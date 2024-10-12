@@ -1,5 +1,6 @@
 <?php
-include("conexao.php");
+include("../../../back/models/conexao.php");
+
 $dados = $_POST["cads"];
 
 

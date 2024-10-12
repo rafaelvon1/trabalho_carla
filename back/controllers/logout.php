@@ -4,5 +4,5 @@
     session_start();
   }
   session_destroy();
-  header("location: log.html");
+  header("location: ../../login.html");
 ?>

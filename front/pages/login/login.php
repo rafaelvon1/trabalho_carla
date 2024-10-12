@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Document</title>
 </head>
+
 <body>
-<?php
+    <?php
 /**pegando no arquivo conexao minha conexao :) */
-include("conexao.php");
+include("../models/conexao.php");
 $dados = $_POST["log"] ;
 /**verificando se a coneccao foi */
 
 if($mysqli -> connect_errno){
-    echo"deu nao mano",$mysqli -> connect_errno,$mysqli -> connect_erro;
+    echo"deu nao mano",$mysqli -> connect_errno,$mysqli -> connect_error;
 }
 else {
     /**vai coloca comando sql aqui nao */
@@ -34,25 +38,14 @@ else {
         $_SESSION["email"] = $variavel["email"];
         $teste = $variavel["email"];
         echo $teste ;
-        header("location: index.php");
+        header("location: ../../index.php");
     }
     else {
         echo"<h1>ta errado meu virgem, email ou senha<h1/>";
     }
 }
 ?>
-<button type="submit"><a href="logout.php">sair</a></button>
+    <button type="submit"><a href="back/controllers/logout.php">sair</a></button>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
