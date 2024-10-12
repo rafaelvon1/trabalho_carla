@@ -11,14 +11,19 @@
 
 <body>
     <?php
+    session_start();
 /**pegando no arquivo conexao minha conexao :) */
-include("../models/conexao.php");
+include("../../../db/conexao.php");
+
 $dados = $_POST["log"] ;
-/**verificando se a coneccao foi */
+/**verificando se a conexão foi */
 
 if($mysqli -> connect_errno){
     echo"deu nao mano",$mysqli -> connect_errno,$mysqli -> connect_error;
 }
+
+
+
 else {
     /**vai coloca comando sql aqui nao */
     $dados[0] = $mysqli -> real_escape_string($dados[0]);
@@ -38,7 +43,7 @@ else {
         $_SESSION["email"] = $variavel["email"];
         $teste = $variavel["email"];
         echo $teste ;
-        header("location: ../../index.php");
+        header("location: ../../../index.php");
     }
     else {
         echo"<h1>ta errado meu virgem, email ou senha<h1/>";
