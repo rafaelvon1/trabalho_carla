@@ -1,7 +1,9 @@
 <?php
 session_start();
+
+// lembrar de atualizar o caminho do arquivo conexao.php caso queria ir para o login
 if (!isset($_SESSION["id"])) {
-    header("Location: front/pages/login/login.html");
+    header("Location: front/pages/cadastro/cadastro.html");
     exit();
 }
 ?>
