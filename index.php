@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION["id"])) {
+    header("Location: front/pages/login/login.html");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
