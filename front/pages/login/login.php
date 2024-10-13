@@ -22,8 +22,8 @@ if($mysqli -> connect_errno){
     echo"deu nao mano",$mysqli -> connect_errno,$mysqli -> connect_error;
 }
 else {
-    
     /**pegando minhas variaveis */
+    /** testendo */
     $dados = $_POST["log"] ;
     /**vai coloca comando sql aqui nao */
     $dados[0] = $mysqli -> real_escape_string($dados[0]);
