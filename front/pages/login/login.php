@@ -12,6 +12,7 @@
 <body>
 
 <?php
+
 /**abrir uma sessao, para armazenar dados do usuario em varias paginas */
 session_start();
 /**pegando no arquivo conexao minha conexao :) */
@@ -34,14 +35,16 @@ else {
     /**verificando se teve algum retorno do meu select*/
     $quantidade = $sql_query->num_rows;
     /**caso sim, entao email e senha aprovados */
+    $variavel =  $sql_query->fetch_assoc();
+    
     if ($quantidade == 1) {
         /**variavael ira guardar dados do banco de dados como uma array*/
-        $variavel =  $sql_query->fetch_assoc();
         if (!isset($_SESSION)) {
             session_start();
         }
         /**enviar pessoa para pagina do site */
-        header("location: ../principal/principal.html"); 
+        $_SESSION["email"] = $variavel["email"];
+        header("location: ../principal/principal.php"); 
     }
     /**caso senha ou email estiver incorreto */
     else {
