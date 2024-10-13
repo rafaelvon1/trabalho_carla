@@ -1,5 +1,5 @@
 <?php
-include("../../../back/models/conexao.php");
+include("../db/conexao.php");
 
 /**forma de mostrar todos os registros da tabela sql */
 /*
