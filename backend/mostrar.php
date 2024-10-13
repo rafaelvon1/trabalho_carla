@@ -1,10 +1,8 @@
 <?php
+/*ligando com o arquivo conexao*/
 include("../db/conexao.php");
 
 /**forma de mostrar todos os registros da tabela sql */
-
-
-
 /**verificando se a conexão foi */
 if($mysqli -> connect_errno){
     echo"deu nao mano",$mysqli -> connect_errno,$mysqli -> connect_error;
