@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mostrando dados</title>
+</head>
+<body>
+<table>
+<tr>
+    <td>id</td>
+    <td>nome</td>
+    <td>email</td>
+    <td>cidade</td>
+    <td>numero</td>
+</tr>
+
 <?php
 /*ligando com o arquivo conexao*/
 include("../db/conexao.php");
@@ -11,20 +28,25 @@ else {
     $sql_cod = "SELECT * FROM pessoas";
     /**utilizando parametro query para enviar codigo sql caso nao funcione die */
     $sql_query = $mysqli -> query($sql_cod) or die("voce simplismente nao existe");
-    /**verificando se teve algum retorno do meu select*/   
-    $quantidade = $sql_query->num_rows;
-    $loop = 0;
-    /**variavael ira guardar dados do banco de dados como uma array*/
-    while ($loop < $quantidade) {
-        /**variavael ira guardar dados do banco de dados como uma array*/
-        $variavel =  $sql_query->fetch_assoc();  
-        foreach ($variavel as $teste) {
-            echo $teste, "<br>";
-        }
-        $loop += 1;
-        echo"<hr>";
+    /**variavael ira guardar dados do banco de dados como uma array,*/
+    while ($variavel = $sql_query->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $variavel['id'] . "</td>";
+        echo "<td>" . $variavel['nome'] . "</td>";
+        echo "<td>" . $variavel['email'] . "</td>";
+        echo "<td>" . $variavel['pais'] . "</td>";
+        echo "<td>" . $variavel['idade'] . "</td>";
+        echo "</tr>";
     }
     
 }
 
 ?>
+
+</table>
+
+
+
+
+</body>
+</html>
