@@ -1,4 +1,5 @@
 create database carla;
+
 create table login(id int primary key auto_increment not null,email varchar(50) not null,senha int not null);
 
 insert into login
