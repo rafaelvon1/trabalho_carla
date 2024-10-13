@@ -34,7 +34,7 @@ if ($mysqli->connect_errno) {
         $usuario = $sql_query->fetch_assoc();
         $_SESSION['id'] = $usuario['id'];
         $_SESSION['email'] = $usuario['email'];
-        header("Location: ../principal/principal.php");
+        header("Location: ../principal/principal.html");
         exit();
     } else {
         echo "Login ou senha incorretos.";
