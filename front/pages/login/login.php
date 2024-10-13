@@ -23,7 +23,6 @@ if($mysqli -> connect_errno){
 }
 else {
     /**pegando minhas variaveis */
-    /**bom dia */
     $dados = $_POST["log"] ;
     /**vai coloca comando sql aqui nao */
     $dados[0] = $mysqli -> real_escape_string($dados[0]);
