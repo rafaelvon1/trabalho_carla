@@ -29,6 +29,7 @@ else {
     /**utilizando parametro query para enviar codigo sql caso nao funcione die */
     $sql_query = $mysqli -> query($sql_cod) or die("voce simplismente nao existe");
     /**variavael ira guardar dados do banco de dados como uma array,*/
+    
     while ($variavel = $sql_query->fetch_assoc()) {
         echo "<tr>";
         echo "<td>" . $variavel['id'] . "</td>";
