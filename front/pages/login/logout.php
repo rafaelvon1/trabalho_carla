@@ -5,5 +5,6 @@
   }
   session_destroy();
   header("location: login.html");
-  echo"caiu no logout";
+  
+
 ?>
