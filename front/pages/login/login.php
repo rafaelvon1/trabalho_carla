@@ -41,7 +41,7 @@ else {
             session_start();
         }
         /**enviar pessoa para pagina do site */
-        /*header("location: ../../../index.php"); */
+        header("location: ../principal/principal.html"); 
     }
     /**caso senha ou email estiver incorreto */
     else {
