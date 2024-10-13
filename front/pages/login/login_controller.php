@@ -12,29 +12,29 @@
 <body>
     <?php
     session_start();
-/**pegando no arquivo conexao minha conexao :) */
-include("../../../db/conexao.php");
+    include("../../../db/conexao.php");
 
 $dados = $_POST["log"];
 
-/**verificando se a conexão foi */
-if($mysqli -> connect_errno){
-    echo"deu nao mano",$mysqli -> connect_errno,$mysqli -> connect_error;
-}
-
-else {
+// Verifica se o usuário e a senha foram informados
+if ($mysqli->connect_errno) {
+    echo "Erro de conexão: ", $mysqli->connect_errno, " - ", $mysqli->connect_error;
+} else {
     $email = $mysqli->real_escape_string($dados['email']);
     $password = $mysqli->real_escape_string($dados['password']);
 
+    // Executa a consulta SQL para verificar o login e a senha
     $sql_code = "SELECT * FROM login WHERE email = '$email' AND senha = '$password'";
     $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
+
     $quantidade = $sql_query->num_rows;
 
+    // Verifica se encontrou o usuário
     if ($quantidade == 1) {
         $usuario = $sql_query->fetch_assoc();
         $_SESSION['id'] = $usuario['id'];
         $_SESSION['email'] = $usuario['email'];
-        header("Location: ../../../index.php");
+        header("Location: ../principal/principal.php");
         exit();
     } else {
         echo "Login ou senha incorretos.";
