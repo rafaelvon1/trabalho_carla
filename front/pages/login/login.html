@@ -33,16 +33,20 @@
       <a class="nav-link disabled" href="#">Desativado</a>
     </li>
   </ul>
-  <form action="login.php" method="post">
-    <h1>login</h1>
-    <label for="email">email: </label>
-    <input name="log[]" type="email" id="email" required placeholder="digite seu email...">
-    <br><br>
-    <label for="senha">senha: </label>
-    <input name="log[]" type="password" id="senha" required placeholder="digite sua senha...">
-    <br><br>
-    <button type="submit">entrar</button>
-  </form>
+  <div class="container">
+    <h1 class="mt-5">Login</h1>
+    <form action="/front/pages/login/controllers/login_controller.php" method="post">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="log[email]" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" class="form-control" id="password" name="log[password]" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
 </body>
 
 </html>
