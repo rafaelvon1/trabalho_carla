@@ -17,7 +17,7 @@
 
 <?php
 /*ligando com o arquivo conexao*/
-include("../db/conexao.php");
+include("../../../db/conexao.php");
 
 /**forma de mostrar todos os registros da tabela sql */
 /**verificando se a conexão foi */
