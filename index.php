@@ -19,7 +19,7 @@ session_start();
 
 <body>
     <div class="container">
-        <h1>Bem-vindo à Pizzaria nerdola!</h1>
+        <h1>Bem-vindo à Pizzaria nerdola !</h1>
         <p class="lead">Saboreie nossas deliciosas pizzas artesanais!</p>
         <a href="front/pages/login/login.html" class="btn btn-primary">Login</a>
         <a href="front/pages/cadastro/cadastro.html" class="btn btn-secondary">Criar Conta</a>
