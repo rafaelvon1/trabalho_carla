@@ -25,7 +25,7 @@ if($mysqli -> connect_errno){
     echo"deu nao mano",$mysqli -> connect_errno,$mysqli -> connect_error;
 }
 else {
-    $sql_cod = "SELECT * FROM pessoas";
+    $sql_cod = "SELECT * FROM teste_reserva";
     /**utilizando parametro query para enviar codigo sql caso nao funcione die */
     $sql_query = $mysqli -> query($sql_cod) or die("voce simplismente nao existe");
     /**variavael ira guardar dados do banco de dados como uma array,*/

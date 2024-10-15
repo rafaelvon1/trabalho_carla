@@ -69,6 +69,9 @@ a {
     background-color: blue;
     color: #ffffff;
 }
+.sql_mostra{
+    margin:auto;
+}
 </style>
 <body>
     <div class="cabecalho">
@@ -101,19 +104,26 @@ a {
                 <h1>reserve uma mesa</h1>
                 <label for="">horario: </label>
                 <br>
-                <input name="hora" type="time">
+                <input name="hora" type="time" required>
 
                 <br>
                 <label for="">mesa para quantos: </label>
                 <br>
-                <select name="" id="">
+                <select name="" id="" required>
+                    <option value="" disabled selected >nao selecionado</option>
                     <option value="1">1-pessoa</option>
+                    <option value="2">2-pessoa</option>
+                    <option value="3">3-pessoa</option>
+                    <option value="4">4-pessoa</option>
+                    <option value="5">5-pessoa</option>
+                    <option value="6">6-pessoa</option>
+
                 </select>
 
                 <br>
                 <label for="">para que dia: </label>
                 <br>
-                <input name="data" type="date">
+                <input name="data" type="date" required>
                 <br><br><br>
 
                 <button class="botao" type="submit">enviar</button>
