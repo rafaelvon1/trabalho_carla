@@ -44,7 +44,7 @@ else {
         }
         /**enviar pessoa para pagina do site */
         $_SESSION["email"] = $variavel["email"];
-        header("location: ../principal/principal.php"); 
+        header("location: ../principal/paginaclient.php"); 
     }
     /**caso senha ou email estiver incorreto */
     else {
