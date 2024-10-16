@@ -7,6 +7,11 @@
     <link rel="shortcut icon" href="..\imagens_videos" type="image/x-icon">
     <link rel="shortcut icon" href="..\imagens_videos\pizza_reserva.png" type="image/x-icon">
     <title>reserva</title>
+    <?php
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    ?>
 </head>
 <style>
 .cabecalho {
@@ -160,34 +165,53 @@ a {
                 <button class="botao" type="submit" name="botao">enviar</button>
                 <br>
                 <?php
+                    /**conectando com meu banco de dados */
+                    include("../../../db/conexao.php");
+                    /**verificando se ja existe alguem com o mesmo email no site */
+                    $sql_code = "SELECT * FROM reserva";
+
+                    /** utilizando um parametro para query para rodar meu codigo no banco de dados caso der erro aparece a mensagem (die->) -> aqui se espera que algo seja retornado*/
+                    $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
+                    /**caso sim, entao email e senha aprovados */
+                    $variavel =  $sql_query->fetch_assoc();
+                    
+                    
+                    /*
+                    verificando se teve algum retorno do meu select
+                    $quantidade = $sql_query->num_rows;
+                    echo $quantidade;
+                    if ($quantidade >= 1) {
+                        echo $variavel["dias"];
+                        echo $variavel["data_reserva"];
+                        echo $variavel["horario"];
+                        echo $variavel["quantidade"];
+
+                    }
+                    */
+
+                    /**caso botao existir fazer os demais processo */
                     if (isset($_POST["botao"])) {
+                        
                         /**pegando meus dados da reserva */
-                        
                         $dados = $_POST["dados"];
                         
-
+                        /**pegando a data e horario q meu usuario digitou, colocando ele em um formato data, para ser legivel com o parametro format */
                         $dataHora = new DateTime("$dados[1] $dados[0]");
-                        $dados = $_POST["dados"];
+
+                        /**o valor q sera guardado no dado[3] é o dia que o meu cliente fez a reserva seg ter quarta e assim em diante */
                         $dados[3] = $dataHora->format('l');
-                        if ($dados[3] == "sunday") {
-                            echo"hoje é quarta";
-    
-            
-                        }
-                        else {
 
-                            include("../../../db/conexao.php");
-                            $sqli = "INSERT INTO reserva VALUES('nulll','$dados[0]','$dados[1]','$dados[2]','$dados[3]')";
-                            /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
-                            $envio = mysqli_query($mysqli,$sqli);
-                        }
+                        $dados[4] = $_SESSION["id"];
+
+                        /**inserindo meus dados no banco de dados */
+                        $sqli = "INSERT INTO reserva VALUES('nulll','$dados[4]','$dados[0]','$dados[1]','$dados[2]','$dados[3]')";
+
+                        /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
+                        $envio = mysqli_query($mysqli,$sqli);
                         
                         
                     }
-                    else {
-                        echo "...";
-                    }
-
+                
                     ?>
             </form>
         </div>

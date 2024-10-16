@@ -9,5 +9,10 @@ date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário
 // Obtém a hora atual
 $hora_atual = date('H:i'); // Formato 24 horas
 echo "Hora atual: $hora_atual"; // Exibe a hora atual
-
+/*
+forma de verificar o dia nome do dia apenas em ingles
+if ($dados[3] == "sunday") {
+echo"hoje é quarta";
+    }
+ */
 ?>
