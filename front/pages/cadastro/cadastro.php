@@ -30,8 +30,10 @@ if ($quantidade == 1) {
 else {
     /**verificando se meu email esta correto -> @gmail.com */
     if(filter_var($dados[0], FILTER_VALIDATE_EMAIL)) {
+        /**criptografando minha senha, usando parametro password_hash md5 nao recomendado */
+        $dados[1] = password_hash($dados[1], PASSWORD_DEFAULT); 
         /**inserindo meus dados no banco de dados*/
-        $sqli = "INSERT INTO login VALUES('nulll','$dados[0]','$dados[1]','client;')";
+        $sqli = "INSERT INTO login VALUES('nulll','$dados[0]','$dados[1]','client')";
         /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
         $envio = mysqli_query($mysqli,$sqli);
 
