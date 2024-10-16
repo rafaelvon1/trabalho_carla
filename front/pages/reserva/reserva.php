@@ -77,6 +77,11 @@ a {
 .sql_mostra{
     margin:auto;
 }
+.registro{
+    margin: auto;
+    background-color: rgba(255, 255, 0, 0.5);
+    color: black;
+}
 </style>
 <body>
     <div class="cabecalho">
@@ -151,78 +156,106 @@ a {
                      * nao existe por isso desse erro
                      */
                     include("../../../db/conexao.php");
+                    
                     /**verificando se ja existe alguem com o mesmo email no site */
                     $id = $_SESSION["id"];
                     $sql_code = "SELECT * FROM reserva where id_client = $id";
                     /** utilizando um parametro para query para rodar meu codigo no banco de dados caso der erro aparece a mensagem (die->) -> aqui se espera que algo seja retornado*/
                     $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
-                    $push =$sql_query->num_rows;
-                    if ($push == 1) {
-                        $variavel =  $sql_query->fetch_assoc();
-                        echo $variavel["id_mesa"],"<br>";
-                        echo $variavel["id_client"],"<br>";
-                        echo $variavel["horario"],"<br>";
-                        echo $variavel["data_reserva"],"<br>";
-                        echo $variavel["quantidade"],"<br>";
-                        echo $variavel["dias"];
-                                
-                    }
-                            /***/
-                            
-                    
+                    $pull =$sql_query->num_rows;
                     /**----essa parte ira fazer a verificaçao se dados existem para nao aparecer na tela do layout------- */
-
-                    if (isset($_POST["dados"])) {
-                        /**pegando meus dados da reserva */
-                        $dados = $_POST["dados"];
-                        
-                        /**pegando hora futura daqui 2 horas */
-                        $hora_futura = $data;
-                        $hora_futura->modify('+2 hours');
-                        $hora_futura = $data->format('H:i');
-                        /**verificando de horario e data corresponde com a data */
-                        /**pegando a data e horario q meu usuario digitou, colocando ele em um formato data, para ser legivel com o parametro format */
-                        $dataHora = new DateTime("$dados[1] $dados[0]");
-    
-                        /**o valor q sera guardado no dado[3] é o dia que o meu cliente fez a reserva seg ter quarta e assim em diante */
-                        $dados[3] = $dataHora->format('l');
-
-                        $dados[4] = $_SESSION["id"];
+                    if ($pull < 1) { 
+                        if (isset($_POST["dados"])) {
+                            /**pegando meus dados da reserva */
+                            $dados = $_POST["dados"];
+                            
+                            /**pegando hora futura daqui 2 horas */
+                            $hora_futura = $data;
+                            $hora_futura->modify('+2 hours');
+                            $hora_futura = $data->format('H:i');
+                            /**verificando de horario e data corresponde com a data */
+                            /**pegando a data e horario q meu usuario digitou, colocando ele em um formato data, para ser legivel com o parametro format */
+                            $dataHora = new DateTime("$dados[1] $dados[0]");
         
-                        if ($dados[1] == $data_atual) {
-                            if ($dados[0] >= $hora_futura ) {
-                                if (isset($_POST["botao"])) {
-                                
-                                    /**inserindo meus dados no banco de dados */
-                                    $sqli = "INSERT INTO reserva VALUES('nulll','$dados[4]','$dados[0]','$dados[1]','$dados[2]','$dados[3]')";
+                            /**o valor q sera guardado no dado[3] é o dia que o meu cliente fez a reserva seg ter quarta e assim em diante */
+                            $dados[3] = $dataHora->format('l');
     
-                                    /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
-                                    $envio = mysqli_query($mysqli,$sqli);
-                                    unset($dados);
-                              
-                                }
-
-                            }
-                            if ($dados[0] <= $hora_futura) {
-                                echo"faça a reserva com 2 horas de antecedencia";
-                            }
+                            $dados[4] = $_SESSION["id"];
             
-                        }
-                        else {
-                            /**inserindo meus dados no banco de dados */
-                            $sqli = "INSERT INTO reserva VALUES('nulll','$dados[4]','$dados[0]','$dados[1]','$dados[2]','$dados[3]')";
+                            if ($dados[1] == $data_atual) {
+                                if ($dados[0] >= $hora_futura ) {
+                                    if (isset($_POST["botao"])) {
+                                    
+                                        /**inserindo meus dados no banco de dados */
+                                        $sqli = "INSERT INTO reserva VALUES('nulll','$dados[4]','$dados[0]','$dados[1]','$dados[2]','$dados[3]')";
+        
+                                        /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
+                                        $envio = mysqli_query($mysqli,$sqli);
+                                        unset($dados);
+                                        unset($_POST["botao"]);
+                                  
+                                    }
     
-                            /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
-                            $envio = mysqli_query($mysqli,$sqli);
-                            unset($dados);
+                                }
+                                if ($dados[0] <= $hora_futura) {
+                                    echo"faça a reserva com 2 horas de antecedencia";
+                                }
+                
+                            }
+                            else {
+                                /**inserindo meus dados no banco de dados */
+                                $sqli = "INSERT INTO reserva VALUES('nulll','$dados[4]','$dados[0]','$dados[1]','$dados[2]','$dados[3]')";
+        
+                                /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
+                                $envio = mysqli_query($mysqli,$sqli);
+                                unset($dados);
+                                unset($_POST["botao"]);
+                            }
                         }
+                                
+                    }
+                    
+                    
+
+
+                    
 
                         
     
-                    }
+                    
                 
                 ?>
             </form>
+
+            <table class="registro">
+                <tr>
+                    <td>---mesa---</td>
+                    <td>---dia---</td>
+                    <td>---pessoas---</td>
+                    <td>---horario---</td>
+                    <td>---reserva---</td>
+                </tr>
+
+                <?php
+                
+                if ($pull == 1) {
+                    $variavel = $sql_query->fetch_assoc();
+                    echo "<tr>";
+                    echo "<td>" . $variavel["id_mesa"] . "</td>";
+                    echo "<td>" . $variavel["dias"] . "</td>";
+                    echo "<td>" . $variavel["quantidade"] . "</td>";
+                    echo "<td>" . $variavel["horario"] . "</td>";
+                    echo "<td>" . $variavel["data_reserva"] . "</td>";
+                    echo "</tr>";
+                    
+                } 
+                    
+                    
+                
+
+                ?>
+
+            </table>
         </div>
       </div>
 </body>
