@@ -3,11 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Cardapio</title>
-    <style>
-#home{
+    <style>        
+a {
+    /*font :)*/
+    font-family: 'Courier New', Courier, monospace;
+    color: #8f8c04; /* Cor do texto */
+}
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: black;
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin-right: 20px; /* Espaçamento entre os itens */
+}
+
+.nav-item.sair {
+    margin-left: auto; /* Move o item 'sair' para o final da linha */
+}
+.nav-link {
+    text-align: center;
 }
 #rs{
 color: brown;
@@ -62,139 +89,336 @@ display: block; /* Exibe o texto ao passar o mouse */
     </style>
 </head>
 <body >
-    <div id="home">
-        <a href=""><img src="logoparavoltar.png" alt=""></a>
-        
+    <div class="cabecalho">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="..\principal\paginaclient.php"><img src="..\imagens_videos\fatia_home.png" alt=""><br> HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="..\reserva\reserva.html"><img src="..\imagens_videos\pizza_reserva.png" alt=""><br> RESERVA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="..\cardapio\cardapio.html"><img src="..\imagens_videos\caixa_aberta_login.png" alt=""><br> CARDÁPIO</a>
+            </li>
+            <li class="nav-item eu">
+                <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_eu.png" alt=""><br> eu</a>
+            </li>
+            <li class="nav-item sair">
+                <a class="nav-link" href="..\login\logout.php"><img src="..\imagens_videos\caixa_fechada_cadastro.png" alt=""><br> SAIR</a>
+            </li>
+        </ul>
     </div>
 
 <div id = "principal"> <!--Colocando as divs em uma borda--> 
     <div class="row">
         <div class="col-3">
             <div class="container">
-                <div class="texto">Adicione o item à compra</div>
                 <img class="imagem" src="pizza.png" alt="">               
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
                 <br>
-                <H5>A Moda da Casa</H5>
-                <small>Frango c/catupiry, Bacon, Carne seca, Mussarela</small>
+                <H6>A MODA DA CASA</H6>
+                <small>Presunto, Calabresa defumada fatiada, Molho de Tomate, Bacon, Mussarela, Milho, Orégano</small>
+                <br>
+                <strong id="rs">R$ 49.99</strong>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">               
+                <H6>ATUM</H6>
+                <small>Atum, Molho de tomate, Mussarela, Orégano, Palmito</small>
+                <br>
+                <strong id="rs">R$ 52.99</strong>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <H6>BAURU</H6>
+                <small>Molho de tomate, Mussarela, Orégano, Presunto, Tomate</small>
                 <br>
                 <strong id="rs">R$ 49.00</strong>
             </div>
         </div>
         <div class="col-3">
             <div class="container">
-                <div class="texto">Adicione o item à compra</div>
-                <img class="imagem" src="pizza.png" alt="">               
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
-                <H5>A Moda da Casa</H5>
-                <p>Hamburguer</p>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <div class="texto">Adicione o item à compra</div>
                 <img class="imagem" src="pizza.png" alt="">   
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <div class="texto">Adicione o item à compra</div>
-                <img class="imagem" src="pizza.png" alt="">   
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
+                <H6>BRÓCOLIS COM CATUPIRY</H6>
+                <small>Bacon, Brócolis, Requeijão cremoso</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-3">
             <div class="container">
-                <div class="texto">Adicione o item à compra</div>
                 <img class="imagem" src="pizza.png" alt="">   
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
+                <H6>CALABRESA</H6>
+                <small>Azeitona Verde, Calabresa fatiada, Cebola, molho de tomate, Orégano</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
             </div>
         </div>
         <div class="col-3">
             <div class="container">
-                <div class="texto">Adicione o item à compra</div>
                 <img class="imagem" src="pizza.png" alt="">   
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
+                <H6>CARNE SECA COM CATUPIRY</H6>
+                <small>Carne seca, Cebola, Requeijão cremoso</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
             </div>
         </div>
         <div class="col-3">
             <div class="container">
-                <div class="texto">Adicione o item à compra</div>
                 <img class="imagem" src="pizza.png" alt="">   
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
+                <H6>CINCO QUEIJOS</H6>
+                <small>Gorgonzola, Mussarela, Parmesão, Provolone, Requeijão cremoso</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
             </div>
         </div>
         <div class="col-3">
             <div class="container">
-                <div class="texto">Adicione o item à compra</div>
                 <img class="imagem" src="pizza.png" alt="">   
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
+                <H6>DOIS QUEIJO</H6>
+                <small> Mussarela, Requeijão cremoso</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-3">
             <div class="container">
-                <div class="texto">Adicione o item à compra</div>
                 <img class="imagem" src="pizza.png" alt="">   
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
+                <H6>DORITOS</H6>
+                <small>Doritos, Mussarela, Peperona</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
             </div>
         </div>
         <div class="col-3">
             <div class="container">
-                <div class="texto">Adicione o item à compra</div>
                 <img class="imagem" src="pizza.png" alt="">   
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
+                <H6>ESCAROLA</H6>
+                <small>Bacon, Escarola, MOlho de tomate, Requeijão cremoso</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
             </div>
         </div>
         <div class="col-3">
             <div class="container">
-                <div class="texto">Adicione o item à compra</div>
                 <img class="imagem" src="pizza.png" alt="">   
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
+                <H6>ESPANHOLA</H6>
+                <small>Calabresa fatiada, Mussarela, Ovo, Presunto</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
             </div>
         </div>
         <div class="col-3">
             <div class="container">
-                <div class="texto">Adicione o item à compra</div>
                 <img class="imagem" src="pizza.png" alt="">   
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
+                <H6>FRANCESA</H6>
+                <small>Cebola, Ervilha, Mussarela, Palmito</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-3">
             <div class="container">
-                <div class="texto">Adicione o item à compra</div>
                 <img class="imagem" src="pizza.png" alt="">   
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
+                <h6>FRANGO COM CATUPIRY</H6>
+                <small>Frango, Requeijão cremoso</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
             </div>
         </div>
         <div class="col-3">
             <div class="container">
-                <div class="texto">Adicione o item à compra</div>
                 <img class="imagem" src="pizza.png" alt="">   
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
+                <h6>GALETO</H6>
+                <small>Frango, Palmito, Requeijão cremoso</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
             </div>
         </div>
         <div class="col-3">
             <div class="container">
-                <div class="texto">Adicione o item à compra</div>
                 <img class="imagem" src="pizza.png" alt="">   
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
+                <h6>GREGO</H6>
+                <small>Ervilha, Mussarela, Palmito, Presunto, Tomate</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
             </div>
         </div>
         <div class="col-3">
             <div class="container">
-                <div class="texto">Adicione o item à compra</div>
                 <img class="imagem" src="pizza.png" alt="">   
-                <div class="botao"><button type="button" class="btn btn-success">Comprar</button></div>
+                <h6>HAVAIANA</H6>
+                <small>Abacaxi em calda, Lombo, Mussarela</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <h6>JARDINEIRA</H6>
+                <small> Ervilha, Milho, Mussarela, Palmito, Tomate</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <h6>LIGHT</H6>
+                <small>Brócolis, Milho, Palmito, Tomate</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <h6>LOMBO</H6>
+                <small>Bacon, Lombo, Palmito, Requeijão cremoso</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <h6>MEXICANA</H6>
+                <small>Azeitona verde, Molho de tomate, Mussarela, Orégano, Peperone, Pimentão</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <h6>NAPOLITANA</H6>
+                <small>Molho de tomate, Orégano, Parmesão, Tomate</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <h6>NERDOLA A MODA DO CHEFE</H6>
+                <small>Bacon, Carne seca, Cheddar, Orégano, Molho de tomate, Azeitona verde, Alho frito</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <h6>PÃO DE ALHO</H6>
+                <small>Molho de tomate, Mussarela, Pão de alho, Pasta de alho</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <h6>PERUANA</H6>
+                <small>Atum, Bacon, Ervilha, Milho, Mussarela</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <h6>QUATRO QUEIJOS</H6>
+                <small>Mussarela, Parmesão, Provolone, Requeijão cremoso</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <h6>SICILIANA</H6>
+                <small>Bacon, Champignon, Mussarela</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <h6>SONHO DA NOITE</H6>
+                <small>Bacon, Milho, Requeijão cremoso</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <h6>TOSCANA</H6>
+                <small>Calabresa Fatiada, Cebola, Mussarela, Tomate</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <h6>TRÊS QUEIJOS</H6>
+                <small>Mussarela, Parmesão, Requeijão cremoso</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <h6>VEGANA</H6>
+                <small>Alho frito, Brócolis, Champignon, Milho, Palmito</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="container">
+                <img class="imagem" src="pizza.png" alt="">   
+                <h6>VENEZA</H6>
+                <small>Bacon, Lombo, Mussarela, Palmito, Presunto</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="container">
+                
+                <img class="imagem" src="pizza.png" alt="">   
+                
+                <h6>Volcano</H6>
+                <small>Molho de tomate, Mussarela, Calabresa, Jalapeños, Pimentão, Cebola, Azeitana verde, Orégano</small>
+                <br>
+                <strong id="rs">R$ 49.00</strong>
+            </div>
+        </div>
+    </div>
+
+    
 </div><!--Identação da Principal-->            
 </body>
 </html>
