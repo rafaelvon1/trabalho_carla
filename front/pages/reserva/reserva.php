@@ -100,33 +100,95 @@ a {
         </video>
         <div class="conteudo">
             <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
-            <form action="teste.php" method="post">
+            <form  method="POST">
                 <h1>reserve uma mesa</h1>
+
+
+                <?php
+                    // Define o fuso horário
+                    date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
+
+                    /**pegando data e horario atual */
+                    $data = new DateTime();
+                    $data_atual = $data ->format('Y-m-d');
+                    $data_max = $data ;
+                    $data_max->modify('+2 months');
+                    $data_max = $data-> format('Y-m-d');
+        
+
+
+                    // Obtém a hora atual
+                    $hora_atual = date('H:i'); // Formato 24 horas
+
+                    /* 
+                    forma de pegar dia da semana em formato e nome
+
+                        $dia_semana = $data->format('l');
+                        if ($dia_semana == "Sunday") {
+                            $hora_max="16:00";
+                        }
+                        else {
+                            $hora_max="20:00";
+                        }
+                    */
+                
+                ?>
+
                 <label for="">horario: </label>
                 <br>
-                <input name="hora" type="time" required>
+                <input name="dados[]" type="time" required min="<?php echo $hora_atual;?>" max="20:00">
 
-                <br>
-                <label for="">mesa para quantos: </label>
-                <br>
-                <select name="" id="" required>
-                    <option value="" disabled selected >nao selecionado</option>
-                    <option value="1">1-pessoa</option>
-                    <option value="2">2-pessoa</option>
-                    <option value="3">3-pessoa</option>
-                    <option value="4">4-pessoa</option>
-                    <option value="5">5-pessoa</option>
-                    <option value="6">6-pessoa</option>
 
-                </select>
-
+                
                 <br>
                 <label for="">para que dia: </label>
                 <br>
-                <input name="data" type="date" required min="2024-10-01" max="2024-12-31">
-                <br><br><br>
+                <input name="dados[]" type="date" required min="<?php echo$data_atual;?>" max="<?php echo$data_max;?>">
+                <br>
+                <label for="">mesa para quantos: </label>
+                <br>
+                <select name="dados[]" required>
+                    <option VALUES="" disabled selected >nao selecionado</option>
+                    <option VALUES="2">2-pessoa</option>
+                    <option VALUES="4">4-pessoa</option>
+                    <option VALUES="8">8-pessoa</option>
+                </select>
+                
+                <br><br>
+                
 
-                <button class="botao" type="submit">enviar</button>
+                <button class="botao" type="submit" name="botao">enviar</button>
+                <br>
+                <?php
+                    if (isset($_POST["botao"])) {
+                        /**pegando meus dados da reserva */
+                        
+                        $dados = $_POST["dados"];
+                        
+
+                        $dataHora = new DateTime("$dados[1] $dados[0]");
+                        $dados = $_POST["dados"];
+                        $dados[3] = $dataHora->format('l');
+                        if ($dados[3] == "sunday") {
+                            echo"hoje é quarta";
+    
+            
+                        }
+                        else {
+
+                            include("../../../db/conexao.php");
+                            $sqli = "INSERT INTO reserva VALUES('nulll','$dados[0]','$dados[1]','$dados[2]','$dados[3]')";
+                            /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
+                            $envio = mysqli_query($mysqli,$sqli);
+                        }
+                        
+                        
+                    }
+                    else {
+                        echo "...";
+                    }
+
+                    ?>
             </form>
         </div>
       </div>
