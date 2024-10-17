@@ -277,7 +277,7 @@ a {
                         if (isset($_POST["excluir"])) {
 
                             
-                            $sql_code = "UPDATE reserva SET id_client = 0, horario = null , data_reserva = null , quantidade = 0 WHERE id_client = {$id} LIMIT 1;";
+                            $sql_code = "UPDATE reserva SET id_client = 0, horario = null , data_reserva = null , quantidade = 0 , dias = null WHERE id_client = {$id} LIMIT 1;";
                             $sql_query = $mysqli -> query($sql_code) or die("algo deu errado");
                             $envio = mysqli_query($mysqli,$sql_code);
                             echo"<h2>atualize a pagina<h2/> <br>";
