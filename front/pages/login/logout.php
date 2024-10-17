@@ -4,7 +4,7 @@
     session_start();
   }
   session_destroy();
-  header("location: login.html");
+  header("location: ..\..\..\index.html");
   
 
 ?>

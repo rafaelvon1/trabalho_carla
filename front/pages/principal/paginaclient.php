@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="..\imagens_videos\pizzaicone.ico" type="image/x-icon">
     <title>pizza</title>
 <?php
-    /*include("../login/protect.php");*/
+    include("../login/protect.php");
 ?>
 </head>
 <style>
