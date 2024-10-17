@@ -82,6 +82,18 @@ a {
     background-color: rgba(255, 255, 0, 0.5);
     color: black;
 }
+.botao_transparente {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    /* Deixa a imagem ajustada no botão */
+    .botao_transparente img {
+      display: block;
+      height: auto;
+    }
 </style>
 <body>
     <div class="cabecalho">
@@ -150,13 +162,11 @@ a {
                 <button class="botao" type="submit" name="botao">enviar</button>
                 <br>
                 <?php
-                    /** ------essa parte ira mostrar caso tenha algun registro ja feito-------- */
                     /**bugs a serem resolvidos, quando atualizo a pagina ele salva mais uma vez minha reserva
                      * outro bug o echo abaixo sai apenas quando atualizo a pagina, a primeira vez q passa ele ainda 
                      * nao existe por isso desse erro
                      */
                     include("../../../db/conexao.php");
-                    
                     /**verificando se ja existe alguem com o mesmo email no site */
                     $id = $_SESSION["id"];
                     $sql_code = "SELECT * FROM reserva where id_client = $id";
@@ -180,7 +190,7 @@ a {
                             /**o valor q sera guardado no dado[3] é o dia que o meu cliente fez a reserva seg ter quarta e assim em diante */
                             $dados[3] = $dataHora->format('l');
     
-                            $dados[4] = $_SESSION["id"];
+                            $dados[4] = $id;
             
                             if ($dados[1] == $data_atual) {
                                 if ($dados[0] >= $hora_futura ) {
@@ -191,9 +201,6 @@ a {
         
                                         /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
                                         $envio = mysqli_query($mysqli,$sqli);
-                                        unset($dados);
-                                        unset($_POST["botao"]);
-                                  
                                     }
     
                                 }
@@ -204,12 +211,10 @@ a {
                             }
                             else {
                                 /**inserindo meus dados no banco de dados */
-                                $sqli = "INSERT INTO reserva VALUES('nulll','$dados[4]','$dados[0]','$dados[1]','$dados[2]','$dados[3]')";
+                                $sql_code = "INSERT INTO reserva VALUES('nulll','$dados[4]','$dados[0]','$dados[1]','$dados[2]','$dados[3]')";
         
                                 /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
-                                $envio = mysqli_query($mysqli,$sqli);
-                                unset($dados);
-                                unset($_POST["botao"]);
+                                $envio = mysqli_query($mysqli,$sql_code);
                             }
                         }
                                 
@@ -237,7 +242,10 @@ a {
                 </tr>
 
                 <?php
-                
+                /** ------essa parte ira mostrar caso tenha algun registro ja feito-------- */
+                $sql_code = "SELECT * FROM reserva where id_client = $id"; 
+                $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
+                $pull =$sql_query->num_rows;
                 if ($pull == 1) {
                     $variavel = $sql_query->fetch_assoc();
                     echo "<tr>";
@@ -247,7 +255,6 @@ a {
                     echo "<td>" . $variavel["horario"] . "</td>";
                     echo "<td>" . $variavel["data_reserva"] . "</td>";
                     echo "</tr>";
-                    
                 } 
                     
                     
@@ -256,6 +263,26 @@ a {
                 ?>
 
             </table>
+            <form method="post">
+                <?php
+                if ($pull == 1) {
+                    
+                        if (isset($_POST["excluir"])) {
+                            $sql_code ="DELETE FROM reserva WHERE id_client = '$id'";
+                            $sql_query = $mysqli -> query($sql_code) or die("algo deu errado");
+                            $envio = mysqli_query($mysqli,$sql_code);
+                            echo"<h2>atualize a pagina<h2/>";
+                        }
+                        else {
+                            echo"<small>excluir</small> <br>";
+                            echo "<button class=\"botao_transparente\" type=\"submit\" name=\"excluir\"><img src=\"..\imagens_videos\cortador_pizza_excluir.png\" alt=\"\"></button>";
+                        }
+                } 
+                
+                ?>
+
+            </form>
+            
         </div>
       </div>
 </body>
