@@ -150,10 +150,10 @@ a {
                 <label for="">mesa para quantos: </label>
                 <br>
                 <select name="dados[]" required>
-                    <option VALUES="" disabled selected >nao selecionado</option>
-                    <option VALUES="2">2-pessoa</option>
-                    <option VALUES="4">4-pessoa</option>
-                    <option VALUES="8">8-pessoa</option>
+                    <option value="" disabled selected >nao selecionado</option>
+                    <option value="2">2-pessoa</option>
+                    <option value="4">4-pessoa</option>
+                    <option value="8">8-pessoa</option>
                 </select>
                 
                 <br><br>
@@ -166,6 +166,7 @@ a {
                      * outro bug o echo abaixo sai apenas quando atualizo a pagina, a primeira vez q passa ele ainda 
                      * nao existe por isso desse erro
                      */
+                    
                     include("../../../db/conexao.php");
                     /**verificando se ja existe alguem com o mesmo email no site */
                     $id = $_SESSION["id"];
@@ -178,7 +179,7 @@ a {
                         if (isset($_POST["dados"])) {
                             /**pegando meus dados da reserva */
                             $dados = $_POST["dados"];
-                            
+                            echo$dados[2];
                             /**pegando hora futura daqui 2 horas */
                             $hora_futura = $data;
                             $hora_futura->modify('+2 hours');
@@ -189,7 +190,6 @@ a {
         
                             /**o valor q sera guardado no dado[3] é o dia que o meu cliente fez a reserva seg ter quarta e assim em diante */
                             $dados[3] = $dataHora->format('l');
-    
                             $dados[4] = $id;
             
                             if ($dados[1] == $data_atual) {
@@ -197,10 +197,11 @@ a {
                                     if (isset($_POST["botao"])) {
                                     
                                         /**inserindo meus dados no banco de dados */
-                                        $sqli = "INSERT INTO reserva VALUES('nulll','$dados[4]','$dados[0]','$dados[1]','$dados[2]','$dados[3]')";
-        
+                                        
+                                        $sql_code = "UPDATE reserva SET id_client = {$dados[4]}, horario = '{$dados[0]}', data_reserva = '{$dados[1]}', quantidade = {$dados[2]}, dias = '{$dados[3]}' WHERE id_client = 0 LIMIT 1;";
+                                
                                         /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
-                                        $envio = mysqli_query($mysqli,$sqli);
+                                        $envio = mysqli_query($mysqli,$sql_code);
                                     }
     
                                 }
@@ -211,8 +212,10 @@ a {
                             }
                             else {
                                 /**inserindo meus dados no banco de dados */
-                                $sql_code = "INSERT INTO reserva VALUES('nulll','$dados[4]','$dados[0]','$dados[1]','$dados[2]','$dados[3]')";
+                        
         
+    
+                                $sql_code = "UPDATE reserva SET id_client = {$dados[4]}, horario = '{$dados[0]}', data_reserva = '{$dados[1]}', quantidade = {$dados[2]}, dias = '{$dados[3]}' WHERE id_client = 0 LIMIT 1;";
                                 /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
                                 $envio = mysqli_query($mysqli,$sql_code);
                             }
@@ -233,30 +236,34 @@ a {
             </form>
 
             <table class="registro">
-                <tr>
-                    <td>---mesa---</td>
-                    <td>---dia---</td>
-                    <td>---pessoas---</td>
-                    <td>---horario---</td>
-                    <td>---reserva---</td>
-                </tr>
-
                 <?php
-                /** ------essa parte ira mostrar caso tenha algun registro ja feito-------- */
-                $sql_code = "SELECT * FROM reserva where id_client = $id"; 
-                $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
-                $pull =$sql_query->num_rows;
-                if ($pull == 1) {
+                    /** ------essa parte ira mostrar caso tenha algun registro ja feito-------- */
+                    $sql_code = "SELECT * FROM reserva where id_client = $id"; 
+                    $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
+                    $pull =$sql_query->num_rows;
                     $variavel = $sql_query->fetch_assoc();
-                    echo "<tr>";
-                    echo "<td>" . $variavel["id_mesa"] . "</td>";
-                    echo "<td>" . $variavel["dias"] . "</td>";
-                    echo "<td>" . $variavel["quantidade"] . "</td>";
-                    echo "<td>" . $variavel["horario"] . "</td>";
-                    echo "<td>" . $variavel["data_reserva"] . "</td>";
-                    echo "</tr>";
-                } 
-                    
+                    if ($pull == 1) {
+                        echo"<tr>";
+                        echo"<td>---mesa---</td>";
+                        echo"<td>---dia---</td>";
+                        echo"<td>---pessoas---</td>";
+                        echo"<td>---horario---</td>";
+                        echo"<td>---reserva---</td>";
+
+                        echo "<tr>";
+                        echo "<td>" . $variavel["id_mesa"] . "</td>";
+                        echo "<td>" . $variavel["dias"] . "</td>";
+                        echo "<td>" . $variavel["quantidade"] . "</td>";
+                        echo "<td>" . $variavel["horario"] . "</td>";
+                        echo "<td>" . $variavel["data_reserva"] . "</td>";
+                        echo "</tr>";
+                    } 
+                    else {
+                        
+
+                        echo"<h2 class=\"total_reserva\"> faça sua reserva<h2/>";
+        
+                    }
                     
                 
 
@@ -268,10 +275,13 @@ a {
                 if ($pull == 1) {
                     
                         if (isset($_POST["excluir"])) {
-                            $sql_code ="DELETE FROM reserva WHERE id_client = '$id'";
+
+                            
+                            $sql_code = "UPDATE reserva SET id_client = 0, horario = null , data_reserva = null , quantidade = 0 WHERE id_client = {$id} LIMIT 1;";
                             $sql_query = $mysqli -> query($sql_code) or die("algo deu errado");
                             $envio = mysqli_query($mysqli,$sql_code);
-                            echo"<h2>atualize a pagina<h2/>";
+                            echo"<h2>atualize a pagina<h2/> <br>";
+                            echo "<button class=\"botao_transparente\" type=\"submit\" name=\"excluir\"><img src=\"..\imagens_videos\pizza_reserva.png\" alt=\"\"></button>";
                         }
                         else {
                             echo"<small>excluir</small> <br>";

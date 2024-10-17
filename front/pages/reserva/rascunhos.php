@@ -15,4 +15,11 @@ if ($dados[3] == "sunday") {
 echo"hoje é quarta";
     }
  */
+/*
+ver quantas mesas tem disponivel
+$sql_code = "SELECT count(id_client) total from reserva where id_client = 0;"; 
+$sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
+$variavel = $sql_query->fetch_assoc();
+echo"<h2 class=\"total_reserva\"> faça sua reserva<h2/>";
+echo"<h3 class=\"total_reserva\"> no momento temos<h3/> ",$variavel["total"]," mesas ";*/
 ?>
