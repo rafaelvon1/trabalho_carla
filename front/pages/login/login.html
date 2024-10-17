@@ -12,7 +12,7 @@
 
 <body>
 
-  <header>
+  <nav>
     <ul class="nav nav-pills">
       <li class="nav-item">
         <a class="nav-link active" href="#">Teste</a>
@@ -24,22 +24,24 @@
         <a class="nav-link" href="#">Teste</a>
       </li>
     </ul>
-  </header>
+  </nav>
 
-  <div class="container">
+  <main class="container">
     <h1>Login</h1>
     <form action="login.php" method="post">
       <div class="form-group">
         <label for="email">Email:</label>
         <input type="email" class="form-control" id="email" name="log[]" required>
       </div>
+
       <div class="form-group">
         <label for="password">Senha:</label>
         <input type="password" class="form-control" id="password" name="log[]" required>
       </div>
+
       <button type="submit" class="btn btn-primary">Login</button>
     </form>
-  </div>
+  </main>
 </body>
 
 </html>

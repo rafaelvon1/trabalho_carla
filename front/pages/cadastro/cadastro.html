@@ -11,33 +11,39 @@
 </head>
 
 <body>
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Ativo</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">Desativado</a>
-    </li>
-  </ul>
-  <form action="cadastro.php" method="post">
-    <h1>cadastro</h1>
-    <label for="email">email: </label>
-    <input name="cads[]" type="email" required placeholder="digite seu email...">
-    <br><br>
-    <label for="senha">senha: </label>
-    <input name="cads[]" type="password" required placeholder="digite sua senha...">
-    <br><br>
-    <button type="submit">entrar</button>
-  </form>
+
+  <header>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="../login/login.html">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../principal/paginaclient.php">Página Principal</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../cardapio/cardapio.html">Cardapio</a>
+      </li>
+    </ul>
+  </header>
+
+  <section class="container">
+    <h1>Cadastro</h1>
+    <form action="cadastro.php" method="post">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="cadastro[]" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" class="form-control" id="password" name="cadastro[]" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </section>
+
 </body>
-
-
 
 </body>
 
