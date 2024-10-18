@@ -192,7 +192,7 @@ a {
 
                             /**ele verifica se o dado 5 ainda nao existe, caso nao exitir cair no meu if e rodar o rand */
                             if (!isset($dados[5])) {
-                                $dados[5] = rand(1,5);
+                                $dados[5] = rand(1,35);
                                 
                             }
                             /** bug select nao esta retornando true ou false*/
@@ -200,7 +200,6 @@ a {
                             /** utilizando um parametro para query para rodar meu codigo no banco de dados caso der erro aparece a mensagem (die->) -> aqui se espera que algo seja retornado*/
                             $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
                             $pull =$sql_query->num_rows;
-                            echo$pull;
                             /**essa parte ira verificar se existe a mesa na qual o rand escolheu aleatoriamente */
                             if ($pull >= 1) {
                                 echo"ja tem uma pessoa com essa reserva";
