@@ -33,10 +33,10 @@ else {
     while ($variavel = $sql_query->fetch_assoc()) {
         echo "<tr>";
         echo "<td>" . $variavel['id'] . "</td>";
-        echo "<td>" . $variavel['nome'] . "</td>";
-        echo "<td>" . $variavel['email'] . "</td>";
-        echo "<td>" . $variavel['pais'] . "</td>";
-        echo "<td>" . $variavel['idade'] . "</td>";
+        echo "<td>" . $variavel['name'] . "</td>";
+        echo "<td>" . $variavel['horario'] . "</td>";
+        echo "<td>" . $variavel['quantidade_pessoa'] . "</td>";
+        echo "<td>" . $variavel['data'] . "</td>";
         echo "</tr>";
     }
     
@@ -45,9 +45,5 @@ else {
 ?>
 
 </table>
-
-
-
-
 </body>
 </html>

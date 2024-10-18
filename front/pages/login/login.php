@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Document</title>
+    <title>login_code</title>
 </head>
 
 <body>
@@ -29,7 +29,7 @@ else {
     $dados[0] = $mysqli -> real_escape_string($dados[0]);
     $dados[1] = $mysqli -> real_escape_string($dados[1]);
     /**gerando uma consulta para verifacar se email e senha estao corretos */
-    $sql_code = "SELECT * FROM login WHERE email = '$dados[0]' AND senha ='$dados[1]'";
+    $sql_code = "SELECT id,email,senha,pessoa_status FROM login WHERE email = '$dados[0]'";
     /**utilizando parametro query para enviar codigo sql caso nao funcione die */
     $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
     /**verificando se teve algum retorno do meu select*/
@@ -42,18 +42,33 @@ else {
         if (!isset($_SESSION)) {
             session_start();
         }
-        /**enviar pessoa para pagina do site */
-        $_SESSION["email"] = $variavel["email"];
-        header("location: ../principal/paginaclient.php"); 
+        /**usando esse parametro é possivel verificar se a senha criptografada do cliente é veridico, caso for retorna 1 True */
+        if (password_verify($dados[1],$variavel["senha"])) {
+            /**usado para verificar se email ja esta cadastrado no arquivo protect */
+            $_SESSION["email"] = $variavel["email"];
+            $_SESSION["id"] = $variavel["id"];
+            /**separando administrador de cliente */
+            if ($variavel["pessoa_status"] == "admin") {
+                /**enviando pessoa administradora para sua pagina */
+                header("location: ../principal/pagina_admin_page.php");
+            }
+            else {
+                /**enviar pessoa para pagina do site */
+                header("location: ../principal/pagina_client_page.php");
+            }    
+        }
+        else {
+            echo "senha incorreta"; 
+        }
     }
     /**caso senha ou email estiver incorreto */
     else {
-        echo"<h1>ta errado meu virgem, email ou senha<h1/>";
+        echo"<h1>email ou senha invalido<h1/>";
     }
 }
 ?>
     <!-- caso algo der errado, voltar para login-->
-    <button type="submit"><a href="logout.php">sair</a></button>
+    <button type="submit"><a href="logout_controller.php">sair</a></button>
 </body>
 
 </html>

@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="..\imagens_videos\pizzaicone.ico" type="image/x-icon">
     <title>pizza</title>
 <?php
-    include("../login/protect.php");
+    include("../login/protect_controller.php");
 ?>
 </head>
 <style>
@@ -77,7 +77,7 @@ a {
                 <a class="nav-link" href="#"><img src="..\imagens_videos\fatia_home.png" alt=""><br> Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="..\reserva\reserva.html"><img src="..\imagens_videos\pizza_reserva.png" alt=""><br> reserva</a>
+                <a class="nav-link" href="..\reserva\reserva.php"><img src="..\imagens_videos\pizza_reserva.png" alt=""><br> reserva</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><img src="..\imagens_videos\caixa_aberta_login.png" alt=""><br> cardapio</a>
@@ -86,7 +86,7 @@ a {
                 <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_eu.png" alt=""><br> eu</a>
             </li>
             <li class="nav-item sair">
-                <a class="nav-link" href="..\login\logout.php"><img src="..\imagens_videos\caixa_fechada_cadastro.png" alt=""><br> sair</a>
+                <a class="nav-link" href="..\login\logout_controller.php"><img src="..\imagens_videos\caixa_fechada_cadastro.png" alt=""><br> sair</a>
             </li>
         </ul>
     </div>
@@ -97,7 +97,7 @@ a {
       </video>
       <div class="conteudo">
           <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
-          <h1>Bem-vindo à Pizzaria</h1>
+          <h1>Bem-vindo à Pizzaria administrador</h1>
 
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat mollitia ut laborum voluptatibus assumenda dicta facere architecto distinctio dolorem officia, obcaecati sapiente qui omnis incidunt nobis nulla blanditiis. Ab, molestiae?</p>
       </div>
