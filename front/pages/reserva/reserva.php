@@ -182,30 +182,37 @@ a {
                             /**pegando meus dados da reserva */
                             $dados = $_POST["dados"];
 
+                            $dataHora = new DateTime("$dados[1] $dados[0]");
+                            $dataHora->modify('+2 hours');
+                            $dataHora = $dataHora->format('H:i');
+                            /**pegando meus dados da reserva */
+                            
+
                             /**pegando um numero aletorio mesa> bug aqui quando atualizo ele vira outro numero*/
 
                             /**ele verifica se o dado 5 ainda nao existe, caso nao exitir cair no meu if e rodar o rand */
                             if (!isset($dados[5])) {
-                                $dados[5] = rand(1,3);
+                                $dados[5] = rand(1,5);
                                 
                             }
-                            $sql_code = "SELECT * FROM reserva where mesa = '$dados[5]' and data_reserva = '$dados[1]' and horario = '$dados[0]'";
+                            /** bug select nao esta retornando true ou false*/
+                            $sql_code = "SELECT * FROM reserva where mesa = '$dados[5]' and data_reserva = '$dados[1]' and horario >= 'horario' and horario <= '$dataHora' ";
                             /** utilizando um parametro para query para rodar meu codigo no banco de dados caso der erro aparece a mensagem (die->) -> aqui se espera que algo seja retornado*/
                             $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
                             $pull =$sql_query->num_rows;
+                            echo$pull;
                             /**essa parte ira verificar se existe a mesa na qual o rand escolheu aleatoriamente */
                             if ($pull >= 1) {
                                 echo"ja tem uma pessoa com essa reserva";
+                                /**tentar mudar o ide do moço para ver se tem alguma mesa disponivel na mesma data posso usar enquanto no pull*/
                                 
                             }
                             else {
-                                /**pegando hora futura daqui 2 horas */
+                                /**verificando de horario e data corresponde com a data */
+                                /**pegando a data e horario q meu usuario digitou, colocando ele em um formato data, para ser legivel com o parametro format */
                                 $hora_futura = $data;
                                 $hora_futura->modify('+2 hours');
                                 $hora_futura = $data->format('H:i');
-                                
-                                /**verificando de horario e data corresponde com a data */
-                                /**pegando a data e horario q meu usuario digitou, colocando ele em um formato data, para ser legivel com o parametro format */
                                 $dataHora = new DateTime("$dados[1] $dados[0]");
             
                                 /**o valor q sera guardado no dado[3] é o dia que o meu cliente fez a reserva seg ter quarta e assim em diante */
@@ -229,7 +236,6 @@ a {
                                 }
                                 else {
                                     /**inserindo meus dados no banco de dados */
-                                    echo $dados[5],"<br>";
                                     $sql_code = "INSERT INTO reserva VALUES(null, '$dados[4]', '$dados[5]', '$dados[0]', '$dados[1]', '$dados[2]', '$dados[3]')";
                                     /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
                                     $envio = mysqli_query($mysqli,$sql_code);
