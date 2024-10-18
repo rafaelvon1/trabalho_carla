@@ -14,41 +14,8 @@ values
 select * from login;
 
 /*teste registro*/
-create table reserva(id_mesa int primary key auto_increment not null,id_client int ,horario time,data_reserva date ,quantidade int ,dias varchar(50) );
-insert into reserva
-values
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,""),
-(null,0,null,null,0,"")
+create table reserva(id int primary key auto_increment not null,id_client int not null,mesa int not null,horario time not null,data_reserva date not null,quantidade int not null,dias varchar(50) not null);
 
-;
 select * from reserva where id_client = 0 limit 1;
 update reserva set id_client = 0,horario = null,data_reserva = null,quantidade = 0,dias = "" where id_client = 0 limit 1; 
 select count(id_client) total from reserva where id_client = 0;
