@@ -182,8 +182,13 @@ a {
                             /**pegando meus dados da reserva */
                             $dados = $_POST["dados"];
 
-                            /**pegando um numero aletorio mesa> */
-                            $dados[5] = rand(1,3);
+                            /**pegando um numero aletorio mesa> bug aqui quando atualizo ele vira outro numero*/
+
+                            /**ele verifica se o dado 5 ainda nao existe, caso nao exitir cair no meu if e rodar o rand */
+                            if (!isset($dados[5])) {
+                                $dados[5] = rand(1,3);
+                                
+                            }
                             $sql_code = "SELECT * FROM reserva where mesa = '$dados[5]' and data_reserva = '$dados[1]' and horario = '$dados[0]'";
                             /** utilizando um parametro para query para rodar meu codigo no banco de dados caso der erro aparece a mensagem (die->) -> aqui se espera que algo seja retornado*/
                             $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
