@@ -8,9 +8,10 @@
     <link rel="shortcut icon" href="..\imagens_videos\pizza_reserva.png" type="image/x-icon">
     <title>reserva</title>
     <?php
-    if (!isset($_SESSION)) {
-        session_start();
-    }
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        include("../login/protect.php");
     ?>
 </head>
 <style>
@@ -140,7 +141,7 @@ a {
 
                 <label for="">horario: </label>
                 <br>
-                <input name="dados[]" type="time" required min="8:00" max="20:00">
+                <input name="dados[]" type="time" required min="10:00" max="20:00">
             
                 <br>
                 <label for="">para que dia: </label>
@@ -168,70 +169,71 @@ a {
                      */
                     
                     include("../../../db/conexao.php");
-                    /**verificando se ja existe alguem com o mesmo email no site */
+                    /**pegando id da tela de login*/
                     $id = $_SESSION["id"];
-                    $sql_code = "SELECT * FROM reserva where id_client = $id";
-                    /** utilizando um parametro para query para rodar meu codigo no banco de dados caso der erro aparece a mensagem (die->) -> aqui se espera que algo seja retornado*/
-                    $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
-                    $pull =$sql_query->num_rows;
                     /**----essa parte ira fazer a verificaçao se dados existem para nao aparecer na tela do layout------- */
-                    if ($pull < 1) { 
-                        if (isset($_POST["dados"])) {
+                    if (isset($_POST["botao"])) { 
+                        $sql_code = "SELECT * FROM reserva where id_client = $id";
+                        /** utilizando um parametro para query para rodar meu codigo no banco de dados caso der erro aparece a mensagem (die->) -> aqui se espera que algo seja retornado*/
+                        $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
+                        $pull =$sql_query->num_rows;
+
+                        if ($pull == 0) {
                             /**pegando meus dados da reserva */
                             $dados = $_POST["dados"];
-                            echo$dados[2];
-                            /**pegando hora futura daqui 2 horas */
-                            $hora_futura = $data;
-                            $hora_futura->modify('+2 hours');
-                            $hora_futura = $data->format('H:i');
-                            /**verificando de horario e data corresponde com a data */
-                            /**pegando a data e horario q meu usuario digitou, colocando ele em um formato data, para ser legivel com o parametro format */
-                            $dataHora = new DateTime("$dados[1] $dados[0]");
-        
-                            /**o valor q sera guardado no dado[3] é o dia que o meu cliente fez a reserva seg ter quarta e assim em diante */
-                            $dados[3] = $dataHora->format('l');
-                            $dados[4] = $id;
-            
-                            if ($dados[1] == $data_atual) {
-                                if ($dados[0] >= $hora_futura ) {
-                                    if (isset($_POST["botao"])) {
-                                    
-                                        /**inserindo meus dados no banco de dados */
-                                        
-                                        $sql_code = "UPDATE reserva SET id_client = {$dados[4]}, horario = '{$dados[0]}', data_reserva = '{$dados[1]}', quantidade = {$dados[2]}, dias = '{$dados[3]}' WHERE id_client = 0 LIMIT 1;";
+
+                            /**pegando um numero aletorio mesa> */
+                            $dados[5] = rand(1,3);
+                            $sql_code = "SELECT * FROM reserva where mesa = '$dados[5]' and data_reserva = '$dados[1]' and horario = '$dados[0]'";
+                            /** utilizando um parametro para query para rodar meu codigo no banco de dados caso der erro aparece a mensagem (die->) -> aqui se espera que algo seja retornado*/
+                            $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
+                            $pull =$sql_query->num_rows;
+                            /**essa parte ira verificar se existe a mesa na qual o rand escolheu aleatoriamente */
+                            if ($pull >= 1) {
+                                echo"ja tem uma pessoa com essa reserva";
                                 
-                                        /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
-                                        $envio = mysqli_query($mysqli,$sql_code);
-                                    }
-    
-                                }
-                                if ($dados[0] <= $hora_futura) {
-                                    echo"faça a reserva com 2 horas de antecedencia";
-                                }
-                
                             }
                             else {
-                                /**inserindo meus dados no banco de dados */
-                        
+                                /**pegando hora futura daqui 2 horas */
+                                $hora_futura = $data;
+                                $hora_futura->modify('+2 hours');
+                                $hora_futura = $data->format('H:i');
+                                
+                                /**verificando de horario e data corresponde com a data */
+                                /**pegando a data e horario q meu usuario digitou, colocando ele em um formato data, para ser legivel com o parametro format */
+                                $dataHora = new DateTime("$dados[1] $dados[0]");
+            
+                                /**o valor q sera guardado no dado[3] é o dia que o meu cliente fez a reserva seg ter quarta e assim em diante */
+                                $dados[3] = $dataHora->format('l');
+                                $dados[4] = $id;
+                                /*verificando se a data digitada é hoje */
+                                if ($dados[1] == $data_atual) {
+                                    /*verificando se horario digitado esta com 2h da hora atual */
+                                    if ($dados[0] >= $hora_futura ) {
+                                        /**inserindo meus dados no banco de dados */
+                                        $sql_code = "INSERT INTO reserva VALUES('null','$dados[4]','$dados[5]','$dados[0]','$dados[1]',$dados[2],$dados[3],)";
+                                        /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
+                                        $envio = mysqli_query($mysqli,$sql_code);
         
-    
-                                $sql_code = "UPDATE reserva SET id_client = {$dados[4]}, horario = '{$dados[0]}', data_reserva = '{$dados[1]}', quantidade = {$dados[2]}, dias = '{$dados[3]}' WHERE id_client = 0 LIMIT 1;";
-                                /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
-                                $envio = mysqli_query($mysqli,$sql_code);
+                                    }
+                                    /*verificando se horario esta antes do horario atual */
+                                    if ($dados[0] <= $hora_futura) {
+                                        echo"faça a reserva com 2 horas de antecedencia";
+                                    }
+                    
+                                }
+                                else {
+                                    /**inserindo meus dados no banco de dados */
+                                    echo $dados[5],"<br>";
+                                    $sql_code = "INSERT INTO reserva VALUES(null, '$dados[4]', '$dados[5]', '$dados[0]', '$dados[1]', '$dados[2]', '$dados[3]')";
+                                    /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
+                                    $envio = mysqli_query($mysqli,$sql_code);
+                                }
                             }
                         }
                                 
                     }
                     
-                    
-
-
-                    
-
-                        
-    
-                    
-                
                 ?>
             </form>
 
@@ -251,7 +253,7 @@ a {
                         echo"<td>---reserva---</td>";
 
                         echo "<tr>";
-                        echo "<td>" . $variavel["id_mesa"] . "</td>";
+                        echo "<td>" . $variavel["mesa"] . "</td>";
                         echo "<td>" . $variavel["dias"] . "</td>";
                         echo "<td>" . $variavel["quantidade"] . "</td>";
                         echo "<td>" . $variavel["horario"] . "</td>";
@@ -259,10 +261,7 @@ a {
                         echo "</tr>";
                     } 
                     else {
-                        
-
                         echo"<h2 class=\"total_reserva\"> faça sua reserva<h2/>";
-        
                     }
                     
                 
@@ -272,18 +271,19 @@ a {
             </table>
             <form method="post">
                 <?php
+                /**essa parte ira excluir minha reserva */
                 if ($pull == 1) {
-                    
+                        /**verificar se botao excluir existe */
                         if (isset($_POST["excluir"])) {
-
-                            
-                            $sql_code = "UPDATE reserva SET id_client = 0, horario = null , data_reserva = null , quantidade = 0 , dias = null WHERE id_client = {$id} LIMIT 1;";
+                            /**caso cliente apertar no botao excluir registro */
+                            $sql_code = "DELETE FROM  reserva WHERE id_client = {$id};";
                             $sql_query = $mysqli -> query($sql_code) or die("algo deu errado");
                             $envio = mysqli_query($mysqli,$sql_code);
                             echo"<h2>atualize a pagina<h2/> <br>";
                             echo "<button class=\"botao_transparente\" type=\"submit\" name=\"excluir\"><img src=\"..\imagens_videos\pizza_reserva.png\" alt=\"\"></button>";
                         }
                         else {
+                            /**caso ainda nao existir, mostrar botao excluir */
                             echo"<small>excluir</small> <br>";
                             echo "<button class=\"botao_transparente\" type=\"submit\" name=\"excluir\"><img src=\"..\imagens_videos\cortador_pizza_excluir.png\" alt=\"\"></button>";
                         }

@@ -21,5 +21,11 @@ $sql_code = "SELECT count(id_client) total from reserva where id_client = 0;";
 $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
 $variavel = $sql_query->fetch_assoc();
 echo"<h2 class=\"total_reserva\"> faça sua reserva<h2/>";
-echo"<h3 class=\"total_reserva\"> no momento temos<h3/> ",$variavel["total"]," mesas ";*/
+echo"<h3 class=\"total_reserva\"> no momento temos<h3/> ",$variavel["total"]," mesas ";
+
+excluir
+$sql_code = "UPDATE reserva SET id_client = 0, horario = null , data_reserva = null , quantidade = 0 , dias = null WHERE id_client = {$id} LIMIT 1;";
+reservar               
+$sql_code = "UPDATE reserva SET id_client = {$dados[4]}, horario = '{$dados[0]}', data_reserva = '{$dados[1]}', quantidade = {$dados[2]}, dias = '{$dados[3]}' WHERE id_client = 0 LIMIT 1;";
+                                */
 ?>

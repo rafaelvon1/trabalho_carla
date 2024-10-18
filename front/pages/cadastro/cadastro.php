@@ -37,10 +37,10 @@ else {
         $dados[1] = password_hash($dados[1], PASSWORD_DEFAULT); 
 
         /**inserindo meus dados no banco de dados*/
-        $sqli = "INSERT INTO login VALUES('nulll','$dados[0]','$dados[1]','client')";
+        $sql_code = "INSERT INTO login VALUES('null','$dados[0]','$dados[1]','client')";
 
         /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
-        $envio = mysqli_query($mysqli,$sqli);
+        $envio = mysqli_query($mysqli,$sql_code);
 
         /**!!!!!!!!!!!!! jogar meu cliente para tela com header !!!!!!!!!!!!! */
 
