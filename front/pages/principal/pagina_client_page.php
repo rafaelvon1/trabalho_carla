@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="..\imagens_videos" type="image/x-icon">
-    <link rel="shortcut icon" href="..\imagens_videos\pizza_reserva.png" type="image/x-icon">
-    <title>reserva</title>
+    <link rel="shortcut icon" href="..\imagens_videos\pizzaicone.ico" type="image/x-icon">
+    <title>pizza</title>
+<?php
+    include("../login/protect_controller.php");
+?>
 </head>
 <style>
 .cabecalho {
@@ -34,11 +36,7 @@
 .nav-link {
     text-align: center;
 }
-a {
-    /*font :)*/
-    font-family: 'Courier New', Courier, monospace;
-    color: #8f8c04; /* Cor do texto */
-}
+
 .video-background {
     position: relative;
     width: 100%;
@@ -65,22 +63,21 @@ a {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
 }
-.botao{
-    background-color: blue;
-    color: #ffffff;
+a {
+    /*font :)*/
+    font-family: 'Courier New', Courier, monospace;
+    color: #8f8c04; /* Cor do texto */
 }
-.sql_mostra{
-    margin:auto;
-}
+
 </style>
 <body>
     <div class="cabecalho">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="..\principal\paginaclient.php"><img src="..\imagens_videos\fatia_home.png" alt=""><br> Home</a>
+                <a class="nav-link" href="#"><img src="..\imagens_videos\fatia_home.png" alt=""><br> Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_reserva.png" alt=""><br> reserva</a>
+                <a class="nav-link" href="..\reserva\reserva.php"><img src="..\imagens_videos\pizza_reserva.png" alt=""><br> reserva</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><img src="..\imagens_videos\caixa_aberta_login.png" alt=""><br> cardapio</a>
@@ -89,46 +86,23 @@ a {
                 <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_eu.png" alt=""><br> eu</a>
             </li>
             <li class="nav-item sair">
-                <a class="nav-link" href="..\login\logout.php"><img src="..\imagens_videos\caixa_fechada_cadastro.png" alt=""><br> sair</a>
+                <a class="nav-link" href="..\login\logout_controller.php"><img src="..\imagens_videos\caixa_fechada_cadastro.png" alt=""><br> sair</a>
             </li>
         </ul>
     </div>
     <div class="video-background">
-        <video autoplay muted loop>
-            <source src="..\imagens_videos\video_reserva.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos.
-        </video>
-        <div class="conteudo">
-            <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
-            <form action="teste.php" method="post">
-                <h1>reserve uma mesa</h1>
-                <label for="">horario: </label>
-                <br>
-                <input name="hora" type="time" required>
+      <video autoplay muted loop>
+          <source src="..\imagens_videos\video_pizza.mp4" type="video/mp4">
+          Seu navegador não suporta vídeos.
+      </video>
+      <div class="conteudo">
+          <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
+          <h1>Bem-vindo à Pizzaria cliente</h1>
 
-                <br>
-                <label for="">mesa para quantos: </label>
-                <br>
-                <select name="" id="" required>
-                    <option value="" disabled selected >nao selecionado</option>
-                    <option value="1">1-pessoa</option>
-                    <option value="2">2-pessoa</option>
-                    <option value="3">3-pessoa</option>
-                    <option value="4">4-pessoa</option>
-                    <option value="5">5-pessoa</option>
-                    <option value="6">6-pessoa</option>
-
-                </select>
-
-                <br>
-                <label for="">para que dia: </label>
-                <br>
-                <input name="data" type="date" required>
-                <br><br><br>
-
-                <button class="botao" type="submit">enviar</button>
-            </form>
-        </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat mollitia ut laborum voluptatibus assumenda dicta facere architecto distinctio dolorem officia, obcaecati sapiente qui omnis incidunt nobis nulla blanditiis. Ab, molestiae?</p>
       </div>
+    </div>
+
+
 </body>
 </html>
