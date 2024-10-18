@@ -53,7 +53,7 @@ else {
 }
 ?>
 <!-- caso de ja existir um cadastro, ir para tela de login -->
-<button type="submit"><a href="../login/login.html">ir para tela de login</a></button>
+<button type="submit"><a href="../login/login_page.html">ir para tela de login</a></button>
 
 
 

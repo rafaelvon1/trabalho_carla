@@ -50,11 +50,11 @@ else {
             /**separando administrador de cliente */
             if ($variavel["pessoa_status"] == "admin") {
                 /**enviando pessoa administradora para sua pagina */
-                header("location: ../principal/pagina_admin.php");
+                header("location: ../principal/pagina_admin_page.php");
             }
             else {
                 /**enviar pessoa para pagina do site */
-                header("location: ../principal/paginaclient.php");
+                header("location: ../principal/pagina_client_page.php");
             }    
         }
         else {
@@ -68,7 +68,7 @@ else {
 }
 ?>
     <!-- caso algo der errado, voltar para login-->
-    <button type="submit"><a href="logout.php">sair</a></button>
+    <button type="submit"><a href="logout_controller.php">sair</a></button>
 </body>
 
 </html>

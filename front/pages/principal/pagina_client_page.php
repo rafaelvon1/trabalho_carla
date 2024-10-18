@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="..\imagens_videos\pizzaicone.ico" type="image/x-icon">
     <title>pizza</title>
 <?php
-    include("../login/protect.php");
+    include("../login/protect_controller.php");
 ?>
 </head>
 <style>
@@ -86,7 +86,7 @@ a {
                 <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_eu.png" alt=""><br> eu</a>
             </li>
             <li class="nav-item sair">
-                <a class="nav-link" href="..\login\logout.php"><img src="..\imagens_videos\caixa_fechada_cadastro.png" alt=""><br> sair</a>
+                <a class="nav-link" href="..\login\logout_controller.php"><img src="..\imagens_videos\caixa_fechada_cadastro.png" alt=""><br> sair</a>
             </li>
         </ul>
     </div>
