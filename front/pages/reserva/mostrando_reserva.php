@@ -9,7 +9,6 @@
     <title>reserva</title>
     <?php
         include("../login/protect_controller.php");
-        include("checking_controller.php");
     ?>
 </head>
 <style>
@@ -121,87 +120,46 @@ a {
         </video>
         <div class="conteudo">
             <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
-            <form  method="POST" action="inserindo_controller.php">
-                <h1>reserve uma mesa</h1>
+        
+        <table class="registro">
+            <?php
+                /** ------essa parte ira mostrar caso tenha algun registro ja feito-------- */
 
+                if (!isset($_SESSION)) {
+                    session_start();
+                }
+                include("../../../db/conexao.php");
+                $id = $_SESSION["id"];
+                $sql_code = "SELECT * FROM reserva where id_client = $id"; 
+                $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
+                $pull =$sql_query->num_rows;
+                $variavel = $sql_query->fetch_assoc();
+                if ($pull == 1) {
+                    echo"<tr>";
+                    echo"<td>---mesa---</td>";
+                    echo"<td>---dia---</td>";
+                    echo"<td>---pessoas---</td>";
+                    echo"<td>---horario---</td>";
+                    echo"<td>---reserva---</td>";
 
-                <?php
-                    // Define o fuso horário
-                    date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
-
-                    /**pegando data e horario atual */
-                    $data = new DateTime();
-                    $data_atual = $data ->format('Y-m-d');
-                    $data_max = $data ;
-                    $data_max->modify('+2 months');
-                    $data_max = $data-> format('Y-m-d');
-                ?>
-
-                <label for="">horario: </label>
-                <br>
-                <input name="dados[]" type="time" required min="10:00" max="20:00">
-            
-                <br>
-                <label for="">para que dia: </label>
-                <br>
-                <input name="dados[]" type="date" required min="<?php echo$data_atual;?>" max="<?php echo$data_max;?>">
-                <br>
-                <label for="">mesa para quantos: </label>
-                <br>
-                <select name="dados[]" required>
-                    <option value="" disabled selected >nao selecionado</option>
-                    <option value="2">2-pessoa</option>
-                    <option value="4">4-pessoa</option>
-                    <option value="8">8-pessoa</option>
-                </select>
-                
-                <br><br>
-                
-
-                <button class="botao" type="submit">enviar</button>
-                <br>
+                    echo "<tr>";
+                    echo "<td>" . $variavel["mesa"] . "</td>";
+                    echo "<td>" . $variavel["dias"] . "</td>";
+                    echo "<td>" . $variavel["quantidade"] . "</td>";
+                    echo "<td>" . $variavel["horario"] . "</td>";
+                    echo "<td>" . $variavel["data_reserva"] . "</td>";
+                    echo "</tr>";
+                } 
+                else {
+                    echo"<h2 class=\"total_reserva\"> faça sua reserva<h2/>";
+                }
                 
             
 
-                <table class="registro">
-                    <?php
-                        /** ------essa parte ira mostrar caso tenha algun registro ja feito-------- */
+            ?>
 
-                        if (!isset($_SESSION)) {
-                            session_start();
-                        }
-                        include("../../../db/conexao.php");
-                        $id = $_SESSION["id"];
-                        $sql_code = "SELECT * FROM reserva where id_client = $id"; 
-                        $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
-                        $pull =$sql_query->num_rows;
-                        $variavel = $sql_query->fetch_assoc();
-                        if ($pull == 1) {
-                            echo"<tr>";
-                            echo"<td>---mesa---</td>";
-                            echo"<td>---dia---</td>";
-                            echo"<td>---pessoas---</td>";
-                            echo"<td>---horario---</td>";
-                            echo"<td>---reserva---</td>";
-
-                            echo "<tr>";
-                            echo "<td>" . $variavel["mesa"] . "</td>";
-                            echo "<td>" . $variavel["dias"] . "</td>";
-                            echo "<td>" . $variavel["quantidade"] . "</td>";
-                            echo "<td>" . $variavel["horario"] . "</td>";
-                            echo "<td>" . $variavel["data_reserva"] . "</td>";
-                            echo "</tr>";
-                        } 
-                        else {
-                            echo"<h2 class=\"total_reserva\"> faça sua reserva<h2/>";
-                        }
-                        
-                    
-
-                    ?>
-
-                </table>
-            </form>
+        </table>
+            
             <form method="post" action="excluir_controller.php">
                 <?php
                 /**essa parte ira excluir minha reserva */
