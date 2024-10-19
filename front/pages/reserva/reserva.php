@@ -181,11 +181,19 @@ a {
                         if ($pull == 0) {
                             /**pegando meus dados da reserva */
                             $dados = $_POST["dados"];
-
+                            
                             $dataHora = new DateTime("$dados[1] $dados[0]");
                             $dataHora->modify('+2 hours');
                             $dataHora = $dataHora->format('H:i');
                             /**pegando meus dados da reserva */
+                            $sql_code = "SELECT count(*) total from reserva"; 
+                            $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
+                            $total = $sql_query->fetch_assoc();
+                            /**para ter certeza q ira rodar mesmo se meu retordo so select for 0 */
+                            $total["total"]+= 1;
+                            /**verificando se tem mesa disponivel nesse horario */
+                            for ($i=1; $i <= $total["total"]; $i++) { 
+                            
                             
 
                             /**pegando um numero aletorio mesa> bug aqui quando atualizo ele vira outro numero*/
@@ -195,15 +203,31 @@ a {
                                 $dados[5] = rand(1,35);
                                 
                             }
-                            /** bug select nao esta retornando true ou false*/
-                            $sql_code = "SELECT * FROM reserva where mesa = '$dados[5]' and data_reserva = '$dados[1]' and horario >= 'horario' and horario <= '$dataHora' ";
-                            /** utilizando um parametro para query para rodar meu codigo no banco de dados caso der erro aparece a mensagem (die->) -> aqui se espera que algo seja retornado*/
-                            $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
-                            $pull =$sql_query->num_rows;
-                            /**essa parte ira verificar se existe a mesa na qual o rand escolheu aleatoriamente */
+                                   
+
+                            /**pegando um numero aletorio mesa> bug aqui quando atualizo ele vira outro numero*/
+
+                            /**ele verifica se o dado 5 ainda nao existe, caso nao exitir cair no meu if e rodar o rand */
+                            if (!isset($dados[5])) {
+                                $dados[5] = rand(1,35);
+                                
+                            }
+                                    /** bug select nao esta retornando true ou false*/
+
+                                    $sql_code = "SELECT * FROM reserva where mesa = '$i' and data_reserva = '$dados[1]' and horario >= 'horario' and horario <= '$dataHora' ";
+                                    /** utilizando um parametro para query para rodar meu codigo no banco de dados caso der erro aparece a mensagem (die->) -> aqui se espera que algo seja retornado*/
+                                    $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
+                                    $pull =$sql_query->num_rows;
+                                    /**caso nao tiver retorna q nao tem ninguem naquela mesa entao i vai ser minha mesa */
+                                    if ($pull == 0) {
+                                        $dados[5]=$i;
+                                        $i += $total["total"] ;
+                                    }
+                            } 
                             if ($pull >= 1) {
-                                echo"ja tem uma pessoa com essa reserva";
-                                /**tentar mudar o ide do moço para ver se tem alguma mesa disponivel na mesma data posso usar enquanto no pull*/
+                                echo"pedimos descupas, mas esse horario e data estao com a mesa cheia";
+                                /**tentar mudar o mesa do moço para ver se tem alguma mesa disponivel na mesma data posso usar enquanto no pull*/
+
                                 
                             }
                             else {
@@ -279,24 +303,15 @@ a {
                 ?>
 
             </table>
-            <form method="post">
+            <form method="post" action="excluir_controller.php">
                 <?php
                 /**essa parte ira excluir minha reserva */
                 if ($pull == 1) {
-                        /**verificar se botao excluir existe */
-                        if (isset($_POST["excluir"])) {
-                            /**caso cliente apertar no botao excluir registro */
-                            $sql_code = "DELETE FROM  reserva WHERE id_client = {$id};";
-                            $sql_query = $mysqli -> query($sql_code) or die("algo deu errado");
-                            $envio = mysqli_query($mysqli,$sql_code);
-                            echo"<h2>atualize a pagina<h2/> <br>";
-                            echo "<button class=\"botao_transparente\" type=\"submit\" name=\"excluir\"><img src=\"..\imagens_videos\pizza_reserva.png\" alt=\"\"></button>";
-                        }
-                        else {
-                            /**caso ainda nao existir, mostrar botao excluir */
-                            echo"<small>excluir</small> <br>";
-                            echo "<button class=\"botao_transparente\" type=\"submit\" name=\"excluir\"><img src=\"..\imagens_videos\cortador_pizza_excluir.png\" alt=\"\"></button>";
-                        }
+                        
+                    /**quando meu pull for 1 siginifica q exite alguem com o id da minha conta, enta mostrar botao excluir */
+                    echo"<small>excluir</small> <br>";
+                    echo "<button class=\"botao_transparente\" type=\"submit\" name=\"excluir\"><img src=\"..\imagens_videos\cortador_pizza_excluir.png\" alt=\"\"></button>";
+                
                 } 
                 
                 ?>
