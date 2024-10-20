@@ -180,27 +180,17 @@ a {
                 </form>
 
                 <!-- alterar reserva-->
-                <form method="post" action="">
-                    <?php
-                    /**essa parte ira excluir minha reserva */
-                    if ($pull == 1) {
-                            
-                        /**quando meu pull for 1 siginifica q exite alguem com o id da minha conta, enta mostrar botao excluir */
-                        echo"<small>alterar</small> <br>";
-                        echo "<button class=\"botao_transparente\" type=\"submit\" name=\"alterar\"><img src=\"..\imagens_videos\pizza_altera.ico\" alt=\"\"></button>";
-                        if (isset($_POST["alterar"])) {
-                            echo"<br><select name=\"opc\" required>
-                                    <option value=\"\" disabled selected >o que deseja alterar</option>
-                                    <option value=\"2\">mesa</option>
-                                    <option value=\"4\">horario</option>
-                                    <option value=\"8\">data</option>
-                                    </select>";
-                        }
-                    
-                    } 
-                    
-                    ?>
-
+                <form method="post" action="">  
+                    <small>alterar</small>
+                    <br>
+                    <select name="opc" required>
+                                <option value="" disabled selected >o que deseja alterar</option>
+                                <option value="mesa">mesa</option>
+                                <option value="horario">horario</option>
+                                <option value="data">data</option>
+                                <option value="pessoa">pessoa</option>
+                                </select>
+                    <br><button type="submit">enviar</button>
                 </form>
             
         </div>
