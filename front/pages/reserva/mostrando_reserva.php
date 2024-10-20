@@ -180,7 +180,7 @@ a {
                 </form>
 
                 <!-- alterar reserva-->
-                <form method="post" action="">  
+                <form method="post" action="alterar_controller.php">  
                     <small>alterar</small>
                     <br>
                     <select name="opc" required>
@@ -192,6 +192,8 @@ a {
                                 </select>
                     <br><button type="submit">enviar</button>
                 </form>
+                    
+                
             
         </div>
       </div>
