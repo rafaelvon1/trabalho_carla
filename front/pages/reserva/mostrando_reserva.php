@@ -9,6 +9,10 @@
     <title>reserva</title>
     <?php
         include("../login/protect_controller.php");
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        $_SESSION["error"] = "";
     ?>
 </head>
 <style>
@@ -184,6 +188,14 @@ a {
                         /**quando meu pull for 1 siginifica q exite alguem com o id da minha conta, enta mostrar botao excluir */
                         echo"<small>alterar</small> <br>";
                         echo "<button class=\"botao_transparente\" type=\"submit\" name=\"alterar\"><img src=\"..\imagens_videos\pizza_altera.ico\" alt=\"\"></button>";
+                        if (isset($_POST["alterar"])) {
+                            echo"<br><select name=\"opc\" required>
+                                    <option value=\"\" disabled selected >o que deseja alterar</option>
+                                    <option value=\"2\">mesa</option>
+                                    <option value=\"4\">horario</option>
+                                    <option value=\"8\">data</option>
+                                    </select>";
+                        }
                     
                     } 
                     

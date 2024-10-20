@@ -163,6 +163,11 @@ a {
                 <button class="botao" type="submit" name="botao">enviar</button>
                 <br>
             </form>  
+            <?php
+            if (isset($_SESSION["error"])) {
+                echo$_SESSION["error"];
+            }
+            ?>
         </div>
       </div>
       
