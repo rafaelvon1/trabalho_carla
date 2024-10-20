@@ -192,9 +192,7 @@ a {
                     <br>
                     <select name="opc" required>
                                 <option value="" disabled selected >o que deseja alterar</option>
-                                <option value="mesa">mesa</option>
-                                <option value="horario">horario</option>
-                                <option value="data">data</option>
+                                <option value="horario">horario e data</option>
                                 <option value="pessoa">pessoa</option>
                                 </select>
                     <br><button type="submit">enviar</button>

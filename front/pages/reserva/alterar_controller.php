@@ -8,7 +8,6 @@
 </head>
 <body>
     <?php
-    include("../../../db/conexao.php");
         $opc = $_POST["opc"];
         if ($opc == "pessoa") {
         header("location: alterar_pessoa.php"); 
@@ -17,10 +16,7 @@
             echo"caiu em data";
         }
         elseif ($opc == "horario") {
-            echo"caiu em horario";
-        }
-        elseif ($opc == "mesa") {
-            echo"caiu em mesa";
+            header("location: alterar_horario_e_data.php");
         }
         else {
             echo"nada foi enviado";
