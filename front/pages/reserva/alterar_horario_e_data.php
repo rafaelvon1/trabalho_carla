@@ -216,7 +216,12 @@ a {
                             header("location: reserva.php");
                         }
                         else{
-                            $sql_code = "UPDATE reserva SET horario = '{$dados[0]}', data_reserva = '{$dados[1]}' ,mesa = '{$dados[5]}'WHERE id_client = {$_SESSION['id']} LIMIT 1";
+                            /**pegando a data e horario q meu usuario digitou, colocando ele em um formato data, para ser legivel com o parametro format */
+                            $dataHora = new DateTime("$dados[1] $dados[0]");
+
+                            /**o valor q sera guardado no dado[3] é o dia que o meu cliente fez a reserva seg ter quarta e assim em diante */
+                            $dados[3] = $dataHora->format('l');
+                            $sql_code = "UPDATE reserva SET horario = '{$dados[0]}', data_reserva = '{$dados[1]}' ,dias = '{$dados[3]}',mesa = '{$dados[5]}'WHERE id_client = {$_SESSION['id']} LIMIT 1";
                             $sql_query = $mysqli -> query($sql_code) or die("algo deu errado");
                             echo"<h2>alteraçao feita com sucesso<h2/>";
                         }
