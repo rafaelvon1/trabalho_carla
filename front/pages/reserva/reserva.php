@@ -94,6 +94,18 @@ a {
       height: auto;
     }
 </style>
+
+<?php
+    // Define o fuso horário
+    date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
+
+    /**pegando data e horario atual */
+    $data = new DateTime();
+    $data_atual = $data ->format('Y-m-d');
+    $data_max = $data ;
+    $data_max->modify('+2 months');
+    $data_max = $data-> format('Y-m-d');
+?>
 <body>
     <div class="cabecalho">
         <ul class="nav">
@@ -125,17 +137,7 @@ a {
                 <h1>reserve uma mesa</h1>
 
 
-                <?php
-                    // Define o fuso horário
-                    date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
-
-                    /**pegando data e horario atual */
-                    $data = new DateTime();
-                    $data_atual = $data ->format('Y-m-d');
-                    $data_max = $data ;
-                    $data_max->modify('+2 months');
-                    $data_max = $data-> format('Y-m-d');
-                ?>
+                
 
                 <label for="">horario: </label>
                 <br>
@@ -158,11 +160,11 @@ a {
                 <br><br>
                 
 
-                <button class="botao" type="submit">enviar</button>
+                <button class="botao" type="submit" name="botao">enviar</button>
                 <br>
-            </form>
-            
+            </form>  
         </div>
       </div>
+      
 </body>
 </html>
