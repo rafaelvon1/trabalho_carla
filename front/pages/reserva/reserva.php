@@ -94,6 +94,18 @@ a {
       height: auto;
     }
 </style>
+
+<?php
+    // Define o fuso horário
+    date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
+
+    /**pegando data e horario atual */
+    $data = new DateTime();
+    $data_atual = $data ->format('Y-m-d');
+    $data_max = $data ;
+    $data_max->modify('+2 months');
+    $data_max = $data-> format('Y-m-d');
+?>
 <body>
     <div class="cabecalho">
         <ul class="nav">
@@ -125,17 +137,7 @@ a {
                 <h1>reserve uma mesa</h1>
 
 
-                <?php
-                    // Define o fuso horário
-                    date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
-
-                    /**pegando data e horario atual */
-                    $data = new DateTime();
-                    $data_atual = $data ->format('Y-m-d');
-                    $data_max = $data ;
-                    $data_max->modify('+2 months');
-                    $data_max = $data-> format('Y-m-d');
-                ?>
+                
 
                 <label for="">horario: </label>
                 <br>
@@ -158,81 +160,16 @@ a {
                 <br><br>
                 
 
-                <button class="botao" type="submit">enviar</button>
+                <button class="botao" type="submit" name="botao">enviar</button>
                 <br>
-                
-            
-
-                <table class="registro">
-                    <?php
-                        /** ------essa parte ira mostrar caso tenha algun registro ja feito-------- */
-
-                        if (!isset($_SESSION)) {
-                            session_start();
-                        }
-                        include("../../../db/conexao.php");
-                        $id = $_SESSION["id"];
-                        $sql_code = "SELECT * FROM reserva where id_client = $id"; 
-                        $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
-                        $pull =$sql_query->num_rows;
-                        $variavel = $sql_query->fetch_assoc();
-                        if ($pull == 1) {
-                            echo"<tr>";
-                            echo"<td>---mesa---</td>";
-                            echo"<td>---dia---</td>";
-                            echo"<td>---pessoas---</td>";
-                            echo"<td>---horario---</td>";
-                            echo"<td>---reserva---</td>";
-
-                            echo "<tr>";
-                            echo "<td>" . $variavel["mesa"] . "</td>";
-                            echo "<td>" . $variavel["dias"] . "</td>";
-                            echo "<td>" . $variavel["quantidade"] . "</td>";
-                            echo "<td>" . $variavel["horario"] . "</td>";
-                            echo "<td>" . $variavel["data_reserva"] . "</td>";
-                            echo "</tr>";
-                        } 
-                        else {
-                            echo"<h2 class=\"total_reserva\"> faça sua reserva<h2/>";
-                        }
-                        
-                    
-
-                    ?>
-
-                </table>
-            </form>
-            <form method="post" action="excluir_controller.php">
-                <?php
-                /**essa parte ira excluir minha reserva */
-                if ($pull == 1) {
-                        
-                    /**quando meu pull for 1 siginifica q exite alguem com o id da minha conta, enta mostrar botao excluir */
-                    echo"<small>excluir</small> <br>";
-                    echo "<button class=\"botao_transparente\" type=\"submit\" name=\"excluir\"><img src=\"..\imagens_videos\cortador_pizza_excluir.png\" alt=\"\"></button>";
-                
-                } 
-                
-                ?>
-
-            </form>
-            <!-- alterar reserva-->
-            <form method="post" action="excluir_controller.php">
-                <?php
-                /**essa parte ira excluir minha reserva */
-                if ($pull == 1) {
-                        
-                    /**quando meu pull for 1 siginifica q exite alguem com o id da minha conta, enta mostrar botao excluir */
-                    echo"<small>excluir</small> <br>";
-                    echo "<button class=\"botao_transparente\" type=\"submit\" name=\"excluir\"><img src=\"..\imagens_videos\cortador_pizza_excluir.png\" alt=\"\"></button>";
-                
-                } 
-                
-                ?>
-
-            </form>
-            
+            </form>  
+            <?php
+            if (isset($_SESSION["error"])) {
+                echo$_SESSION["error"];
+            }
+            ?>
         </div>
       </div>
+      
 </body>
 </html>

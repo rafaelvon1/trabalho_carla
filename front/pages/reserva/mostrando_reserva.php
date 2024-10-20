@@ -9,6 +9,10 @@
     <title>reserva</title>
     <?php
         include("../login/protect_controller.php");
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        $_SESSION["error"] = "";
     ?>
 </head>
 <style>
@@ -121,74 +125,73 @@ a {
         <div class="conteudo">
             <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
         
-        <table class="registro">
-            <?php
-                /** ------essa parte ira mostrar caso tenha algun registro ja feito-------- */
-
-                if (!isset($_SESSION)) {
-                    session_start();
-                }
-                include("../../../db/conexao.php");
-                $id = $_SESSION["id"];
-                $sql_code = "SELECT * FROM reserva where id_client = $id"; 
-                $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
-                $pull =$sql_query->num_rows;
-                $variavel = $sql_query->fetch_assoc();
-                if ($pull == 1) {
-                    echo"<tr>";
-                    echo"<td>---mesa---</td>";
-                    echo"<td>---dia---</td>";
-                    echo"<td>---pessoas---</td>";
-                    echo"<td>---horario---</td>";
-                    echo"<td>---reserva---</td>";
-
-                    echo "<tr>";
-                    echo "<td>" . $variavel["mesa"] . "</td>";
-                    echo "<td>" . $variavel["dias"] . "</td>";
-                    echo "<td>" . $variavel["quantidade"] . "</td>";
-                    echo "<td>" . $variavel["horario"] . "</td>";
-                    echo "<td>" . $variavel["data_reserva"] . "</td>";
-                    echo "</tr>";
-                } 
-                else {
-                    echo"<h2 class=\"total_reserva\"> faça sua reserva<h2/>";
-                }
-                
-            
-
-            ?>
-
-        </table>
-            
-            <form method="post" action="excluir_controller.php">
+            <table class="registro">
                 <?php
-                /**essa parte ira excluir minha reserva */
-                if ($pull == 1) {
-                        
-                    /**quando meu pull for 1 siginifica q exite alguem com o id da minha conta, enta mostrar botao excluir */
-                    echo"<small>excluir</small> <br>";
-                    echo "<button class=\"botao_transparente\" type=\"submit\" name=\"excluir\"><img src=\"..\imagens_videos\cortador_pizza_excluir.png\" alt=\"\"></button>";
+                    /** ------essa parte ira mostrar caso tenha algun registro ja feito-------- */
+
+                    if (!isset($_SESSION)) {
+                        session_start();
+                    }
+                    include("../../../db/conexao.php");
+                    $id = $_SESSION["id"];
+                    $sql_code = "SELECT * FROM reserva where id_client = $id"; 
+                    $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
+                    $pull =$sql_query->num_rows;
+                    $variavel = $sql_query->fetch_assoc();
+                    if ($pull == 1) {
+                        echo"<tr>";
+                        echo"<td>---mesa---</td>";
+                        echo"<td>---dia---</td>";
+                        echo"<td>---pessoas---</td>";
+                        echo"<td>---horario---</td>";
+                        echo"<td>---reserva---</td>";
+
+                        echo "<tr>";
+                        echo "<td>" . $variavel["mesa"] . "</td>";
+                        echo "<td>" . $variavel["dias"] . "</td>";
+                        echo "<td>" . $variavel["quantidade"] . "</td>";
+                        echo "<td>" . $variavel["horario"] . "</td>";
+                        echo "<td>" . $variavel["data_reserva"] . "</td>";
+                        echo "</tr>";
+                    } 
+                    else {
+                        echo"<h2 class=\"total_reserva\"> faça sua reserva<h2/>";
+                    }
+                    
                 
-                } 
-                
+
                 ?>
 
-            </form>
-            <!-- alterar reserva-->
-            <form method="post" action="excluir_controller.php">
-                <?php
-                /**essa parte ira excluir minha reserva */
-                if ($pull == 1) {
-                        
-                    /**quando meu pull for 1 siginifica q exite alguem com o id da minha conta, enta mostrar botao excluir */
-                    echo"<small>excluir</small> <br>";
-                    echo "<button class=\"botao_transparente\" type=\"submit\" name=\"excluir\"><img src=\"..\imagens_videos\cortador_pizza_excluir.png\" alt=\"\"></button>";
+            </table>
                 
-                } 
-                
-                ?>
+                <form method="post" action="excluir_controller.php">
+                    <?php
+                    /**essa parte ira excluir minha reserva */
+                    if ($pull == 1) {
+                            
+                        /**quando meu pull for 1 siginifica q exite alguem com o id da minha conta, enta mostrar botao excluir */
+                        echo"<small>excluir</small> <br>";
+                        echo "<button class=\"botao_transparente\" type=\"submit\" name=\"excluir\"><img src=\"..\imagens_videos\cortador_pizza_excluir.png\" alt=\"\"></button>";
+                    
+                    } 
+                    
+                    ?>
 
-            </form>
+                </form>
+
+                <!-- alterar reserva-->
+                <form method="post" action="">  
+                    <small>alterar</small>
+                    <br>
+                    <select name="opc" required>
+                                <option value="" disabled selected >o que deseja alterar</option>
+                                <option value="mesa">mesa</option>
+                                <option value="horario">horario</option>
+                                <option value="data">data</option>
+                                <option value="pessoa">pessoa</option>
+                                </select>
+                    <br><button type="submit">enviar</button>
+                </form>
             
         </div>
       </div>
