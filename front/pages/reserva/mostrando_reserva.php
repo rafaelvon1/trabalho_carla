@@ -8,11 +8,18 @@
     <link rel="shortcut icon" href="..\imagens_videos\pizza_reserva.png" type="image/x-icon">
     <title>reserva</title>
     <?php
+        /**dados na posição 4 = id do cliente 
+         * dados na posição 5 = mesa
+         * dados na posição 0 = horario
+         * dados na posição 1 = data
+         * dados na posição 2 = quantidade pessoa
+         * dados na posição 3 = dia da semana
+        */
         include("../login/protect_controller.php");
         if (!isset($_SESSION)) {
             session_start();
         }
-        $_SESSION["error"] = "";
+        $_SESSION["error"] = "";   
     ?>
 </head>
 <style>
