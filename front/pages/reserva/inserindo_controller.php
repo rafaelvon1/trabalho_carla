@@ -13,7 +13,6 @@
     include("../../../db/conexao.php");
     /**pegando id da tela de login*/
     $id = $_SESSION["id"];
-    /**----essa parte ira fazer a verificaçao se dados existem para nao aparecer na tela do layout------- */
     // Define o fuso horário
     date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
 
@@ -50,14 +49,13 @@
             
     } 
     if ($pull == 1) {
-        $_SESSION["error"] = "pedimos descupas, mas esse horario e data estao com a mesa cheia";
+        $_SESSION["error"] = "pedimos descupas, mas esse horario e data estao com a mesa cheia, tente outro horario";
         header("location: reserva.php");
-        /**tentar mudar o mesa do moço para ver se tem alguma mesa disponivel na mesma data posso usar enquanto no pull*/
 
         
     }
     else {
-        /**verificando de horario e data corresponde com a data */
+       
         /**pegando a data e horario q meu usuario digitou, colocando ele em um formato data, para ser legivel com o parametro format */
         $dataHora = new DateTime("$dados[1] $dados[0]");
 

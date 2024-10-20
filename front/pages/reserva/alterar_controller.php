@@ -11,7 +11,7 @@
     include("../../../db/conexao.php");
         $opc = $_POST["opc"];
         if ($opc == "pessoa") {
-        header(); 
+        header("location: alterar_pessoa.php"); 
         }
         elseif ($opc == "data") {
             echo"caiu em data";
