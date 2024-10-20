@@ -132,6 +132,13 @@ else {
                     
                 ?>
 
+echo"<select name=\"pessoa\" required>
+                    <option value=\"\" disabled selected >nao selecionado</option>
+                    <option value=\"2\">2-pessoa</option>
+                    <option value=\"4\">4-pessoa</option>
+                    <option value=\"8\">8-pessoa</option>
+                </select>";
+
 </table>
 </body>
 </html>
