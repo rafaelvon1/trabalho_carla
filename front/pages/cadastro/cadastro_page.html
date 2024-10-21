@@ -2,16 +2,14 @@
 <html lang="pt-br">
 
 <head>
-
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../assets/styles/cadastro.css">
-    <title>cadastro</title>
-  </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../assets/styles/cadastro.css">
+  <title>cadastro</title>
 </head>
+
 
 <body>
   <ul class="nav nav-pills">
@@ -30,15 +28,26 @@
   </ul>
   <form action="cadastro_controller.php" method="post">
     <h1>cadastro</h1>
-    <label for="email">email: </label>
-    <input name="cads[]" type="email" required placeholder="digite seu email...">
+    <label for="nome">Nome: </label>
+    <input name="cads[]" type="text" required placeholder="Digite aqui o seu nome:">
     <br><br>
-    <label for="senha">senha: </label>
-    <input name="cads[]" type="password" required placeholder="digite sua senha...">
+    <label for="telefone">Nº Telefone: </label>
+    <input name="cads[]" type="number" required placeholder="Nº de telefone:">
+    <br><br>
+    <label for="cpf">CPF: </label>
+    <input name="cads[]" type="number" required placeholder="Nº do CPF:">
+    <br><br>
+    <label for="cep">CEP: </label>
+    <input name="cads[]" type="number" required placeholder="Nº do CEP:">
+    <br><br>
+    <label for="email">Email: </label>
+    <input name="cads[]" type="email" required placeholder="Digite o seu email:">
+    <br><br>
+    <label for="senha">Senha: </label>
+    <input name="cads[]" type="password" required placeholder="Digite sua senha:">
     <br><br>
     <button type="submit">entrar</button>
   </form>
 </body>
-
 
 </html>

@@ -1,7 +1,7 @@
 body {
     background-color: #f8f9fa;
     display: flex;
-    justify-content: center;
+    justify-self: center;
     align-items: flex-start;
     height: 100vh;
     margin: 0;
@@ -14,8 +14,6 @@ header {
     padding: 10px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
-    top: 0;
-    left: 0;
     z-index: 1000;
 }
 
