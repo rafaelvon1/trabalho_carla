@@ -16,7 +16,10 @@
          * dados na posição 3 = dia da semana
         */
         include("../login/protect_controller.php");
-        include("checking_controller.php");
+        include("../../../db/conexao.php");
+        if (!isset($_SESSION)) {
+            session_start();
+        }
     ?>
 </head>
 <style>
@@ -140,24 +143,11 @@ a {
         </video>
         <div class="conteudo">
             <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
-            <form  method="POST" action="inserindo_controller.php">
-                <h1>reserve uma mesa</h1>
-
-
-                
-
-                <label for="">horario: </label>
-                <br>
-                <input name="dados[]" type="time" required min="10:00" max="20:00">
-            
-                <br>
-                <label for="">para que dia: </label>
-                <br>
-                <input name="dados[]" type="date" required min="<?php echo$data_atual;?>" max="<?php echo$data_max;?>">
-                <br>
+            <form  method="POST" action="">
+                <h1>altera pessoas</h1>
                 <label for="">mesa para quantos: </label>
                 <br>
-                <select name="dados[]" required>
+                <select name="pessoa" required>
                     <option value="" disabled selected >nao selecionado</option>
                     <option value="2">2-pessoa</option>
                     <option value="4">4-pessoa</option>
@@ -169,14 +159,16 @@ a {
 
                 <button class="botao" type="submit" name="botao">enviar</button>
                 <br>
+                <button><a href="mostrando_reserva.php">voltar</a></button>
+                <?php
+                    if (isset($_POST["pessoa"])) {
+                        
+                        $sql_code = "UPDATE reserva SET quantidade = {$_POST["pessoa"]} WHERE id_client = {$_SESSION ["id"]} LIMIT 1";
+                        $sql_query = $mysqli -> query($sql_code) or die("algo deu errado");
+                        echo"<h2>alteraçao feita com sucesso<h2/>";
+                    }
+                ?>
             </form>  
-            <?php
-            if (isset($_SESSION["error"])) {
-                echo$_SESSION["error"];
-            }
-            ?>
-        </div>
-      </div>
       
 </body>
 </html>

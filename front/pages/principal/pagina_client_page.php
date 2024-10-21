@@ -98,10 +98,11 @@ a {
       <div class="conteudo">
           <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
           <h1>Bem-vindo à Pizzaria cliente</h1>
-
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat mollitia ut laborum voluptatibus assumenda dicta facere architecto distinctio dolorem officia, obcaecati sapiente qui omnis incidunt nobis nulla blanditiis. Ab, molestiae?</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat mollitia ut laborum volup
+            tatibus assumenda dicta facere architecto distinctio dolorem officia, obcaecati sapiente qui omnis incidunt nobis nulla blanditiis. Ab, molestiae?</p>
       </div>
     </div>
+        
 
 
 </body>

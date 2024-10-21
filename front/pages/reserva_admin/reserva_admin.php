@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="..\imagens_videos" type="image/x-icon">
     <link rel="shortcut icon" href="..\imagens_videos\pizza_reserva.png" type="image/x-icon">
-    <title>reserva</title>
+    <title>reserva administrador</title>
     <?php
         /**dados na posição 4 = id do cliente 
          * dados na posição 5 = mesa
@@ -16,7 +16,11 @@
          * dados na posição 3 = dia da semana
         */
         include("../login/protect_controller.php");
-        include("checking_controller.php");
+        /**caso usuario client tentar entrar no admin com url, barrar com o if */
+        if ($_SESSION["status"] == "client") {
+            /**enviando pessoa administradora para sua pagina */
+            header("location: ../principal/pagina_client_page.php");
+        }
     ?>
 </head>
 <style>
@@ -100,6 +104,15 @@ a {
       display: block;
       height: auto;
     }
+    .registros{
+        margin: auto;
+    }
+    .form-container {
+            display: flex;
+            gap: 20px; /* Espaço entre os elementos */
+            
+            
+        }
 </style>
 
 <?php
@@ -117,7 +130,7 @@ a {
     <div class="cabecalho">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="..\principal\pagina_client_page.php"><img src="..\imagens_videos\fatia_home.png" alt=""><br> Home</a>
+                <a class="nav-link" href="..\principal\pagina_admin_page.php"><img src="..\imagens_videos\fatia_home.png" alt=""><br> Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_reserva.png" alt=""><br> reserva</a>
@@ -139,42 +152,60 @@ a {
             Seu navegador não suporta vídeos.
         </video>
         <div class="conteudo">
-            <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
-            <form  method="POST" action="inserindo_controller.php">
-                <h1>reserve uma mesa</h1>
-
-
-                
-
-                <label for="">horario: </label>
+            <form action="" method="post" class="form-container">
+                <label for="">pesquisa</label>
                 <br>
-                <input name="dados[]" type="time" required min="10:00" max="20:00">
-            
+                <input type="text">
                 <br>
-                <label for="">para que dia: </label>
+                <button type="submit">pesquisar</button>
                 <br>
-                <input name="dados[]" type="date" required min="<?php echo$data_atual;?>" max="<?php echo$data_max;?>">
-                <br>
-                <label for="">mesa para quantos: </label>
-                <br>
-                <select name="dados[]" required>
+                <select name="" required>
                     <option value="" disabled selected >nao selecionado</option>
-                    <option value="2">2-pessoa</option>
-                    <option value="4">4-pessoa</option>
-                    <option value="8">8-pessoa</option>
+                    <option value="2">todos usuarios</option>
+                    <option value="4">reservas atrasadas</option>
+                    <option value="8">por ordem</option>
                 </select>
-                
-                <br><br>
-                
+            </form>
 
-                <button class="botao" type="submit" name="botao">enviar</button>
-                <br>
-            </form>  
+            
+        <table class ="registros">
+            <tr>
+                <td>----nome----</td>
+                <td>----mesa----</td>
+                <td>----horario----</td>
+                <td>----data_reserva----</td>
+                <td>----pessoa----</td>
+            </tr>
+
             <?php
-            if (isset($_SESSION["error"])) {
-                echo$_SESSION["error"];
+            /*ligando com o arquivo conexao*/
+            include("../../../db/conexao.php");
+
+            /**forma de mostrar todos os registros da tabela sql */
+            /**verificando se a conexão foi */
+            if($mysqli -> connect_errno){
+                echo"deu nao mano",$mysqli -> connect_errno,$mysqli -> connect_error;
             }
+            else {
+                $sql_cod = "select d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client;";
+                /**utilizando parametro query para enviar codigo sql caso nao funcione die */
+                $sql_query = $mysqli -> query($sql_cod) or die("voce simplismente nao existe");
+                /**variavael ira guardar dados do banco de dados como uma array,*/
+                
+                while ($variavel = $sql_query->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $variavel['nome'] . "</td>";
+                    echo "<td>" . $variavel['mesa'] . "</td>";
+                    echo "<td>" . $variavel['horario'] . "</td>";
+                    echo "<td>" . $variavel['data_reserva'] . "</td>";
+                    echo "<td>" . $variavel['quantidade'] . "</td>";
+                    echo "</tr>";
+                }
+                
+            }
+
             ?>
+        </table>           
         </div>
       </div>
       
