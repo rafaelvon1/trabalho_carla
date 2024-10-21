@@ -14,6 +14,8 @@ header {
     padding: 10px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1000;
 }
 
@@ -33,6 +35,7 @@ header .nav-link.active {
 
 .container {
     margin-top: 100px;
+
     max-width: 400px;
     width: 100%;
     padding: 20px;
