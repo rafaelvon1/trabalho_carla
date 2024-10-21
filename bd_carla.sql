@@ -20,7 +20,12 @@ values
 (null,"Matheushrnque@gmail.com","$2y$10$YziOo12X6W47H35X8wWoAujf4zF2Ce/mf3MpICaBdzPQWob/6diGy","admin"),
 (null,"cliente@gmail.com","$2y$10$tCTGoTbev3OuaWeZIJYioecuSPti.1UH7b1CvyyzHzT0j0doGvxTW","client")
 ;
-
+/*para ser posivel fazer mais teste com usuario fantasma*/
+insert into dados_usuario
+values
+/*adicionar ids */
+(null,5,"cliente_teste","00","00","00")
+;
 
 
 /*---------------select e delete-----------------------*/
@@ -31,6 +36,10 @@ drop table login;
 drop table reserva;
 drop table dados_usuario;
 /*------------------------------------------testes-------------------------------------------*/
+
+
+select d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client;
+
 
 select * from reserva where id_client = 0 limit 1;
 
