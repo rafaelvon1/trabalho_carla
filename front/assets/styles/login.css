@@ -1,71 +1,71 @@
 body {
-    background-color: #f8f9fa;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    margin: 0;
-    flex-direction: column;
-  }
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+}
 
-  header {
-    width: 100%;
-    background-color: #343a40;
-    padding: 10px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
+header {
+  width: 100%;
+  background-color: #343a40;
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
 
-  header .nav-pills {
-    justify-content: center;
-  }
+header .nav-pills {
+  justify-content: center;
+}
 
-  header .nav-link {
-    color: #fff;
-    margin: 0 10px;
-    border-radius: 30px;
-  }
+header .nav-link {
+  color: #fff;
+  margin: 0 10px;
+  border-radius: 30px;
+}
 
-  header .nav-link.active {
-    background-color: #007bff;
-  }
+header .nav-link.active {
+  background-color: #007bff;
+}
 
-  .container {
-    margin-top: 100px; /* Espaço para dar distância entre a navegação e o formulário */
-    max-width: 400px;
-    width: 100%;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
+.container {
+  margin-top: 100px;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-  h1 {
-    text-align: center;
-    color: #343a40;
-    margin-bottom: 20px;
-  }
+h1 {
+  text-align: center;
+  color: #343a40;
+  margin-bottom: 20px;
+}
 
-  form {
-    padding: 20px;
-    background-color: #fdfdfd;
-    border-radius: 10px;
-    border: 1px solid #eee;
-  }
+form {
+  padding: 20px;
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
 
-  .form-group label {
-    color: #495057;
-  }
+.form-group label {
+  color: #495057;
+}
 
-  .btn-primary {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-  }
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
 
-  .btn-primary:hover {
-    background-color: #0056b3;
-  }
+.btn-primary:hover {
+  background-color: #0056b3;
+}
