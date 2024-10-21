@@ -15,8 +15,12 @@
     $id = $_SESSION["id"];
     // Define o fuso horário
     date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
-
-    
+    /**pegando data atual para verificação */
+    $data = new DateTime();
+    $data_atual = $data ->format('Y-m-d');
+    $horario_presente = $data;
+    $horario_presente->modify('+2 hours');
+    $horario_presente = $horario_presente->format('H:i');
     /**pegando meus dados da reserva */
     $dados = $_POST["dados"];
 
@@ -33,43 +37,50 @@
      */
     $total= 35;
     /**verificando se tem mesa disponivel nesse horario */
-    for ($i=1; $i <= $total; ) { 
-            $sql_code = "SELECT * FROM reserva where mesa = '$i' and data_reserva = '$dados[1]' and ((horario >= '$horas_antes' and horario <= '$dados[0]') or (horario >= '$dados[0]' and horario <= '$horas_depois')) ";
-            /** utilizando um parametro para query para rodar meu codigo no banco de dados caso der erro aparece a mensagem (die->) -> aqui se espera que algo seja retornado*/
-            $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
-            $pull =$sql_query->num_rows;
-            /**caso nao tiver retorna q nao tem ninguem naquela mesa entao i vai ser minha mesa */
-            if ($pull == 0) {
-                $dados[5]=$i;
-                $i += $total;
-            }
-            else {
-                $i +=1;
-            }
-            
-    } 
-    if ($pull == 1) {
-        $_SESSION["error"] = "pedimos descupas, mas esse horario e data estao com a mesa cheia, tente outro horario";
+    if ($dados[1] == $data_atual and $dados[0] <= $horario_presente) {
+        $_SESSION["error"] = "reserve sua mesa com 2 horas de antecedencia";
         header("location: reserva.php");
-
-        
     }
     else {
        
-        /**pegando a data e horario q meu usuario digitou, colocando ele em um formato data, para ser legivel com o parametro format */
-        $dataHora = new DateTime("$dados[1] $dados[0]");
-
-        /**o valor q sera guardado no dado[3] é o dia que o meu cliente fez a reserva seg ter quarta e assim em diante */
-        $dados[3] = $dataHora->format('l');
-        $dados[4] = $id;
-        /*verificando se a data digitada é hoje */
-        
-        /**inserindo meus dados no banco de dados */
-        $sql_code = "INSERT INTO reserva VALUES('null','$dados[4]','$dados[5]','$dados[0]','$dados[1]','$dados[2]','$dados[3]')";
-        /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
-        $envio = mysqli_query($mysqli,$sql_code);
-        header("location: checking_controller.php");
-    }
     
+        for ($i=1; $i <= $total; ) { 
+                $sql_code = "SELECT * FROM reserva where mesa = '$i' and data_reserva = '$dados[1]' and ((horario >= '$horas_antes' and horario <= '$dados[0]') or (horario >= '$dados[0]' and horario <= '$horas_depois')) ";
+                /** utilizando um parametro para query para rodar meu codigo no banco de dados caso der erro aparece a mensagem (die->) -> aqui se espera que algo seja retornado*/
+                $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
+                $pull =$sql_query->num_rows;
+                /**caso nao tiver retorna q nao tem ninguem naquela mesa entao i vai ser minha mesa */
+                if ($pull == 0) {
+                    $dados[5]=$i;
+                    $i += $total;
+                }
+                else {
+                    $i +=1;
+                }
+                
+        } 
+        if ($pull == 1) {
+            $_SESSION["error"] = "pedimos descupas, mas esse horario e data estao com a mesa cheia, tente outro horario";
+            header("location: reserva.php");
+
+            
+        }
+        else {
+        
+            /**pegando a data e horario q meu usuario digitou, colocando ele em um formato data, para ser legivel com o parametro format */
+            $dataHora = new DateTime("$dados[1] $dados[0]");
+
+            /**o valor q sera guardado no dado[3] é o dia que o meu cliente fez a reserva seg ter quarta e assim em diante */
+            $dados[3] = $dataHora->format('l');
+            $dados[4] = $id;
+            /*verificando se a data digitada é hoje */
+            
+            /**inserindo meus dados no banco de dados */
+            $sql_code = "INSERT INTO reserva VALUES('null','$dados[4]','$dados[5]','$dados[0]','$dados[1]','$dados[2]','$dados[3]')";
+            /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
+            $envio = mysqli_query($mysqli,$sql_code);
+            header("location: checking_controller.php");
+        }
+    }
                
 ?>

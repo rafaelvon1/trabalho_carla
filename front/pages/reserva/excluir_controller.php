@@ -8,6 +8,5 @@
     $id = $_SESSION["id"];
     $sql_code = "DELETE FROM  reserva WHERE id_client = {$id};";
     $sql_query = $mysqli -> query($sql_code) or die("algo deu errado");
-    $envio = mysqli_query($mysqli,$sql_code);
     header("location: ../reserva/reserva.php");
 ?>

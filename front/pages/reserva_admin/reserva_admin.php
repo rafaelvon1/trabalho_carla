@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="..\imagens_videos" type="image/x-icon">
     <link rel="shortcut icon" href="..\imagens_videos\pizza_reserva.png" type="image/x-icon">
-    <title>reserva</title>
+    <title>reserva administrador</title>
     <?php
         /**dados na posição 4 = id do cliente 
          * dados na posição 5 = mesa
@@ -16,10 +16,11 @@
          * dados na posição 3 = dia da semana
         */
         include("../login/protect_controller.php");
-        if (!isset($_SESSION)) {
-            session_start();
+        /**caso usuario client tentar entrar no admin com url, barrar com o if */
+        if ($_SESSION["status"] == "client") {
+            /**enviando pessoa administradora para sua pagina */
+            header("location: ../principal/pagina_client_page.php");
         }
-        $_SESSION["error"] = "";   
     ?>
 </head>
 <style>
@@ -103,12 +104,33 @@ a {
       display: block;
       height: auto;
     }
+    .registros{
+        margin: auto;
+    }
+    .form-container {
+            display: flex;
+            gap: 20px; /* Espaço entre os elementos */
+            
+            
+        }
 </style>
+
+<?php
+    // Define o fuso horário
+    date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
+
+    /**pegando data e horario atual */
+    $data = new DateTime();
+    $data_atual = $data ->format('Y-m-d');
+    $data_max = $data ;
+    $data_max->modify('+2 months');
+    $data_max = $data-> format('Y-m-d');
+?>
 <body>
     <div class="cabecalho">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="..\principal\pagina_client_page.php"><img src="..\imagens_videos\fatia_home.png" alt=""><br> Home</a>
+                <a class="nav-link" href="..\principal\pagina_admin_page.php"><img src="..\imagens_videos\fatia_home.png" alt=""><br> Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_reserva.png" alt=""><br> reserva</a>
@@ -130,77 +152,64 @@ a {
             Seu navegador não suporta vídeos.
         </video>
         <div class="conteudo">
-            <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
-        
-            <table class="registro">
-                <?php
-                    /** ------essa parte ira mostrar caso tenha algun registro ja feito-------- */
+            <form action="" method="post" class="form-container">
+                <label for="">pesquisa</label>
+                <br>
+                <input type="text">
+                <br>
+                <button type="submit">pesquisar</button>
+                <br>
+                <select name="" required>
+                    <option value="" disabled selected >nao selecionado</option>
+                    <option value="2">todos usuarios</option>
+                    <option value="4">reservas atrasadas</option>
+                    <option value="8">por ordem</option>
+                </select>
+            </form>
 
-                    if (!isset($_SESSION)) {
-                        session_start();
-                    }
-                    include("../../../db/conexao.php");
-                    $id = $_SESSION["id"];
-                    $sql_code = "SELECT * FROM reserva where id_client = $id"; 
-                    $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
-                    $pull =$sql_query->num_rows;
-                    $variavel = $sql_query->fetch_assoc();
-                    if ($pull == 1) {
-                        echo"<tr>";
-                        echo"<td>---mesa---</td>";
-                        echo"<td>---dia---</td>";
-                        echo"<td>---pessoas---</td>";
-                        echo"<td>---horario---</td>";
-                        echo"<td>---reserva---</td>";
-
-                        echo "<tr>";
-                        echo "<td>" . $variavel["mesa"] . "</td>";
-                        echo "<td>" . $variavel["dias"] . "</td>";
-                        echo "<td>" . $variavel["quantidade"] . "</td>";
-                        echo "<td>" . $variavel["horario"] . "</td>";
-                        echo "<td>" . $variavel["data_reserva"] . "</td>";
-                        echo "</tr>";
-                    } 
-                    else {
-                        echo"<h2 class=\"total_reserva\"> faça sua reserva<h2/>";
-                    }
-                    
-                
-
-                ?>
-
-            </table>
-                
-                <form method="post" action="excluir_controller.php">
-                    <?php
-                    /**essa parte ira excluir minha reserva */
-                    if ($pull == 1) {
-                            
-                        /**quando meu pull for 1 siginifica q exite alguem com o id da minha conta, enta mostrar botao excluir */
-                        echo"<small>excluir</small> <br>";
-                        echo "<button class=\"botao_transparente\" type=\"submit\" name=\"excluir\"><img src=\"..\imagens_videos\cortador_pizza_excluir.png\" alt=\"\"></button>";
-                    
-                    } 
-                    
-                    ?>
-
-                </form>
-
-                <!-- alterar reserva-->
-                <form method="post" action="alterar_controller.php">  
-                    <small>alterar</small>
-                    <br>
-                    <select name="opc" required>
-                                <option value="" disabled selected >o que deseja alterar</option>
-                                <option value="horario">horario e data</option>
-                                <option value="pessoa">pessoa</option>
-                                </select>
-                    <br><button type="submit">enviar</button>
-                </form>
-                    
-                
             
+        <table class ="registros">
+            <tr>
+                <td>----id_client----</td>
+                <td>----mesa----</td>
+                <td>----horario----</td>
+                <td>----data_reserva----</td>
+                <td>----pessoa----</td>
+                <td>----dia----</td>
+            </tr>
+
+            <?php
+            /*ligando com o arquivo conexao*/
+            include("../../../db/conexao.php");
+
+            /**forma de mostrar todos os registros da tabela sql */
+            /**verificando se a conexão foi */
+            if($mysqli -> connect_errno){
+                echo"deu nao mano",$mysqli -> connect_errno,$mysqli -> connect_error;
+            }
+            else {
+                $sql_cod = "SELECT * FROM reserva";
+                /**utilizando parametro query para enviar codigo sql caso nao funcione die */
+                $sql_query = $mysqli -> query($sql_cod) or die("voce simplismente nao existe");
+                /**variavael ira guardar dados do banco de dados como uma array,*/
+                
+                while ($variavel = $sql_query->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $variavel['id_client'] . "</td>";
+                    echo "<td>" . $variavel['mesa'] . "</td>";
+                    echo "<td>" . $variavel['horario'] . "</td>";
+                    echo "<td>" . $variavel['data_reserva'] . "</td>";
+                    echo "<td>" . $variavel['quantidade'] . "</td>";
+                    echo "<td>" . $variavel['dias'] . "</td>";
+                    echo "</tr>";
+                }
+                
+            }
+
+            ?>
+        </table>           
         </div>
       </div>
+      
 </body>
 </html>

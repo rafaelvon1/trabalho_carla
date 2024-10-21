@@ -144,15 +144,14 @@ a {
         <div class="conteudo">
             <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
             <form  method="POST" action="">
-                <h1>altera pessoas</h1>
-                <label for="">mesa para quantos: </label>
+                <h1>altera horario e data</h1>
+                <label for="">horario: </label>
                 <br>
-                <select name="pessoa" required>
-                    <option value="" disabled selected >nao selecionado</option>
-                    <option value="2">2-pessoa</option>
-                    <option value="4">4-pessoa</option>
-                    <option value="8">8-pessoa</option>
-                </select>
+                <input name="dados[]" type="time" required min="10:00" max="20:00">
+                <br>
+                <label for="">para que dia: </label>
+                <br>
+                <input name="dados[]" type="date" required min="<?php echo$data_atual;?>" max="<?php echo$data_max;?>">
                 
                 <br><br>
                 
@@ -161,11 +160,71 @@ a {
                 <br>
                 <button><a href="mostrando_reserva.php">voltar</a></button>
                 <?php
-                    if (isset($_POST["pessoa"])) {
-                        
-                        $sql_code = "UPDATE reserva SET quantidade = {$_POST["pessoa"]} WHERE id_client = {$_SESSION ["id"]} LIMIT 1";
+                        /**dados na posição 4 = id do cliente 
+                         * dados na posição 5 = mesa
+                         * dados na posição 0 = horario
+                         * dados na posição 1 = data
+                         * dados na posição 2 = quantidade pessoa
+                         * dados na posição 3 = dia da semana
+                        */
+
+                    if (isset($_POST["dados"])) {
+                            /**pegando meus dados da reserva */
+                        $dados = $_POST["dados"];
+
+                        $sql_code = "SELECT * FROM reserva WHERE id_client = '" . $_SESSION['id'] . "'";
+                        $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
+                        $variavel = $sql_query->fetch_assoc();         
+                        $bck_horario = $variavel["horario"];
+                        $bck_data = $variavel["data_reserva"];
+                        /**deleteando horario e data do meu usuario para mudar para novo horario */
+                        $sql_code = "UPDATE reserva SET horario = '00:00:00', data_reserva = '0000-00-00' WHERE id_client = {$_SESSION['id']} LIMIT 1";
                         $sql_query = $mysqli -> query($sql_code) or die("algo deu errado");
-                        echo"<h2>alteraçao feita com sucesso<h2/>";
+
+                        /**pegando 2 horas antes da hora digitada */
+                        $horas_antes = new DateTime("$dados[1] $dados[0]");
+                        $horas_antes->modify('-2 hours');
+                        $horas_antes = $horas_antes->format('H:i');
+
+                        /**pegando 2 horas depois da hora digitada */
+                        $horas_depois = new DateTime("$dados[1] $dados[0]");
+                        $horas_depois->modify('+2 hours');
+                        $horas_depois = $horas_depois->format('H:i');
+                        /**mesas pre definidas
+                         */
+                        $total= 35;
+                        /**verificando se tem mesa disponivel nesse horario */
+                        for ($i=1; $i <= $total; ) { 
+                                $sql_code = "SELECT * FROM reserva where mesa = '$i' and data_reserva = '$dados[1]' and ((horario >= '$horas_antes' and horario <= '$dados[0]') or (horario >= '$dados[0]' and horario <= '$horas_depois')) ";
+                                /** utilizando um parametro para query para rodar meu codigo no banco de dados caso der erro aparece a mensagem (die->) -> aqui se espera que algo seja retornado*/
+                                $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
+                                $pull =$sql_query->num_rows;
+                                /**caso nao tiver retorna q nao tem ninguem naquela mesa entao i vai ser minha mesa */
+                                if ($pull == 0) {
+                                    $dados[5]=$i;
+                                    $i += $total;
+                                }
+                                else {
+                                    $i +=1;
+                                }
+                                
+                        } 
+                        if ($pull == 1) {
+                            $_SESSION["error"] = "pedimos descupas, mas esse horario e data estao com a mesa cheia, tente outro horario";
+                            $sql_code = "UPDATE reserva SET horario = '{$bck_horario}', data_reserva = '{$bck_data}',mesa = '{$dados[5]}' WHERE id_client = {$_SESSION ['id']} LIMIT 1";
+                            $sql_query = $mysqli -> query($sql_code) or die("algo deu errado");
+                            header("location: reserva.php");
+                        }
+                        else{
+                            /**pegando a data e horario q meu usuario digitou, colocando ele em um formato data, para ser legivel com o parametro format */
+                            $dataHora = new DateTime("$dados[1] $dados[0]");
+
+                            /**o valor q sera guardado no dado[3] é o dia que o meu cliente fez a reserva seg ter quarta e assim em diante */
+                            $dados[3] = $dataHora->format('l');
+                            $sql_code = "UPDATE reserva SET horario = '{$dados[0]}', data_reserva = '{$dados[1]}' ,dias = '{$dados[3]}',mesa = '{$dados[5]}'WHERE id_client = {$_SESSION['id']} LIMIT 1";
+                            $sql_query = $mysqli -> query($sql_code) or die("algo deu errado");
+                            echo"<h2>alteraçao feita com sucesso<h2/>";
+                        }
                     }
                 ?>
             </form>  

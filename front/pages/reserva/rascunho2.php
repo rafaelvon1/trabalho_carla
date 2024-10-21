@@ -43,6 +43,7 @@ else {
 }
 
 ?>
+</table>
 <?php
                     /**bugs a serem resolvidos, quando atualizo a pagina ele salva mais uma vez minha reserva
                      * outro bug o echo abaixo sai apenas quando atualizo a pagina, a primeira vez q passa ele ainda 
