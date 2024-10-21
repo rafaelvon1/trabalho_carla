@@ -158,7 +158,15 @@ a {
                 <input type="text">
                 <br>
                 <button type="submit">pesquisar</button>
+                <br>
+                <select name="" required>
+                    <option value="" disabled selected >nao selecionado</option>
+                    <option value="2">todos usuarios</option>
+                    <option value="4">reservas atrasadas</option>
+                    <option value="8">por ordem</option>
+                </select>
             </form>
+
             
         <table class ="registros">
             <tr>
