@@ -23,8 +23,8 @@ include("../../../db/conexao.php");
 /**pegando dados do meu arquivo html */
 $dados = $_POST["cads"];
 /**verificando se meus dados estao limpos,se nao ah codigo sql*/
-$dados[0] = $mysqli -> real_escape_string($dados[4]);
-$dados[1] = $mysqli -> real_escape_string($dados[5]);
+$dados[4] = $mysqli -> real_escape_string($dados[4]);
+$dados[5] = $mysqli -> real_escape_string($dados[5]);
 
 /**verificando se ja existe alguem com o mesmo email no site */
 $sql_code = "SELECT email FROM login WHERE email = '$dados[4]'";
@@ -56,7 +56,6 @@ else {
         $envio = mysqli_query($mysqli,$sql_code);
         $variavel = $envio->fetch_assoc();
         $id_usuario = $variavel['id'];
-
         $sql_code = "INSERT INTO dados_usuario VALUES('null','$id_usuario','$dados[0]','$dados[1]','$dados[2]','$dados[3]');";
         $envio = mysqli_query($mysqli,$sql_code);
         /**!!!!!!!!!!!!! jogar meu cliente para tela com header !!!!!!!!!!!!! */
