@@ -170,12 +170,11 @@ a {
             
         <table class ="registros">
             <tr>
-                <td>----id_client----</td>
+                <td>----nome----</td>
                 <td>----mesa----</td>
                 <td>----horario----</td>
                 <td>----data_reserva----</td>
                 <td>----pessoa----</td>
-                <td>----dia----</td>
             </tr>
 
             <?php
@@ -188,19 +187,18 @@ a {
                 echo"deu nao mano",$mysqli -> connect_errno,$mysqli -> connect_error;
             }
             else {
-                $sql_cod = "SELECT * FROM reserva";
+                $sql_cod = "select d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client;";
                 /**utilizando parametro query para enviar codigo sql caso nao funcione die */
                 $sql_query = $mysqli -> query($sql_cod) or die("voce simplismente nao existe");
                 /**variavael ira guardar dados do banco de dados como uma array,*/
                 
                 while ($variavel = $sql_query->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td>" . $variavel['id_client'] . "</td>";
+                    echo "<td>" . $variavel['nome'] . "</td>";
                     echo "<td>" . $variavel['mesa'] . "</td>";
                     echo "<td>" . $variavel['horario'] . "</td>";
                     echo "<td>" . $variavel['data_reserva'] . "</td>";
                     echo "<td>" . $variavel['quantidade'] . "</td>";
-                    echo "<td>" . $variavel['dias'] . "</td>";
                     echo "</tr>";
                 }
                 
