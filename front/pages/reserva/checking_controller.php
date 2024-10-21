@@ -1,6 +1,9 @@
 <?php
 include("../../../db/conexao.php");
 /**pegando id da tela de login*/
+if (!isset($_SESSION)) {
+    session_start();
+}
 $id = $_SESSION["id"];
 /**----essa parte ira fazer a verificaçao se dados existem para nao aparecer na tela do layout------- */
 

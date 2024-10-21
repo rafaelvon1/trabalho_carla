@@ -47,6 +47,7 @@ else {
             /**usado para verificar se email ja esta cadastrado no arquivo protect */
             $_SESSION["email"] = $variavel["email"];
             $_SESSION["id"] = $variavel["id"];
+            $_SESSION["status"] = $variavel["pessoa_status"];
             /**separando administrador de cliente */
             if ($variavel["pessoa_status"] == "admin") {
                 /**enviando pessoa administradora para sua pagina */

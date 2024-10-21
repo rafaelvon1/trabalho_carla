@@ -43,6 +43,7 @@ else {
 }
 
 ?>
+</table>
 <?php
                     /**bugs a serem resolvidos, quando atualizo a pagina ele salva mais uma vez minha reserva
                      * outro bug o echo abaixo sai apenas quando atualizo a pagina, a primeira vez q passa ele ainda 
@@ -131,6 +132,13 @@ else {
                     }
                     
                 ?>
+
+echo"<select name=\"pessoa\" required>
+                    <option value=\"\" disabled selected >nao selecionado</option>
+                    <option value=\"2\">2-pessoa</option>
+                    <option value=\"4\">4-pessoa</option>
+                    <option value=\"8\">8-pessoa</option>
+                </select>";
 
 </table>
 </body>
