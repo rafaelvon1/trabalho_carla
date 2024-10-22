@@ -180,7 +180,7 @@ a {
                     <br>
                     <small>alterar</small>
                     <br>
-                    <button type="submit">altera</button>
+                    <button type="submit"><img src="../imagens_videos/alterar.png" alt=""></button>
                 </form>
                 <!-- alterar reserva
                 <form method="post" action="alterar_controller.php">  

@@ -21,6 +21,9 @@
             /**enviando pessoa administradora para sua pagina */
             header("location: ../principal/pagina_client_page.php");
         }
+
+        /*ligando com o arquivo conexao*/
+        include("../../../db/conexao.php");
     ?>
 </head>
 <style>
@@ -91,6 +94,12 @@ a {
     color: white;
     text-align: center;
 }
+.aviso{
+    margin: auto;
+    background-color: rgba(255, 255, 0, 0.8);
+    color: black;
+    width: 450px;
+}
 </style>
 
 <?php
@@ -137,18 +146,17 @@ a {
                     <br>
                     <button type="submit">enviar</button>
                     <br>
-                    
                 </form>
                 <!--filtros para procurar cliente
                 <form action="" method="post">
                     <div>
-                            <button>todos</button>
+                            <button name="todos">todos</button>
                             <button>todos</button>
                             <button>todos</button>
                             <button>todos</button>
                     </div>
                 </form>
-                    -->
+                -->
                 
             </div>
         <div class="conteudo">  
@@ -184,27 +192,37 @@ a {
             </tr>
 
             <?php
-            /*ligando com o arquivo conexao*/
-            include("../../../db/conexao.php");
+            
 
             /**forma de mostrar todos os registros da tabela sql */
             /**verificando se a conexão foi */
             if(isset($_POST["pesquisa"])){
                 $pesquisa = $_POST['pesquisa'];
-                $sql_cod = "select d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client and nome like '$pesquisa%';";
+                if ($pesquisa == "1") {
+                    $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client;";
+                }
+                elseif ($pesquisa == "2") {
+                    $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client order by d.nome;";
+                }
+                elseif ($pesquisa == "3") {
+                    $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client and data_reserva < date(now());";  
+                }
+                else {
+                    $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client and nome like '$pesquisa%';";
+                    
+                }
                 /**utilizando parametro query para enviar codigo sql caso nao funcione die */
                 $sql_query = $mysqli -> query($sql_cod) or die("voce simplismente nao existe");
-                /**variavael ira guardar dados do banco de dados como uma array,*/
                 /**verificando se teve algum retorno da minha consulta */
                 $retorno = $sql_query->num_rows;
                 if ($retorno == 0) {
-                    echo"<h2 class=\"aviso\">pessoa nao encontrada<h2/>";
+                    echo"<h2 class=\"aviso\">nada registrado<h2/>";
                 }
                 else {
                     
                     while ($variavel = $sql_query->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td> <a href=\"\">entrar</a> </td>";
+                        echo "<td> <a href=\"perfil_page.html?id=$variavel[id_client]\">entrar</a> </td>";
                         echo "<td>" . $variavel['nome'] . "</td>";
                         echo "<td>" . $variavel['mesa'] . "</td>";
                         echo "<td>" . $variavel['horario'] . "</td>";
