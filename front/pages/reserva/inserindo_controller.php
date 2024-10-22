@@ -14,6 +14,9 @@
     /**pegando id da tela de login*/
     $id = $_SESSION["id"];
     // Define o fuso horário
+   /*apagando registro caso usuario alterar, usando update teria q fazer as mesmas verificaçoes, ent nessa parte de alterar o insert paresse ser mais viavel*/
+    $sql_code = "DELETE FROM  reserva WHERE id_client = {$id};";
+    $sql_query = $mysqli -> query($sql_code) or die("algo deu errado");
     date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
     /**pegando data atual para verificação */
     $data = new DateTime();

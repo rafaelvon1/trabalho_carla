@@ -80,39 +80,17 @@ a {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
 }
-.botao{
-    background-color: blue;
-    color: #ffffff;
-}
-.sql_mostra{
-    margin:auto;
-}
 .registro{
     margin: auto;
-    background-color: rgba(255, 255, 0, 0.5);
+    background-color: rgba(255, 255, 0, 0.8);
     color: black;
 }
-.botao_transparente {
-      background-color: transparent;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-    }
-
-    /* Deixa a imagem ajustada no botão */
-    .botao_transparente img {
-      display: block;
-      height: auto;
-    }
-    .registros{
-        margin: auto;
-    }
-    .form-container {
-            display: flex;
-            gap: 20px; /* Espaço entre os elementos */
-            
-            
-        }
+.pesquisa{
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    text-align: center;
+}
 </style>
 
 <?php
@@ -148,10 +126,36 @@ a {
     </div>
     <div class="video-background">
         <video autoplay muted loop>
-            <source src="..\imagens_videos\video_reserva.mp4" type="video/mp4">
+            <source src="..\imagens_videos\mario_page_adm.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
         </video>
-        <div class="conteudo">
+        <div class="pesquisa">
+                <form action="" method="post">
+                    <label for="pesquisa">pesquisar</label>
+                    <br>
+                    <input type="text" name='pesquisa' placeholder="1° letra do nome" required>
+                    <br>
+                    <button type="submit">enviar</button>
+                    <br>
+                    
+                </form>
+                <!--filtros para procurar cliente
+                <form action="" method="post">
+                    <div>
+                            <button>todos</button>
+                            <button>todos</button>
+                            <button>todos</button>
+                            <button>todos</button>
+                    </div>
+                </form>
+                    -->
+                
+            </div>
+        <div class="conteudo">  
+            <!--
+
+
+             <input type="radio>
             <form action="" method="post" class="form-container">
                 <label for="">pesquisa</label>
                 <br>
@@ -166,10 +170,12 @@ a {
                     <option value="8">por ordem</option>
                 </select>
             </form>
+            -->
 
             
-        <table class ="registros">
+        <table class ="registro">
             <tr>
+                <td>----perfil----</td>
                 <td>----nome----</td>
                 <td>----mesa----</td>
                 <td>----horario----</td>
@@ -183,25 +189,33 @@ a {
 
             /**forma de mostrar todos os registros da tabela sql */
             /**verificando se a conexão foi */
-            if($mysqli -> connect_errno){
-                echo"deu nao mano",$mysqli -> connect_errno,$mysqli -> connect_error;
-            }
-            else {
-                $sql_cod = "select d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client;";
+            if(isset($_POST["pesquisa"])){
+                $pesquisa = $_POST['pesquisa'];
+                $sql_cod = "select d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client and nome like '$pesquisa%';";
                 /**utilizando parametro query para enviar codigo sql caso nao funcione die */
                 $sql_query = $mysqli -> query($sql_cod) or die("voce simplismente nao existe");
                 /**variavael ira guardar dados do banco de dados como uma array,*/
-                
-                while ($variavel = $sql_query->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . $variavel['nome'] . "</td>";
-                    echo "<td>" . $variavel['mesa'] . "</td>";
-                    echo "<td>" . $variavel['horario'] . "</td>";
-                    echo "<td>" . $variavel['data_reserva'] . "</td>";
-                    echo "<td>" . $variavel['quantidade'] . "</td>";
-                    echo "</tr>";
+                /**verificando se teve algum retorno da minha consulta */
+                $retorno = $sql_query->num_rows;
+                if ($retorno == 0) {
+                    echo"<h2 class=\"aviso\">pessoa nao encontrada<h2/>";
                 }
-                
+                else {
+                    
+                    while ($variavel = $sql_query->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td> <a href=\"\">entrar</a> </td>";
+                        echo "<td>" . $variavel['nome'] . "</td>";
+                        echo "<td>" . $variavel['mesa'] . "</td>";
+                        echo "<td>" . $variavel['horario'] . "</td>";
+                        echo "<td>" . $variavel['data_reserva'] . "</td>";
+                        echo "<td>" . $variavel['quantidade'] . "</td>";
+                        echo "</tr>";
+                    }
+                }
+            }
+            else {
+                echo"";  
             }
 
             ?>

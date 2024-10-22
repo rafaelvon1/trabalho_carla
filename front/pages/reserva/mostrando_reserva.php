@@ -172,22 +172,19 @@ a {
             </table>
                 
                 <form method="post" action="excluir_controller.php">
-                    <?php
-                    /**essa parte ira excluir minha reserva */
-                    if ($pull == 1) {
-                            
-                        /**quando meu pull for 1 siginifica q exite alguem com o id da minha conta, enta mostrar botao excluir */
-                        echo"<small>excluir</small> <br>";
-                        echo "<button class=\"botao_transparente\" type=\"submit\" name=\"excluir\"><img src=\"..\imagens_videos\cortador_pizza_excluir.png\" alt=\"\"></button>";
-                    
-                    } 
-                    
-                    ?>
-
+                    <small>excluir</small> <br>
+                    <button class="botao_transparente" type="submit" name="excluir"><img src="..\imagens_videos\cortador_pizza_excluir.png" alt=""></button>
                 </form>
 
-                <!-- alterar reserva-->
+                <form action="alterar_page.php" method="post">
+                    <br>
+                    <small>alterar</small>
+                    <br>
+                    <button type="submit">altera</button>
+                </form>
+                <!-- alterar reserva
                 <form method="post" action="alterar_controller.php">  
+                    
                     <small>alterar</small>
                     <br>
                     <select name="opc" required>
@@ -197,7 +194,7 @@ a {
                                 </select>
                     <br><button type="submit">enviar</button>
                 </form>
-                    
+                -->  
                 
             
         </div>
