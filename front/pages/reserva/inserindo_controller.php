@@ -18,9 +18,9 @@
     /**pegando data atual para verificação */
     $data = new DateTime();
     $data_atual = $data ->format('Y-m-d');
-    $horario_presente = $data;
-    $horario_presente->modify('+2 hours');
-    $horario_presente = $horario_presente->format('H:i');
+    $horario_futuro = $data;
+    $horario_futuro->modify('+2 hours');
+    $horario_futuro = $horario_futuro->format('H:i');
     /**pegando meus dados da reserva */
     $dados = $_POST["dados"];
 
@@ -36,14 +36,20 @@
     /**mesas pre definidas
      */
     $total= 35;
-    /**verificando se tem mesa disponivel nesse horario */
-    if ($dados[1] == $data_atual and $dados[0] <= $horario_presente) {
+    /**caso usuario esteja reservando mesa as 23:00 horario futuro ira chegar a 00:00 assim deixando usuario digitar horario na data errada */
+    if ($horario_futuro >= '00:00:00') {
+        $horario_futuro ='23:59:00';
+    }
+    if ($dados[1] == $data_atual and $dados[0] <= $horario_futuro ) {
         $_SESSION["error"] = "reserve sua mesa com 2 horas de antecedencia";
         header("location: reserva.php");
     }
+    /**verificando se tem mesa disponivel nesse horario */
     else {
        
-    
+        /*apagando registro caso usuario alterar, usando update teria q fazer as mesmas verificaçoes, ent nessa parte de alterar o insert paresse ser mais viavel*/
+        $sql_code = "DELETE FROM  reserva WHERE id_client = {$id};";
+        $sql_query = $mysqli -> query($sql_code) or die("algo deu errado");
         for ($i=1; $i <= $total; ) { 
                 $sql_code = "SELECT * FROM reserva where mesa = '$i' and data_reserva = '$dados[1]' and ((horario >= '$horas_antes' and horario <= '$dados[0]') or (horario >= '$dados[0]' and horario <= '$horas_depois')) ";
                 /** utilizando um parametro para query para rodar meu codigo no banco de dados caso der erro aparece a mensagem (die->) -> aqui se espera que algo seja retornado*/
