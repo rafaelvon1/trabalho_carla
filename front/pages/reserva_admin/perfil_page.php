@@ -8,5 +8,9 @@
 <body>
     <h1>bom dia</h1>
     <button><a href="reserva_admin.php">voltar</a></button>
+    <?php
+        $id = $_GET["id"];
+        echo $id ;
+    ?>
 </body>
 </html>

@@ -196,33 +196,31 @@ a {
 
             /**forma de mostrar todos os registros da tabela sql */
             /**verificando se a conexão foi */
-            if(isset($_POST["pesquisa"])){
-                $pesquisa = $_POST['pesquisa'];
-                if ($pesquisa == "1") {
-                    $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client;";
+                $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client;";
+                if (isset($_POST['pesquisa'])) {
+                    $pesquisa = $_POST['pesquisa'];
+                    if ($pesquisa == "1") {
+                        $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client order by d.nome;";
+                    }
+                    elseif ($pesquisa == "2") {
+                        $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client and data_reserva < date(now());";  
+                    }
+                    elseif ($pesquisa == "3") {
+                        $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client and nome like '$pesquisa%';";
+                    }
                 }
-                elseif ($pesquisa == "2") {
-                    $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client order by d.nome;";
-                }
-                elseif ($pesquisa == "3") {
-                    $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client and data_reserva < date(now());";  
-                }
-                else {
-                    $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client and nome like '$pesquisa%';";
-                    
-                }
+                
                 /**utilizando parametro query para enviar codigo sql caso nao funcione die */
                 $sql_query = $mysqli -> query($sql_cod) or die("voce simplismente nao existe");
                 /**verificando se teve algum retorno da minha consulta */
                 $retorno = $sql_query->num_rows;
                 if ($retorno == 0) {
                     echo"<h2 class=\"aviso\">nada registrado<h2/>";
-                }
+                } 
                 else {
-                    
                     while ($variavel = $sql_query->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td> <a href=\"perfil_page.html?id=$variavel[id_client]\">entrar</a> </td>";
+                        echo "<td> <a href=\"perfil_page.php?id=$variavel[id_client]\">entrar</a> </td>";
                         echo "<td>" . $variavel['nome'] . "</td>";
                         echo "<td>" . $variavel['mesa'] . "</td>";
                         echo "<td>" . $variavel['horario'] . "</td>";
@@ -230,11 +228,11 @@ a {
                         echo "<td>" . $variavel['quantidade'] . "</td>";
                         echo "</tr>";
                     }
+                
+                    
                 }
-            }
-            else {
-                echo"";  
-            }
+                
+                
 
             ?>
         </table>           
