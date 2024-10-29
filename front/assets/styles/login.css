@@ -17,7 +17,6 @@ body {
   height: 100vh;
 }
 
-
 .image-panel {
   flex: 1;
 }
@@ -28,51 +27,49 @@ body {
   object-fit: cover;
 }
 
-
 .login {
   flex: 1;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 40px;
   background: linear-gradient(to bottom right, #b31b1b, #c9c91f);
 }
 
-.login h2 {
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background-color: #ffe3c6;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container h2 {
   margin-bottom: 20px;
   font-size: 24px;
   color: #313131;
   font-weight: bold;
+  text-align: center;
 }
 
-.login form {
+.form-container form {
   width: 100%;
-  max-width: 300px;
   display: flex;
   flex-direction: column;
 }
 
-.login input[type="email"],
-.login input[type="password"] {
+form input[type="email"],
+form input[type="password"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-weight: bold;
-}
-
-
-.options a,
-.signup a {
-  color: white;
-  text-decoration: none;
-}
-
-.options a:hover,
-.signup a:hover {
-  color: #929191;
 }
 
 .options {
@@ -84,11 +81,6 @@ body {
   margin-bottom: 15px;
 }
 
-.create {
-  margin-left: 15px;
-  color: whitesmoke;
-}
-
 button[type="submit"] {
   padding: 10px;
   background-color: #333;
@@ -97,6 +89,7 @@ button[type="submit"] {
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 button[type="submit"]:hover {
@@ -106,5 +99,20 @@ button[type="submit"]:hover {
 .signup {
   margin-top: 15px;
   font-size: 14px;
-  color: whitesmoke;
+  color: #333;
+  text-align: center;
+}
+
+.signup a {
+  color: #b31b1b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup a:hover {
+  color: #8c1a1a;
+}
+
+.create {
+  margin-left: 8px;
 }
