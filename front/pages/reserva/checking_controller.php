@@ -1,4 +1,5 @@
 <?php
+/**se meu usuario ja tiver um cadastro, levar ele para mostrar reserva, nao para pagina de fazer uma reserva */
 include("../../../db/conexao.php");
 /**pegando id da tela de login*/
 if (!isset($_SESSION)) {
