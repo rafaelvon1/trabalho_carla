@@ -205,7 +205,8 @@ a {
                     elseif ($pesquisa == "2") {
                         $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client and data_reserva < date(now());";  
                     }
-                    elseif ($pesquisa == "3") {
+                    else {
+                        
                         $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client and nome like '$pesquisa%';";
                     }
                 }
