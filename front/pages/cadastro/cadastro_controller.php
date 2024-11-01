@@ -59,7 +59,7 @@ else {
         $sql_code = "INSERT INTO dados_usuario VALUES('null','$id_usuario','$dados[0]','$dados[1]','$dados[2]','$dados[3]');";
         $envio = mysqli_query($mysqli,$sql_code);
         /**!!!!!!!!!!!!! jogar meu cliente para tela com header !!!!!!!!!!!!! */
-
+        header("location:../login/login_page.html");
 
     }
     else {
@@ -68,8 +68,8 @@ else {
     
 }
 ?>
-<!-- caso de ja existir um cadastro, ir para tela de login -->
-<button type="submit"><a href="../login/login_page.html">ir para tela de login</a></button>
+<!-- caso de ja existir um cadastro, voltar para tela de cadastro -->
+<button type="submit"><a href="../cadastro/cadastro_page.html">ir para tela de login</a></button>
 
 
 
