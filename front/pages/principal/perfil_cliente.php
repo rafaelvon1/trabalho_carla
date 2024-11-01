@@ -1,7 +1,7 @@
 <?php
-session_start();
-
-include('../login.php');
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ include('../login.php');
         <div class="dados">
             <ul>
                 <li>Nome: </li>
-                <li>Email: <?php echo $_SESSION['usuario']; ?> </li>
+                <li>Email: <?php echo $_SESSION['email']; ?> </li>
             </ul>
         </div>
     </fieldset>
