@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Cardapio</title>
-    <style>        
+    <style>   
+.imagem{
+    width: 170px; /* Ajuste a largura */
+    height: auto; /* Mantém a proporção da imagem */
+}     
 a {
     /*font :)*/
     font-family: 'Courier New', Courier, monospace;
@@ -61,7 +65,6 @@ margin:auto;
 padding: 20px; /* Espaçamento interno */
 border: 1px solid hsl(0, 0%, 52%); /* Borda */
 max-width: 800px; /* Largura máxima */
-margin: 500px auto; /* Centraliza o body na página */
 text-align: center; /*Centraliza Texto que estão dentro da div principal*/
             
 }
@@ -85,10 +88,46 @@ z-index: 20px;
 .container:hover .texto {
 display: block; /* Exibe o texto ao passar o mouse */
 }
+body{
+     /* Fixado para cobrir toda a tela */
+    top: 50%; /* Inicia no topo */
+    left: 50%; /* Inicia à esquerda */
+    width: auto; /* Largura da viewport */
+    height: auto; /* Altura da viewport */
+    min-width: 100%; /* Garante que o vídeo cubra toda a largura */
+    min-height: 100%; /* Garante que o vídeo cubra toda a altura */
+    background-image: url(''); /* Substitua pelo caminho da sua imagem */
+    background-size: cover; /* Faz a imagem cobrir todo o espaço */
+    background-position: center; /* Centraliza a imagem */
+    z-index: -1; /* Mantém a imagem atrás do conteúdo */
+}
+.menu {
+    
+    display: flex; /* Alinha os botões em linha */
+    margin: auto; /* Centraliza o menu */
+    max-width: 800px; /* Largura máxima */
+    margin-top: 650px; /* Move o menu um pouco para cima */
+    
+}
+button{
+    background-color: #ecebeb; /* Cor de fundo */
+    color: rgb(0, 0, 0); /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Arredonda os cantos */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efeito de transição */  
+}
 
+button:hover {
+    background-color: #ffffff; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
     </style>
 </head>
 <body>
+    
     <div class="cabecalho">
         <ul class="nav">
             <li class="nav-item">
@@ -108,317 +147,633 @@ display: block; /* Exibe o texto ao passar o mouse */
             </li>
         </ul>
     </div>
-
-<div id = "principal"> <!--Colocando as divs em uma borda--> 
-    <div class="row">
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">               
-                <br>
-                <H6>A MODA DA CASA</H6>
-                <small>Presunto, Calabresa defumada fatiada, Molho de Tomate, Bacon, Mussarela, Milho, Orégano</small>
-                <br>
-                <strong id="rs">R$ 49.99</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">               
-                <H6>ATUM</H6>
-                <small>Atum, Molho de tomate, Mussarela, Orégano, Palmito</small>
-                <br>
-                <strong id="rs">R$ 52.99</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <H6>BAURU</H6>
-                <small>Molho de tomate, Mussarela, Orégano, Presunto, Tomate</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <H6>BRÓCOLIS COM CATUPIRY</H6>
-                <small>Bacon, Brócolis, Requeijão cremoso</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <H6>CALABRESA</H6>
-                <small>Azeitona Verde, Calabresa fatiada, Cebola, molho de tomate, Orégano</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <H6>CARNE SECA COM CATUPIRY</H6>
-                <small>Carne seca, Cebola, Requeijão cremoso</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <H6>CINCO QUEIJOS</H6>
-                <small>Gorgonzola, Mussarela, Parmesão, Provolone, Requeijão cremoso</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <H6>DOIS QUEIJO</H6>
-                <small> Mussarela, Requeijão cremoso</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <H6>DORITOS</H6>
-                <small>Doritos, Mussarela, Peperona</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <H6>ESCAROLA</H6>
-                <small>Bacon, Escarola, MOlho de tomate, Requeijão cremoso</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <H6>ESPANHOLA</H6>
-                <small>Calabresa fatiada, Mussarela, Ovo, Presunto</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <H6>FRANCESA</H6>
-                <small>Cebola, Ervilha, Mussarela, Palmito</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>FRANGO COM CATUPIRY</H6>
-                <small>Frango, Requeijão cremoso</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>GALETO</H6>
-                <small>Frango, Palmito, Requeijão cremoso</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>GREGO</H6>
-                <small>Ervilha, Mussarela, Palmito, Presunto, Tomate</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>HAVAIANA</H6>
-                <small>Abacaxi em calda, Lombo, Mussarela</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>JARDINEIRA</H6>
-                <small> Ervilha, Milho, Mussarela, Palmito, Tomate</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>LIGHT</H6>
-                <small>Brócolis, Milho, Palmito, Tomate</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>LOMBO</H6>
-                <small>Bacon, Lombo, Palmito, Requeijão cremoso</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>MEXICANA</H6>
-                <small>Azeitona verde, Molho de tomate, Mussarela, Orégano, Peperone, Pimentão</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>NAPOLITANA</H6>
-                <small>Molho de tomate, Orégano, Parmesão, Tomate</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>NERDOLA A MODA DO CHEFE</H6>
-                <small>Bacon, Carne seca, Cheddar, Orégano, Molho de tomate, Azeitona verde, Alho frito</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>PÃO DE ALHO</H6>
-                <small>Molho de tomate, Mussarela, Pão de alho, Pasta de alho</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>PERUANA</H6>
-                <small>Atum, Bacon, Ervilha, Milho, Mussarela</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>QUATRO QUEIJOS</H6>
-                <small>Mussarela, Parmesão, Provolone, Requeijão cremoso</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>SICILIANA</H6>
-                <small>Bacon, Champignon, Mussarela</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>SONHO DA NOITE</H6>
-                <small>Bacon, Milho, Requeijão cremoso</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>TOSCANA</H6>
-                <small>Calabresa Fatiada, Cebola, Mussarela, Tomate</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>TRÊS QUEIJOS</H6>
-                <small>Mussarela, Parmesão, Requeijão cremoso</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>VEGANA</H6>
-                <small>Alho frito, Brócolis, Champignon, Milho, Palmito</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                <img class="imagem" src="pizza.png" alt="">   
-                <h6>VENEZA</H6>
-                <small>Bacon, Lombo, Mussarela, Palmito, Presunto</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="container">
-                
-                <img class="imagem" src="pizza.png" alt="">   
-                
-                <h6>Volcano</H6>
-                <small>Molho de tomate, Mussarela, Calabresa, Jalapeños, Pimentão, Cebola, Azeitana verde, Orégano</small>
-                <br>
-                <strong id="rs">R$ 49.00</strong>
-            </div>
-        </div>
-    </div>
-
     
-</div><!--Identação da Principal-->            
+    <div class="inter">
+        <button id="Pizzas"></button>
+        <button id="Esfihas"></button>
+        <button id="Bebidas"></button>
+    </div>
+    <div class="menu">
+        <button id="btsalgada">Salgadas</button>
+        <button id="btdoce">Doces</button>
+    </div>
+    
+<div id = "principal"> <!--Colocando as divs em uma borda--> 
+    <div id="alimentos">
+        <div id="salgadas">
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">               
+                        <br>
+                        <H6>A MODA DA CASA</H6>
+                        <small>Presunto, Calabresa defumada fatiada, Molho de Tomate, Bacon, Mussarela, Milho, Orégano</small>
+                        <br>
+                        <strong id="rs">R$ 54.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">               
+                        <H6>ATUM</H6>
+                        <small>Atum, Molho de tomate, Mussarela, Orégano, Palmito</small>
+                        <br>
+                        <strong id="rs">R$ 52.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <H6>BAURU</H6>
+                        <small>Molho de tomate, Mussarela, Orégano, Presunto, Tomate</small>
+                        <br>
+                        <strong id="rs">R$ 49.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <H6>BRÓCOLIS COM CATUPIRY</H6>
+                        <small>Bacon, Brócolis, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 49.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <H6>CALABRESA</H6>
+                        <small>Azeitona Verde, Calabresa fatiada, Cebola, molho de tomate, Orégano</small>
+                        <br>
+                        <strong id="rs">R$ 49.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <H6>CARNE SECA COM CATUPIRY</H6>
+                        <small>Carne seca, Cebola, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 452.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <H6>CINCO QUEIJOS</H6>
+                        <small>Gorgonzola, Mussarela, Parmesão, Provolone, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 452.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <H6>DOIS QUEIJO</H6>
+                        <small> Mussarela, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 45.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <H6>DORITOS</H6>
+                        <small>Doritos, Mussarela, Peperona</small>
+                        <br>
+                        <strong id="rs">R$ 52.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <H6>ESCAROLA</H6>
+                        <small>Bacon, Escarola, MOlho de tomate, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 46.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <H6>ESPANHOLA</H6>
+                        <small>Calabresa fatiada, Mussarela, Ovo, Presunto</small>
+                        <br>
+                        <strong id="rs">R$ 52.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <H6>FRANCESA</H6>
+                        <small>Cebola, Ervilha, Mussarela, Palmito</small>
+                        <br>
+                        <strong id="rs">R$ 49.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>FRANGO COM CATUPIRY</H6>
+                        <small>Frango, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 52.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>GALETO</H6>
+                        <small>Frango, Palmito, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 49.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>GREGO</H6>
+                        <small>Ervilha, Mussarela, Palmito, Presunto, Tomate</small>
+                        <br>
+                        <strong id="rs">R$ 46.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>HAVAIANA</H6>
+                        <small>Abacaxi em calda, Lombo, Mussarela</small>
+                        <br>
+                        <strong id="rs">R$ 52.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>JARDINEIRA</H6>
+                        <small> Ervilha, Milho, Mussarela, Palmito, Tomate</small>
+                        <br>
+                        <strong id="rs">R$ 45.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>LIGHT</H6>
+                        <small>Brócolis, Milho, Palmito, Tomate</small>
+                        <br>
+                        <strong id="rs">R$ 45.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>LOMBO</H6>
+                        <small>Bacon, Lombo, Palmito, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$52.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>MEXICANA</H6>
+                        <small>Azeitona verde, Molho de tomate, Mussarela, Orégano, Peperone, Pimentão</small>
+                        <br>
+                        <strong id="rs">R$ 49.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>NAPOLITANA</H6>
+                        <small>Molho de tomate, Orégano, Parmesão, Tomate</small>
+                        <br>
+                        <strong id="rs">R$ 52.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>NERDOLA A MODA DO CHEFE</H6>
+                        <small>Bacon, Carne seca, Cheddar, Orégano, Molho de tomate, Azeitona verde, Alho frito</small>
+                        <br>
+                        <strong id="rs">R$ 57.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>PÃO DE ALHO</H6>
+                        <small>Molho de tomate, Mussarela, Pão de alho, Pasta de alho</small>
+                        <br>
+                        <strong id="rs">R$ 45.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>PERUANA</H6>
+                        <small>Atum, Bacon, Ervilha, Milho, Mussarela</small>
+                        <br>
+                        <strong id="rs">R$ 52.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>QUATRO QUEIJOS</H6>
+                        <small>Mussarela, Parmesão, Provolone, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 52.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>SICILIANA</H6>
+                        <small>Bacon, Champignon, Mussarela</small>
+                        <br>
+                        <strong id="rs">R$ 49.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>SONHO DA NOITE</H6>
+                        <small>Bacon, Milho, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 45.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>TOSCANA</H6>
+                        <small>Calabresa Fatiada, Cebola, Mussarela, Tomate</small>
+                        <br>
+                        <strong id="rs">R$ 52.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>TRÊS QUEIJOS</H6>
+                        <small>Mussarela, Parmesão, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 49.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>VEGANA</H6>
+                        <small>Alho frito, Brócolis, Champignon, Milho, Palmito</small>
+                        <br>
+                        <strong id="rs">R$ 45.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <h6>VENEZA</H6>
+                        <small>Bacon, Lombo, Mussarela, Palmito, Presunto</small>
+                        <br>
+                        <strong id="rs">R$ 52.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">                  
+                        <h6>Volcano</H6>
+                        <small>Molho de tomate, Mussarela, Calabresa, Jalapeños, Pimentão, Cebola, Azeitana verde, Orégano</small>
+                        <br>
+                        <strong id="rs">R$ 52.99</strong>
+                    </div>
+                </div>
+            </div>
+        </div> <!--div salgada termina aqui -->
+        <div id="doces" style="display: none;">
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>ABACAXI COM CANELA</H6>
+                        <small>Abacaxi fatiado, Açucar e canela, Calda de caramelo</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>ABÓBORA COM ESPECIARIAS</H6>
+                        <small>Purê de abóbora, Canela, Noz-Moscada,Cobertura cream cheese</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>BANANA COM DOCE DE LEITE</H6>
+                        <small>Banana fatiada, Doce de leite, Canela</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">                  
+                        <h6>BAUNILHA COM AMÊNDOAS</H6>
+                        <small>Creme de baunilha, Amêndoas fatiadas, Frutas de estação</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>BIS</H6>
+                        <small>Bis, Chcocolate ao leite, Chocolate branco</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>CARAMELO SALGADO</H6>
+                            <small>Creme de caramelo, Flocos de sal, Nozes e Amêndoas</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>CHEESECAKE</H6>
+                        <small>Cream cheese, Açucar, Baunilha, Cobertura de frutas verlhas</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">                  
+                        <h6>CHOCOLETE BRANCO E FRUTAS</H6>
+                        <small>Chocolate branco, Morango, Kiwi, Framboesa</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>CHURROS</H6>
+                        <small>Doce de leite/Chocolate, Canela, Açucar, Cobertura de chantilly</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>COCO</H6>
+                        <small>Coco ralado, Leite de coco, Açucar </small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>DOCE DE LEITE</H6>
+                        <small>Doce de leite, Coco ralado</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">                  
+                        <h6>ECLAIR</H6>
+                        <small>Creme de confeiteiro, Cobertura de chocolate</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>FERRERO ROCHER</H6>
+                        <small>Creme de avelã, Pedaços de ferrero rocher, avelãs trituradas</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6> FONDUE DE CHOCOLATE</H6>
+                        <small>Chocolate derretido, Base com chocolate, Marshmallows para mergulhar</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>GELATO</H6>
+                        <small>IORGURTE GREDO, MEL</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">                  
+                        <h6>IOGURTE GREGO COM AMENDOIM</H6>
+                            <small>Iogurte grego, Mel, Amendoim triturado</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>IOGURTE E FRUTAS VERMELHAS</H6>
+                        <small>Iogurte natural, Frutas vermelhas, Mel</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>KINDER BUENO</H6>
+                        <small>Chocolate ao leite, Creme ninho, Kinder bueno</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>KITKAT</H6>
+                        <small>Chocolate ao leite, Kitkat</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">                  
+                        <h6>LEITE NINHO</H6>
+                        <small>Leite em pó, Doce de leite</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>LIMÃO</H6>
+                        <small>Creme de limão, Raspas de limão, Açucar</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>MAÇA COM CANELA</H6>
+                        <small>Maças fatiadas, Açucar, Canela em pó</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>M&M</H6>
+                        <small>Chocolate ao leite, M&M's coloridos</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">                  
+                        <h6>MORANGO COM CHANTILLY</H6>
+                        <small>Morango frescos, Cobertura chantilly, Açucar</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>NUTELLA</H6>
+                        <small>Nutella</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>NUTELLA COM LEITE NINHO</H6>
+                        <small>Nutella, Leite em pó</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>NUTELLA COM MORANGO</H6>
+                        <small>Nutella, Morango</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">                  
+                        <h6>OREO</H6>
+                        <small>Oreo, Chocolate ao leite</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>PAÇOCA</H6>
+                        <small>Paçoca esfarelada, Chocolate ao leite, Amendoim</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>PRESTÍGIO</H6>
+                        <small>Chocolate ao leite, Coco ralado, Leite condensado</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>RAFFAELLO</H6>
+                        <small>Coco, Leite em pó, Raffaello</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">                  
+                        <h6>TORTUGUITA</H6>
+                        <small>Chocolate ao leite, Granulado, Tortuguita</small>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+            </div>
+        </div><!--div doce termina aqui-->
+    </div> <!--div alimentos 1 termina aqui (pizza salgadas e doces)-->       
+</div><!--Identação da Principal-->         
+<script src="script.js"></script>   
 </body>
 </html>

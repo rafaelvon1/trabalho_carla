@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../assets/styles/cadastro.css">
+  <title>Cadastro</title>
+</head>
+
+<body>
+
+  <main class="container">
+    <form action="cadastro_controller.php" method="post">
+      <h1>Cadastro</h1>
+
+      <label for="nome">Nome:</label>
+      <input name="cads[]" type="text" required placeholder="Digite aqui o seu nome">
+
+      <label for="telefone">Nº Telefone:</label>
+      <input name="cads[]" type="number" required placeholder="Nº de telefone">
+
+      <label for="cpf">CPF:</label>
+      <input name="cads[]" type="number" required placeholder="Nº do CPF">
+
+      <label for="cep">CEP:</label>
+      <input name="cads[]" type="number" required placeholder="Nº do CEP">
+
+      <label for="email">Email:</label>
+      <input name="cads[]" type="email" required placeholder="Digite o seu email">
+
+      <label for="senha">Senha:</label>
+      <input name="cads[]" type="password" required placeholder="Digite sua senha">
+
+      <button type="submit">Cadastrar</button>
+
+      <p class="info">
+        Já tem uma conta? <a href="../login/login_page.html">Faça login</a> ou <a
+          href="../cardapio/cardapio.html">acesse o
+          cardápio</a>.
+      </p>
+    </form>
+  </main>
+
+</body>
+
+</html>

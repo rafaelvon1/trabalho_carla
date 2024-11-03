@@ -1,0 +1,98 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding:0px;
+    margin:0px;
+    text-decoration: none;
+}
+
+/* imagem de fundo do site*/
+body{
+    background-image: url(../images/pexels-tolga-ardic-410168453-28869117.jpg);
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.nr{
+    margin-left:15%;
+}
+
+.contato{
+    padding:10px;
+}
+
+.contato > span{
+    margin-left:30px;
+    margin-right:15px;
+}
+
+header{
+    padding:25px;
+    margin-bottom:8%;
+    color: white;
+    background-color: rgba(10,23,55,0.5);
+    box-shadow:1px 1px 1px 2px black;
+}
+/* alinhando os botões de login/cadastro*/
+li{
+    display: flex;
+    justify-content:space-between;
+}
+
+.reserva{
+    border: 3px solid goldenrod;
+    border-radius:10px;
+    padding:5px;
+}
+
+main{
+    margin-left:10%;
+    padding:10px;
+    width:40%;
+}
+
+main > h1 {
+    margin-bottom:15px;
+}
+
+.botoes{
+    margin-top:50px;
+}
+
+a{
+    color: white;
+    margin:5px;
+}
+
+.log{
+    border: 3px solid goldenrod;
+    border-radius:10px;
+    padding:5px;
+}
+
+.log:hover{
+    background-color: goldenrod;
+}
+
+.cad{
+    border: 3px solid goldenrod;
+    border-radius:10px;
+    padding:5px;
+}
+/* aplicando cor quando passa mouse por cima do botão */
+.cad:hover{
+    background-color: goldenrod;
+}
+
+.menu{
+    color: white;
+    border: 3px solid goldenrod;
+    border-radius:10px;
+    margin-left:10%;
+    padding:10px;
+}
+/* aplicando cor quando passa mouse por cima do botão */
+.menu:hover{
+    background-color: goldenrod;
+}
