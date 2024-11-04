@@ -109,7 +109,7 @@ body{
     margin-top: 650px; /* Move o menu um pouco para cima */
     
 }
-button{
+.botaobaixo{
     background-color: #ecebeb; /* Cor de fundo */
     color: rgb(0, 0, 0); /* Cor do texto */
     border: none; /* Remove a borda padrão */
@@ -120,10 +120,11 @@ button{
     transition: background-color 0.3s ease, transform 0.3s ease; /* Efeito de transição */  
 }
 
-button:hover {
+.botaobaixo:hover {
     background-color: #ffffff; /* Cor ao passar o mouse */
     transform: scale(1.05); /* Leve aumento ao passar o mouse */
 }
+
     </style>
 </head>
 <body>
@@ -149,13 +150,14 @@ button:hover {
     </div>
     
     <div class="inter">
-        <button id="Pizzas"></button>
-        <button id="Esfihas"></button>
-        <button id="Bebidas"></button>
+        <button class="botaocima" id="pizzas">PIZZAS</button>
+        <button class="botaocima" id="esfiha">ESFIHAS</button>
+        <button class="botaocima" id="bebidas">BEBIDAS</button>
+        <button class="botaocima" id="mostrartudo">MOSTRAR TUDO</button>
     </div>
     <div class="menu">
-        <button id="btsalgada">Salgadas</button>
-        <button id="btdoce">Doces</button>
+        <button class="botaobaixo" id="btsalgada">Salgadas</button>
+        <button class="botaobaixo" id="btdoce">Doces</button>
     </div>
     
 <div id = "principal"> <!--Colocando as divs em uma borda--> 
@@ -216,7 +218,7 @@ button:hover {
                         <H6>CARNE SECA COM CATUPIRY</H6>
                         <small>Carne seca, Cebola, Requeijão cremoso</small>
                         <br>
-                        <strong id="rs">R$ 452.99</strong>
+                        <strong id="rs">R$ 52.99</strong>
                     </div>
                 </div>
                 <div class="col-3">
@@ -225,7 +227,7 @@ button:hover {
                         <H6>CINCO QUEIJOS</H6>
                         <small>Gorgonzola, Mussarela, Parmesão, Provolone, Requeijão cremoso</small>
                         <br>
-                        <strong id="rs">R$ 452.99</strong>
+                        <strong id="rs">R$ 52.99</strong>
                     </div>
                 </div>
                 <div class="col-3">
@@ -772,8 +774,91 @@ button:hover {
                 </div>
             </div>
         </div><!--div doce termina aqui-->
-    </div> <!--div alimentos 1 termina aqui (pizza salgadas e doces)-->       
+    </div> <!--div alimentos 1 termina aqui (pizza salgadas e doces)-->
+    <div id="alimentos2" style="display: none;">
+        <div id="salgada">
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>PAÇOCA</H6>
+                        <small>Paçoca esfarelada, Chocolate ao leite, Amendoim</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>PRESTÍGIO</H6>
+                        <small>Chocolate ao leite, Coco ralado, Leite condensado</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
+                        <h6>RAFFAELLO</H6>
+                        <small>Coco, Leite em pó, Raffaello</small>
+                        <br>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">                  
+                        <h6>TORTUGUITA</H6>
+                        <small>Chocolate ao leite, Granulado, Tortuguita</small>
+                        <strong id="rs">R$ 66.99</strong>
+                    </div>
+                </div>
+            </div>
+        </div><!--final da identação esfiha salgada--> 
+        <div id="doce">
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">               
+                        <br>
+                        <H6>A MODA DA CASA</H6>
+                        <small>Presunto, Calabresa defumada fatiada, Molho de Tomate, Bacon, Mussarela, Milho, Orégano</small>
+                        <br>
+                        <strong id="rs">R$ 54.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">               
+                        <H6>ATUM</H6>
+                        <small>Atum, Molho de tomate, Mussarela, Orégano, Palmito</small>
+                        <br>
+                        <strong id="rs">R$ 52.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <H6>BAURU</H6>
+                        <small>Molho de tomate, Mussarela, Orégano, Presunto, Tomate</small>
+                        <br>
+                        <strong id="rs">R$ 49.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
+                        <H6>BRÓCOLIS COM CATUPIRY</H6>
+                        <small>Bacon, Brócolis, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 49.99</strong>
+                    </div>
+                </div>
+            </div>
+        </div><!--Final Identação esfiha doce-->
+    </div><!--Final da identação alimentos 2 (esfihas)-->
 </div><!--Identação da Principal-->         
-<script src="script.js"></script>   
+<script src="btnbaixo.js"></script>   
+<script src="btncima.js"></script>
 </body>
 </html>
