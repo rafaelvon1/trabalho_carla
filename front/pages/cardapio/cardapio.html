@@ -124,7 +124,32 @@ body{
     background-color: #ffffff; /* Cor ao passar o mouse */
     transform: scale(1.05); /* Leve aumento ao passar o mouse */
 }
-
+.botaocima{
+    background-color: red; /* Cor de fundo */
+    color: rgb(255, 255, 255); /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    border-radius: 200px; /* Arredonda os cantos */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efeito de transição */  
+}
+.botaocima:hover {
+    background-image: linear-gradient(to top, red, black); /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+.inter{
+    
+    margin: auto; /* Centraliza o menu */
+    max-width: 720px; /* Largura máxima */
+    top: 450px;
+    position:relative;
+    
+    
+}
+.hidden {
+      display: none;
+    }
     </style>
 </head>
 <body>
@@ -156,9 +181,14 @@ body{
         <button class="botaocima" id="mostrartudo">MOSTRAR TUDO</button>
     </div>
     <div class="menu">
-        <button class="botaobaixo" id="btsalgada">Salgadas</button>
-        <button class="botaobaixo" id="btdoce">Doces</button>
-    </div>
+        <button class="botaobaixo" id="btsalgada" onclick="toggleButtons()">Salgadas</button>
+        <button class="botaobaixo" id="btdoce" onclick="toggleButtons()">Doces</button>
+        <button class="botaobaixo" id="btrefri" onclick="toggleButtons()">Refrigerante</button>
+        <button class="botaobaixo" id="btsuco" onclick="toggleButtons()">Suco</button>
+        <button class="botaobaixo" id="btcerva" onclick="toggleButtons()">Cerveja</button>
+        <button class="botaobaixo" id="btagua" onclick="toggleButtons()">Água</button>
+        <button class="botaobaixo" id="btvinho" onclick="toggleButtons()">Vinho</button>
+      </div>
     
 <div id = "principal"> <!--Colocando as divs em uma borda--> 
     <div id="alimentos">
@@ -780,83 +810,731 @@ body{
             <div class="row">
                 <div class="col-3">
                     <div class="container">
-                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
-                        <h6>PAÇOCA</H6>
-                        <small>Paçoca esfarelada, Chocolate ao leite, Amendoim</small>
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>ALHO COM MUSSARELA</H6>
+                        <small>Alho, Mussarela</small>
                         <br>
-                        <strong id="rs">R$ 66.99</strong>
+                        <strong id="rs">R$ 6.00</strong>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="container">
-                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
-                        <h6>PRESTÍGIO</H6>
-                        <small>Chocolate ao leite, Coco ralado, Leite condensado</small>
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>ATUM</H6>
+                        <small>Atum</small>
                         <br>
-                        <strong id="rs">R$ 66.99</strong>
+                        <strong id="rs">R$ 6.00</strong>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="container">
-                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">   
-                        <h6>RAFFAELLO</H6>
-                        <small>Coco, Leite em pó, Raffaello</small>
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>ATUM COM QUEIJO E PALMITO</H6>
+                        <small>Atum, Palmito, Queijo</small>
                         <br>
-                        <strong id="rs">R$ 66.99</strong>
+                        <strong id="rs">R$ 6.00</strong>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="container">               
-                        <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">                  
-                        <h6>TORTUGUITA</H6>
-                        <small>Chocolate ao leite, Granulado, Tortuguita</small>
-                        <strong id="rs">R$ 66.99</strong>
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">                  
+                        <h6>ATUM COM CATUPIRY</H6>
+                        <small>Atum, Requeijão cremoso</small>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>ATUM COM QUEIJO</H6>
+                        <small>Atum, Queijo</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>BACON</H6>
+                        <small>Bacon, Mussarela</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>BACON COM CHEDDAR</H6>
+                        <small>Bacon, Cheddar</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">                  
+                        <h6>BAURU</H6>
+                        <small>Mussarela, Presunto, Tomate</small>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>BRÓCOLIS COM CATUPIRY E BACON</H6>
+                        <small>Bacon, Brócolis, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>BRÓCOLIS COM QUEIJO</H6>
+                        <small>Brócolis, Queijo</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>BRÓCOLIS COM QUEIJO E BACON</H6>
+                        <small>Bacon, Brócolis, Queijo</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">                  
+                        <h6>CALABRESA</H6>
+                        <small>Calabresa, Requeijão cremoso</small>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>CALABRESA COM CATUPIRY</H6>
+                        <small>Calabresa, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>CALABRESA COM CHEDDAR</H6>
+                        <small>Calabresa, Cheddar</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>CALABRESA COM QUEIJO</H6>
+                        <small>Calabresa, Queijo</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">                  
+                        <h6>CARNE</H6>
+                        <small>Carne temperada</small>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>CARNE COM CATUPIRY</H6>
+                        <small>Carne temperada, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>CARNE COM QUEIJO</H6>
+                        <small>Carne temperada, Queijo</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>CARNE SECA COM CATUPIRY</H6>
+                        <small>Carne seca, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">                  
+                        <h6>CARNE SECA COM QUEIJO</H6>
+                        <small>Carne seca, Queijo</small>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>CATUPIRY</H6>
+                        <small>Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>CHEDDAR</H6>
+                        <small>Cheddar</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>DOIS QUEIJOS</H6>
+                        <small>Mussarela, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">                  
+                        <h6>ESCAROLA COM QUEIJO</H6>
+                        <small>Escarola, Queijo</small>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>ESCAROLA COM QUEIJO E BACON</H6>
+                        <small>Bacon, Escarola, Queijo</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>ESCAROLA COM CATUPIRY</H6>
+                        <small>Escarola, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>FRANGO</H6>
+                        <small>Frango</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">                  
+                        <h6>FRANGO COM CATUPIRY</H6>
+                        <small>Frango, Requeijão cremoso</small>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>FRANGO COM CHEDDAR</H6>
+                        <small>Cheddar, Frango</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>FRANGO COM CREAM CHEESE</H6>
+                        <small>Cream cheese, Frango</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>FRANGO COM MUSSARELA</H6>
+                        <small>Frango, Mussarela</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">                  
+                        <h6>MILHO COM CATUPIRY</H6>
+                        <small>Milho, Requeijão cremoso</small>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>MILHO COM MUSSARELA</H6>
+                        <small>Milho, Mussarela</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>PALMITO</H6>
+                        <small>Palmito, Mussarela</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>PALMITO COM CATUPIRY</H6>
+                        <small>Palmito, Requeijão cremoso</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">                  
+                        <h6>PÃO DE ALHO</H6>
+                        <small>Mussarela, Pão de alho</small>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>PEPERONE COM MUSSARELA</H6>
+                        <small>Peperone, Mussarela</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>PORTUGUESA</H6>
+                        <small>Ovo, Mussarela, Presunto</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">   
+                        <h6>PRESUNTO COM QUEIJO</H6>
+                        <small>Mussarela, Presunto</small>
+                        <br>
+                        <strong id="rs">R$ 6.00</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">               
+                        <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">                  
+                        <h6>QUEIJO</H6>
+                        <small>Mussarela</small>
+                        <strong id="rs">R$ 6.00</strong>
                     </div>
                 </div>
             </div>
         </div><!--final da identação esfiha salgada--> 
-        <div id="doce">
+        <div id="doce" style="display: none;">
             <div class="row">
                 <div class="col-3">
                     <div class="container">
-                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">               
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
                         <br>
-                        <H6>A MODA DA CASA</H6>
-                        <small>Presunto, Calabresa defumada fatiada, Molho de Tomate, Bacon, Mussarela, Milho, Orégano</small>
+                        <H6>ABACAXI</H6>
+                        <small>Abacaxi picado, Açúcar, Canela</small>
                         <br>
-                        <strong id="rs">R$ 54.99</strong>
+                        <strong id="rs">R$ 14.99</strong>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="container">
-                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">               
-                        <H6>ATUM</H6>
-                        <small>Atum, Molho de tomate, Mussarela, Orégano, Palmito</small>
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <H6>ABÓBORA</H6>
+                        <small>purê de abóbora, açúcar, canela</small>
                         <br>
-                        <strong id="rs">R$ 52.99</strong>
+                        <strong id="rs">R$ 14.99</strong>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="container">
-                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
-                        <H6>BAURU</H6>
-                        <small>Molho de tomate, Mussarela, Orégano, Presunto, Tomate</small>
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>BRIGADEIRO</H6>
+                        <small>Leite condensado, Chocolate em pó, Granulado</small>
                         <br>
-                        <strong id="rs">R$ 49.99</strong>
+                        <strong id="rs">R$ 14.99</strong>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="container">
-                        <img class="imagem" src="..\imagens_videos\pizza.png" alt="">   
-                        <H6>BRÓCOLIS COM CATUPIRY</H6>
-                        <small>Bacon, Brócolis, Requeijão cremoso</small>
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>CHOCOLATE AO LEITE</H6>
+                        <small>Chocalate ao leite derretido</small>
                         <br>
-                        <strong id="rs">R$ 49.99</strong>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <br>
+                        <H6>Coco</H6>
+                        <small>Coco ralado, Leite condensado</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <H6>DOCE DE LEITE</H6>
+                        <small>Doce de Leite</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>DOCE DE LEITE COM COCO</H6>
+                        <small>Doce de leite, Coco ralado</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>DUO</H6>
+                        <small>Kitkat, Galak</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <br>
+                        <H6>GALAK</H6>
+                        <small>Galak</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <H6>GALAK COM NEGRESCO</H6>
+                        <small>Galak, Negresco</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>GOIABADA</H6>
+                        <small>Goiabada fatiada, Leite condensado</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>IOGURTE GREGO</H6>
+                        <small>Iogurte grego</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <br>
+                        <H6>KIWI</H6>
+                        <small>Kiwi, Leite condensado</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <H6>LEITE CONSENSADO COM AMENDOIM</H6>
+                        <small>Amendoim, Leite condensado</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>MAÇA</H6>
+                        <small>Maçã fatiada, Açúcar, Canela</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>MARACUJÁ</H6>
+                        <small>Polpa de maracujá, Açúcar</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <br>
+                        <H6>MARSHMALLOWS</H6>
+                        <small>Marshmallow picado</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <H6>MEL</H6>
+                        <small>Mel</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>NUTELLA</H6>
+                        <small>Nutella</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>NUTELLA COM BANANA</H6>
+                        <small>Nutella, Banana fatiada</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <br>
+                        <H6>OVOMALTINE</H6>
+                        <small>Creme de ovomaltine</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <H6>PAÇOCA</H6>
+                        <small>Paçoca esfarelada</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>PAÇOCA COM AMENDOIM EXTRA CROCANTE</H6>
+                        <small>Paçoca esfarelada, Amendoim crocante</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>PAÇOCA COM CHOCOLATE</H6>
+                        <small>Paçoca esfarelada, Chocolate derretido</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <br>
+                        <H6>PACOÇA COM COCO</H6>
+                        <small>Paçoca esfarelada, Coco ralado</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <H6>PERA</H6>
+                        <small>Pera picada, Açúcar, Canela</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>PISTACHE</H6>
+                        <small>Pistaches triturados, Açúcar</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>QUINDIM</H6>
+                        <small>Coco ralado, Açúcar, Leite de coco</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <br>
+                        <H6>ROMÃ</H6>
+                        <small>Sementes de romã, Açúcar</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <H6>ROMEU E JULIETA</H6>
+                        <small>Catupiry, Goiabada</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>SORVETE</H6>
+                        <small>Sorvete de Morango/Chocolate/Creme (de sua escolha, só 1)</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>TAPIOCA</H6>
+                        <small>Tapioca, Leite condensado</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <br>
+                        <H6>TAPIOCA COM NUTELLA</H6>
+                        <small>Tapioca, Nutella</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">               
+                        <H6>TIRAMISU</H6>
+                        <small>Mascarpone, Café, Açúcar, Cacau em pó</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>TORTA DE LIMÃO</H6>
+                        <small>Creme de limão, Raspas de limão</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">   
+                        <H6>UVA</H6>
+                        <small>Uvas cortadas, Açúcar</small>
+                        <br>
+                        <strong id="rs">R$ 14.99</strong>
                     </div>
                 </div>
             </div>
         </div><!--Final Identação esfiha doce-->
     </div><!--Final da identação alimentos 2 (esfihas)-->
+    <div id="drink">
+
+    </div>
 </div><!--Identação da Principal-->         
 <script src="btnbaixo.js"></script>   
 <script src="btncima.js"></script>
