@@ -1,109 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="..\imagens_videos\pizzaicone.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../assets/styles/principal_cliente.css">
+
     <title>pizza</title>
-<?php
+
+    <?php
     include("../login/protect_controller.php");
 ?>
 </head>
-<style>
-.cabecalho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-}
 
-.nav {
-    display: flex;
-    width: 100%;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
 
-.nav-item {
-    margin-right: 20px; /* Espaçamento entre os itens */
-}
-
-.nav-item.sair {
-    margin-left: auto; /* Move o item 'sair' para o final da linha */
-}
-.nav-link {
-    text-align: center;
-}
-
-.video-background {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Define a altura do vídeo como a altura total da tela */
-    overflow: hidden;
-}
-
-.video-background video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%; /* Garante que o vídeo cubra toda a largura */
-    min-height: 100%; /* Garante que o vídeo cubra toda a altura */
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    z-index: -1; /* Coloca o vídeo atrás do conteúdo */
-}
-
-.conteudo {
-    position: relative;
-    z-index: 1; /* Garante que o conteúdo fique na frente do vídeo */
-    color: white; /* Cor do texto para contraste com o vídeo */
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-}
-a {
-    /*font :)*/
-    font-family: 'Courier New', Courier, monospace;
-    color: #8f8c04; /* Cor do texto */
-}
-
-</style>
 <body>
     <div class="cabecalho">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\fatia_home.png" alt=""><br> Home</a>
+                <a class="nav-link" href="#"><img src="..\imagens_videos\fatia_home.png" alt="Botão para a Home"><br>
+                    Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="..\reserva\reserva.php"><img src="..\imagens_videos\pizza_reserva.png" alt=""><br> reserva</a>
+                <a class="nav-link" href="..\reserva\reserva.php"><img src="..\imagens_videos\pizza_reserva.png"
+                        alt=""><br> reserva</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\caixa_aberta_login.png" alt=""><br> cardapio</a>
+                <a class="nav-link" href="#"><img src="..\imagens_videos\caixa_aberta_login.png"
+                        alt="Botão do cardapio"><br>
+                    cardapio</a>
             </li>
             <li class="nav-item eu">
-                <a class="nav-link" href="perfil_cliente.php"><img src="..\imagens_videos\pizza_eu.png" alt=""><br> eu</a>
+                <a class="nav-link" href="perfil_cliente.php"><img src="..\imagens_videos\pizza_eu.png"
+                        alt="Botão para sei la onde porra é"><br>
+                    eu</a>
             </li>
             <li class="nav-item sair">
-                <a class="nav-link" href="..\login\logout_controller.php"><img src="..\imagens_videos\caixa_fechada_cadastro.png" alt=""><br> sair</a>
+                <a class="nav-link" href="..\login\logout_controller.php"><img
+                        src="..\imagens_videos\caixa_fechada_cadastro.png" alt=""><br> sair</a>
             </li>
         </ul>
     </div>
     <div class="video-background">
-      <video autoplay muted loop>
-          <source src="..\imagens_videos\video_pizza.mp4" type="video/mp4">
-          Seu navegador não suporta vídeos.
-      </video>
-      <div class="conteudo">
-          <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
-          <h1>Bem-vindo à Pizzaria cliente</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat mollitia ut laborum volup
-            tatibus assumenda dicta facere architecto distinctio dolorem officia, obcaecati sapiente qui omnis incidunt nobis nulla blanditiis. Ab, molestiae?</p>
-      </div>
-    </div>
-        
+        <video autoplay muted loop>
+            <source src="..\imagens_videos\video_pizza.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
+        <div class="conteudo">
+            <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
+            <h1>Bem-vindo à Pizzaria Nerdola!</h1>
+            <p>Agora que você entrou no universo Nerdola, prepare-se para uma explosão de sabores e referências geek!
+                Aqui, cada pizza é uma aventura, e a diversão nunca acaba. Fique à vontade para explorar nossas opções
+                inspiradas nos seus filmes, séries e jogos favoritos!</p>
+            <p>Pronto para uma experiência épica? Vamos nessa, a próxima fatia é sua! 😎🍕</p>
 
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.0645243091217!2d-46.34044722363292!3d-23.530181560449453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce7ae5ef9df591%3A0xab444b2e732ab64f!2sAv.%20Get%C3%BAlio%20Vargas%2C%20649%20-%20Calmon%20Viana%2C%20Po%C3%A1%20-%20SP%2C%2008560-000!5e0!3m2!1spt-BR!2sbr!4v1730855764357!5m2!1spt-BR!2sbr"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
 
 </body>
+
 </html>
