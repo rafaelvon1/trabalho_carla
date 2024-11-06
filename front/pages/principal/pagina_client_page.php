@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -26,21 +26,22 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="..\reserva\reserva.php"><img src="..\imagens_videos\pizza_reserva.png"
-                        alt=""><br> reserva</a>
+                        alt="Botão que leva pra reserva"><br> Reserva</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><img src="..\imagens_videos\caixa_aberta_login.png"
                         alt="Botão do cardapio"><br>
-                    cardapio</a>
+                    Cardapio</a>
             </li>
             <li class="nav-item eu">
                 <a class="nav-link" href="perfil_cliente.php"><img src="..\imagens_videos\pizza_eu.png"
                         alt="Botão para sei la onde porra é"><br>
-                    eu</a>
+                    Perfil</a>
             </li>
             <li class="nav-item sair">
                 <a class="nav-link" href="..\login\logout_controller.php"><img
-                        src="..\imagens_videos\caixa_fechada_cadastro.png" alt=""><br> sair</a>
+                        src="..\imagens_videos\caixa_fechada_cadastro.png"
+                        alt="Sair da pagina e ir para a home"><br>Sair</a>
             </li>
         </ul>
     </div>

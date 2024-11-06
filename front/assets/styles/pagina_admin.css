@@ -1,0 +1,68 @@
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin-right: 20px;
+    /* Espaçamento entre os itens */
+}
+
+.nav-item.sair {
+    margin-left: auto;
+    /* Move o item 'sair' para o final da linha */
+}
+
+.nav-link {
+    text-align: center;
+}
+
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Define a altura do vídeo como a altura total da tela */
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    /* Garante que o vídeo cubra toda a largura */
+    min-height: 100%;
+    /* Garante que o vídeo cubra toda a altura */
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    /* Coloca o vídeo atrás do conteúdo */
+}
+
+.conteudo {
+    position: relative;
+    z-index: 1;
+    /* Garante que o conteúdo fique na frente do vídeo */
+    color: white;
+    /* Cor do texto para contraste com o vídeo */
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a {
+    /*font :)*/
+    font-family: 'Courier New', Courier, monospace;
+    color: #8f8c04;
+    /* Cor do texto */
+}
