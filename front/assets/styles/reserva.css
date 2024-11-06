@@ -13,6 +13,13 @@
     margin: 0;
 }
 
+body {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    background-color: #000;
+    /* Adiciona um fundo preto para contraste */
+}
+
 .nav-item {
     margin-right: 20px;
     /* Espaçamento entre os itens */
@@ -25,7 +32,11 @@
 
 .nav-link {
     text-align: center;
+    color: #8f8c04;
+    text-decoration: none;
+    display: block;
 }
+
 
 a {
     /*font :)*/
@@ -61,10 +72,14 @@ a {
     position: relative;
     z-index: 1;
     /* Garante que o conteúdo fique na frente do vídeo */
-    color: white;
-    /* Cor do texto para contraste com o vídeo */
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    margin-top: -240px;
 }
 
 .botao {
@@ -93,4 +108,12 @@ a {
 .botao_transparente img {
     display: block;
     height: auto;
+}
+
+
+.conteudo h1,
+.conteudo p {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    max-width: 800px;
 }

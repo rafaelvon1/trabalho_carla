@@ -44,18 +44,22 @@
                         src="..\imagens_videos\fatia_home.png" alt=""><br> Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_reserva.png" alt=""><br> reserva</a>
+                <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_reserva.png"
+                        alt="Botão que leva para reserva"><br> Reserva</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\caixa_aberta_login.png" alt=""><br>
-                    cardapio</a>
+                <a class="nav-link" href="#"><img src="..\imagens_videos\caixa_aberta_login.png"
+                        alt="Botão que leva para o cardapio"><br>
+                    Cardapio</a>
             </li>
             <li class="nav-item eu">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_eu.png" alt=""><br> eu</a>
+                <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_eu.png"
+                        alt="Botão que leva ao perfil"><br> Perfil</a>
             </li>
             <li class="nav-item sair">
                 <a class="nav-link" href="..\login\logout_controller.php"><img
-                        src="..\imagens_videos\caixa_fechada_cadastro.png" alt=""><br> sair</a>
+                        src="..\imagens_videos\caixa_fechada_cadastro.png"
+                        alt="Botão que faz o usuario sair da conta"><br> Sair</a>
             </li>
         </ul>
     </div>
@@ -67,21 +71,18 @@
         <div class="conteudo">
             <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
             <form method="POST" action="inserindo_controller.php">
-                <h1>reserve uma mesa</h1>
+                <h1>Reserve sua mesa!</h1>
 
-
-
-
-                <label for="">horario: </label>
+                <label>Horario: </label>
                 <br>
                 <input name="dados[]" type="time" required min="10:00" max="20:00">
 
                 <br>
-                <label for="">para que dia: </label>
+                <label>Para qual dia: </label>
                 <br>
                 <input name="dados[]" type="date" required min="<?php echo$data_atual;?>" max="<?php echo$data_max;?>">
                 <br>
-                <label for="">mesa para quantos: </label>
+                <label>Qnt de pessoas: </label>
                 <br>
                 <select name="dados[]" required>
                     <option value="" disabled selected>nao selecionado</option>
