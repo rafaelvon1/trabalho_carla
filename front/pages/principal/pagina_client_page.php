@@ -54,7 +54,8 @@
             <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
             <h1>Bem-vindo à Pizzaria Nerdola!</h1>
             <p>Agora que você entrou no universo Nerdola, prepare-se para uma explosão de sabores e referências geek!
-                Aqui, cada pizza é uma aventura, e a diversão nunca acaba. Fique à vontade para explorar nossas opções
+                Aqui, cada pizza é uma aventura, e a diversão nunca acaba. <br> Fique à vontade para explorar nossas
+                opções
                 inspiradas nos seus filmes, séries e jogos favoritos!</p>
             <p>Pronto para uma experiência épica? Vamos nessa, a próxima fatia é sua! 😎🍕</p>
 
