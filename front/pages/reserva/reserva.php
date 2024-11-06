@@ -73,27 +73,26 @@
             <form method="POST" action="inserindo_controller.php">
                 <h1>Reserve sua mesa!</h1>
 
-                <label>Horario: </label>
-                <br>
-                <input name="dados[]" type="time" required min="10:00" max="20:00">
+                <div class="form-group">
+                    <label for="horario">Horário:</label>
+                    <input id="horario" name="dados[]" type="time" required min="10:00" max="20:00">
+                </div>
 
-                <br>
-                <label>Para qual dia: </label>
-                <br>
-                <input name="dados[]" type="date" required min="<?php echo$data_atual;?>" max="<?php echo$data_max;?>">
-                <br>
-                <label>Qnt de pessoas: </label>
-                <br>
-                <select name="dados[]" required>
-                    <option value="" disabled selected>nao selecionado</option>
-                    <option value="2">2-pessoa</option>
-                    <option value="4">4-pessoa</option>
-                    <option value="8">8-pessoa</option>
-                </select>
+                <div class="form-group">
+                    <label for="data">Para qual dia:</label>
+                    <input id="data" name="dados[]" type="date" required min="<?php echo $data_atual; ?>"
+                        max="<?php echo $data_max; ?>">
+                </div>
 
-                <br><br>
-
-
+                <div class="form-group">
+                    <label for="pessoas">Quantidade de pessoas:</label>
+                    <select id="pessoas" name="dados[]" required>
+                        <option value="" disabled selected>Não selecionado</option>
+                        <option value="2">2 pessoas</option>
+                        <option value="4">4 pessoas</option>
+                        <option value="8">8 pessoas</option>
+                    </select>
+                </div>
                 <button class="botao" type="submit" name="botao">enviar</button>
                 <br>
             </form>
