@@ -4,52 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="../../assets/styles/cadastro.css">
   <title>Cadastro</title>
 </head>
 
-
 <body>
-
-  <header>
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Teste</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Teste</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Teste</a>
-      </li>
-    </ul>
-  </header>
 
   <main class="container">
     <form action="cadastro_controller.php" method="post">
-      <h1>cadastro</h1>
-      <label for="nome">Nome: </label>
-      <input name="cads[]" type="text" required placeholder="Digite aqui o seu nome:">
-      <br><br>
-      <label for="telefone">Nº Telefone: </label>
-      <input name="cads[]" type="number" required placeholder="Nº de telefone:">
-      <br><br>
-      <label for="cpf">CPF: </label>
-      <input name="cads[]" type="number" required placeholder="Nº do CPF:">
-      <br><br>
-      <label for="cep">CEP: </label>
-      <input name="cads[]" type="number" required placeholder="Nº do CEP:">
-      <br><br>
-      <label for="email">Email: </label>
-      <input name="cads[]" type="email" required placeholder="Digite o seu email:">
-      <br><br>
-      <label for="senha">Senha: </label>
-      <input name="cads[]" type="password" required placeholder="Digite sua senha:">
-      <br><br>
-      <button type="submit">entrar</button>
+      <h1>Cadastro</h1>
+
+      <label for="nome">Nome:</label>
+      <input name="cads[]" type="text" required placeholder="Digite aqui o seu nome">
+
+      <label for="telefone">Nº Telefone:</label>
+      <input name="cads[]" type="number" required placeholder="Nº de telefone">
+
+      <label for="cpf">CPF:</label>
+      <input name="cads[]" type="number" required placeholder="Nº do CPF">
+
+      <label for="cep">CEP:</label>
+      <input name="cads[]" type="number" required placeholder="Nº do CEP">
+
+      <label for="email">Email:</label>
+      <input name="cads[]" type="email" required placeholder="Digite o seu email">
+
+      <label for="senha">Senha:</label>
+      <input name="cads[]" type="password" required placeholder="Digite sua senha">
+
+      <button type="submit">Cadastrar</button>
+
+      <p class="info">
+        Já tem uma conta? <a href="../login/login_page.html">Faça login</a> ou <a
+          href="../cardapio/cardapio.html">acesse o
+          cardápio</a>.
+      </p>
+      <p class="info">Deseja voltar para a home? <a href="../../../index.html">Clique aqui!</a></p>
     </form>
   </main>
+
 </body>
+
 </html>
