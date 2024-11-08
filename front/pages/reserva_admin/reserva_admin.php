@@ -65,6 +65,7 @@ a {
 }
 
 .video-background video {
+    background-attachment: fixed; 
     position: absolute;
     top: 50%;
     left: 50%;
@@ -99,6 +100,13 @@ a {
     background-color: rgba(255, 255, 0, 0.8);
     color: black;
     width: 450px;
+}
+
+body {
+    background-image: url('..\imagens_videos\mario_page_adm.mp4');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Deixa a imagem fixa */
 }
 </style>
 
@@ -154,30 +162,7 @@ a {
                     </div>
                 </form>
                 -->
-                
             </div>
-        <div class="conteudo">  
-            <!--
-
-
-             <input type="radio>
-            <form action="" method="post" class="form-container">
-                <label for="">pesquisa</label>
-                <br>
-                <input type="text">
-                <br>
-                <button type="submit">pesquisar</button>
-                <br>
-                <select name="" required>
-                    <option value="" disabled selected >nao selecionado</option>
-                    <option value="2">todos usuarios</option>
-                    <option value="4">reservas atrasadas</option>
-                    <option value="8">por ordem</option>
-                </select>
-            </form>
-            -->
-
-            
         <table class ="registro">
             <tr>
                 <td>----perfil----</td>

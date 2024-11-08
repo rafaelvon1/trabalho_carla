@@ -26,8 +26,10 @@ $id = $_GET["id"];
         <b> 
             <p>Informações</p>
         </b>
-        <a href="#">Editar perfil</a>
-        <a href="#">Excluir perfil</a>
+        <?php echo" <a href=\"alterar.php?id=$id\">Editar perfil</a>"; ?>
+        <!-- enviando id do cliente para pegar com get-->
+        <?php echo" <a href=\"excluir.php?id=$id\">Excluir perfil</a>"; ?>
+
     </div>
     <hr>
         <div class="dados">
