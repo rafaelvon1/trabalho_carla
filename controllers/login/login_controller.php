@@ -13,7 +13,7 @@
 /**abrir uma sessao, para armazenar dados do usuario em varias paginas */
 session_start();
 /**pegando no arquivo conexao minha conexao :) */
-include("../../../db/conexao.php");
+include("../../models/conexao.php");
 
 /**verificando se a conexão foi */
 if($mysqli -> connect_errno){
@@ -48,11 +48,11 @@ else {
             /**separando administrador de cliente */
             if ($variavel["pessoa_status"] == "admin") {
                 /**enviando pessoa administradora para sua pagina */
-                header("location: ../principal/pagina_admin_page.php");
+                header("location: ../../views/principal_admin/pagina_admin_view.php");
             }
             else {
                 /**enviar pessoa para pagina do site */
-                header("location: ../principal/pagina_client_page.php");
+                header("location: ../../views/principal_cliente/pagina_cliente_view.php");
             }    
         }
         else {
