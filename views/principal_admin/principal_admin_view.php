@@ -26,18 +26,18 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../reserva_admin/reserva_admin_view.php"><img
-                        src="../../Images/pizza_reserva.png" alt=""><br> reserva</a>
+                        src="../../Images/pizza_reserva.png" alt=""><br> Reserva</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><img src="../../images/caixa_aberta_login.png" alt=""><br>
-                    cardapio</a>
+                    Cardapio</a>
             </li>
             <li class="nav-item eu">
-                <a class="nav-link" href="#"><img src="../../images/pizza_eu.png" alt=""><br> eu</a>
+                <a class="nav-link" href="#"><img src="../../images/pizza_eu.png" alt=""><br> Perfil</a>
             </li>
             <li class="nav-item sair">
                 <a class="nav-link" href="../../controllers/login/logout_controller.php"><img
-                        src="../../images/caixa_fechada_cadastro.png" alt=""><br> sair</a>
+                        src="../../images/caixa_fechada_cadastro.png" alt=""><br> Sair</a>
             </li>
         </ul>
     </div>

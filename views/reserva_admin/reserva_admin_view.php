@@ -46,8 +46,8 @@
     <div class="cabecalho">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="..\principal\pagina_client_view.php"><img src="../../images/fatia_home.png"
-                        alt=""><br> Home</a>
+                <a class="nav-link" href="../principal_admin/principal_admin_view.php"><img
+                        src="../../images/fatia_home.png" alt=""><br> Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><img src="../../images/pizza_reserva.png"
@@ -157,7 +157,7 @@
                 else {
                     while ($variavel = $sql_query->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td> <a href=\"perfil_page.php?id=$variavel[id_client]\">entrar</a> </td>";
+                        echo "<td> <a href=\"../perfils/perfil_admin/perfil_admin_view.php?id=$variavel[id_client]\">entrar</a> </td>";
                         echo "<td>" . $variavel['nome'] . "</td>";
                         echo "<td>" . $variavel['mesa'] . "</td>";
                         echo "<td>" . $variavel['horario'] . "</td>";
