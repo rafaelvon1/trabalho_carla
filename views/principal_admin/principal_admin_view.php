@@ -25,8 +25,8 @@
                 <a class="nav-link" href="#"><img src="../../images/fatia_home.png" alt=""><br> Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="..\reserva_admin\reserva_admin.php"><img
-                        src="..\imagens_videos\pizza_reserva.png" alt=""><br> reserva</a>
+                <a class="nav-link" href="../reserva_admin/reserva_admin_view.php"><img
+                        src="../../Images/pizza_reserva.png" alt=""><br> reserva</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><img src="../../images/caixa_aberta_login.png" alt=""><br>

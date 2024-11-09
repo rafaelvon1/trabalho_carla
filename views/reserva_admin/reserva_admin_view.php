@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reserva_admin.css">
     <link rel="shortcut icon" href="..\imagens_videos" type="image/x-icon">
     <link rel="shortcut icon" href="..\imagens_videos\pizza_reserva.png" type="image/x-icon">
     <title>reserva administrador</title>
@@ -17,7 +18,7 @@
          * dados na posição 2 = quantidade pessoa
          * dados na posição 3 = dia da semana
         */
-        include("../login/protect_controller.php");
+        include("../../controllers/login/protect_controller.php");
         /**caso usuario client tentar entrar no admin com url, barrar com o if */
         if ($_SESSION["status"] == "client") {
             /**enviando pessoa administradora para sua pagina */
@@ -25,7 +26,7 @@
         }
 
         /*ligando com o arquivo conexao*/
-        include("../../../db/conexao.php");
+        include("../../models/conexao.php");
     ?>
 </head>
 
