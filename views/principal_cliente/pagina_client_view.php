@@ -6,13 +6,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="..\imagens_videos\pizzaicone.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../../assets/styles/principal_cliente.css">
+    <link rel="stylesheet" href="principal_cliente.css">
 
     <title>pizza</title>
 
     <?php
-    include("../login/protect_controller.php");
+    include("../../controllers/login/protect_controller.php");
 ?>
 </head>
 
@@ -21,33 +20,31 @@
     <div class="cabecalho">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\fatia_home.png" alt="Botão para a Home"><br>
+                <a class="nav-link" href="#"><img src="../../images/fatia_home.png" alt="Botão para a Home"><br>
                     Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="..\reserva\reserva.php"><img src="..\imagens_videos\pizza_reserva.png"
+                <a class="nav-link" href="..\reserva\reserva_view.php"><img src="../../images/pizza_reserva.png"
                         alt="Botão que leva pra reserva"><br> Reserva</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\caixa_aberta_login.png"
-                        alt="Botão do cardapio"><br>
+                <a class="nav-link" href="#"><img src="../../images/caixa_aberta_login.png" alt="Botão do cardapio"><br>
                     Cardapio</a>
             </li>
             <li class="nav-item eu">
-                <a class="nav-link" href="perfil_cliente.php"><img src="..\imagens_videos\pizza_eu.png"
-                        alt="Botão para sei la onde porra é"><br>
+                <a class="nav-link" href="../perfils/perfil_cliente/perfil_cliente_view.php"><img
+                        src="../../images/pizza_eu.png" alt="Botão para sei la onde porra é"><br>
                     Perfil</a>
             </li>
             <li class="nav-item sair">
-                <a class="nav-link" href="..\login\logout_controller.php"><img
-                        src="..\imagens_videos\caixa_fechada_cadastro.png"
-                        alt="Sair da pagina e ir para a home"><br>Sair</a>
+                <a class="nav-link" href="../../controllers/login/logout_controller.php"><img
+                        src="../../images/caixa_fechada_cadastro.png" alt="Sair da pagina e ir para a home"><br>Sair</a>
             </li>
         </ul>
     </div>
     <div class="video-background">
         <video autoplay muted loop>
-            <source src="..\imagens_videos\video_pizza.mp4" type="video/mp4">
+            <source src="../../images/video_pizza.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
         </video>
         <div class="conteudo">
