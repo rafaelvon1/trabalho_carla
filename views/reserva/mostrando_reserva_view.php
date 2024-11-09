@@ -16,7 +16,7 @@
          * dados na posição 2 = quantidade pessoa
          * dados na posição 3 = dia da semana
         */
-        include("../login/protect_controller.php");
+        include("../../controllers/login/protect_controller.php");
         if (!isset($_SESSION)) {
             session_start();
         }
@@ -126,22 +126,22 @@ a {
     <div class="cabecalho">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="../../views/principal_cliente/principal_cliente_view.php"><img
+                <a class="nav-link" href="../principal_cliente/principal_client_view.php"><img
                         src="../../images/fatia_home.png" alt=""><br> Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="../../images/pizza_reserva.png" alt=""><br> reserva</a>
+                <a class="nav-link" href="#"><img src="../../images/pizza_reserva.png" alt=""><br> Reserva</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><img src="../../images/caixa_aberta_login.png" alt=""><br>
-                    cardapio</a>
+                    Cardapio</a>
             </li>
             <li class="nav-item eu">
-                <a class="nav-link" href="#"><img src="../../images/pizza_eu.png" alt=""><br> eu</a>
+                <a class="nav-link" href="#"><img src="../../images/pizza_eu.png" alt=""><br> Perfil</a>
             </li>
             <li class="nav-item sair">
                 <a class="nav-link" href="..\login\logout_controller.php"><img
-                        src="../../images/\caixa_fechada_cadastro.png" alt=""><br> sair</a>
+                        src="../../images/caixa_fechada_cadastro.png" alt=""><br> Sair</a>
             </li>
         </ul>
     </div>

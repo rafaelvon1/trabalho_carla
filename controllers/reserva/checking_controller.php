@@ -18,6 +18,6 @@ if ($pull == 0){
 }
 else {
     /**me leva para a pagina onde mostra minha reserva */
-    header("location: mostrando_reserva.php");
+    header("location: mostrando_reserva_view.php");
 }
 ?>

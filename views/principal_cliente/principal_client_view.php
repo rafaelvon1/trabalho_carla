@@ -24,7 +24,7 @@
                     Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="..\reserva\reserva_view.php"><img src="../../images/pizza_reserva.png"
+                <a class="nav-link" href="../reserva/reserva_view.php"><img src="../../images/pizza_reserva.png"
                         alt="Botão que leva pra reserva"><br> Reserva</a>
             </li>
             <li class="nav-item">
