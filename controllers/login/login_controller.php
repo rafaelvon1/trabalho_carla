@@ -48,11 +48,11 @@ else {
             /**separando administrador de cliente */
             if ($variavel["pessoa_status"] == "admin") {
                 /**enviando pessoa administradora para sua pagina */
-                header("location: ../../views/principal_admin/pagina_admin_view.php");
+                header("location: ../../views/principal_admin/principal_admin_view.php");
             }
             else {
                 /**enviar pessoa para pagina do site */
-                header("location: ../../views/principal_cliente/pagina_cliente_view.php");
+                header("location: ../../views/principal_cliente/principal_client_view.php");
             }    
         }
         else {
