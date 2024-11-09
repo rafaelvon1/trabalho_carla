@@ -29,9 +29,6 @@
                     </div>
                     <button type="submit">Login</button>
 
-                    <p class="signup">Ainda não tem uma conta?<a class="create"
-                            href="../cadastro/cadastro_view.html">Crie
-                            agora!</a></p>
                     <p class="signup">Deseja voltar para a home? <a href="../../index.html">Clique aqui!</a></p>
                 </form>
             </div>
