@@ -6,9 +6,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="..\imagens_videos" type="image/x-icon">
-    <link rel="shortcut icon" href="..\imagens_videos\pizza_reserva.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../assets/styles/reserva.css">
+    <link rel="shortcut icon" href="../../images/pizza_reserva.png" type="image/x-icon">
+    <link rel="stylesheet" href="reserva.css">
     <title>reserva</title>
     <?php
         /**dados na posição 4 = id do cliente 
@@ -18,8 +17,8 @@
          * dados na posição 2 = quantidade pessoa
          * dados na posição 3 = dia da semana
         */
-        include("../login/protect_controller.php");
-        include("checking_controller.php");
+        include("../../controllers/login/protect_controller.php");
+        include("../../controllers/reserva/checking_controller.php");
     ?>
 </head>
 
@@ -40,37 +39,37 @@
     <div class="cabecalho">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="..\principal\pagina_client_page.php"><img
-                        src="..\imagens_videos\fatia_home.png" alt=""><br> Home</a>
+                <a class="nav-link" href="..\principal\pagina_client_view.php"><img src="../../images/fatia_home.png"
+                        alt=""><br> Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_reserva.png"
+                <a class="nav-link" href="#"><img src="../../images/pizza_reserva.png"
                         alt="Botão que leva para reserva"><br> Reserva</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\caixa_aberta_login.png"
+                <a class="nav-link" href="#"><img src="../../images/caixa_aberta_login.png"
                         alt="Botão que leva para o cardapio"><br>
                     Cardapio</a>
             </li>
             <li class="nav-item eu">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_eu.png"
-                        alt="Botão que leva ao perfil"><br> Perfil</a>
+                <a class="nav-link" href="#"><img src="../../images/pizza_eu.png" alt="Botão que leva ao perfil"><br>
+                    Perfil</a>
             </li>
             <li class="nav-item sair">
-                <a class="nav-link" href="..\login\logout_controller.php"><img
-                        src="..\imagens_videos\caixa_fechada_cadastro.png"
-                        alt="Botão que faz o usuario sair da conta"><br> Sair</a>
+                <a class="nav-link" href="../../controllers/login/logout_controller.php"><img
+                        src="../../images/caixa_fechada_cadastro.png" alt="Botão que faz o usuario sair da conta"><br>
+                    Sair</a>
             </li>
         </ul>
     </div>
     <div class="video-background">
         <video autoplay muted loop>
-            <source src="..\imagens_videos\video_reserva.mp4" type="video/mp4">
+            <source src="../../images/video_reserva.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
         </video>
         <div class="conteudo">
             <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
-            <form method="POST" action="inserindo_controller.php">
+            <form method="POST" action="../../controllers/reserva/inserindo_controller.php">
                 <h1>Reserve sua mesa!</h1>
 
                 <div class="form-group">

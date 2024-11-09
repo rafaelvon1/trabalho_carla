@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="..\imagens_videos" type="image/x-icon">
     <link rel="shortcut icon" href="..\imagens_videos\pizza_reserva.png" type="image/x-icon">
@@ -26,81 +28,6 @@
         include("../../../db/conexao.php");
     ?>
 </head>
-<style>
-.cabecalho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-}
-
-.nav {
-    display: flex;
-    width: 100%;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-item {
-    margin-right: 20px; /* Espaçamento entre os itens */
-}
-
-.nav-item.sair {
-    margin-left: auto; /* Move o item 'sair' para o final da linha */
-}
-.nav-link {
-    text-align: center;
-}
-a {
-    /*font :)*/
-    font-family: 'Courier New', Courier, monospace;
-    color: #8f8c04; /* Cor do texto */
-}
-.video-background {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Define a altura do vídeo como a altura total da tela */
-    overflow: hidden;
-}
-
-.video-background video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%; /* Garante que o vídeo cubra toda a largura */
-    min-height: 100%; /* Garante que o vídeo cubra toda a altura */
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    z-index: -1; /* Coloca o vídeo atrás do conteúdo */
-}
-
-.conteudo {
-    position: relative;
-    z-index: 1; /* Garante que o conteúdo fique na frente do vídeo */
-    color: white; /* Cor do texto para contraste com o vídeo */
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-}
-.registro{
-    margin: auto;
-    background-color: rgba(255, 255, 0, 0.8);
-    color: black;
-}
-.pesquisa{
-    display: block;
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
-    text-align: center;
-}
-.aviso{
-    margin: auto;
-    background-color: rgba(255, 255, 0, 0.8);
-    color: black;
-    width: 450px;
-}
-</style>
 
 <?php
     // Define o fuso horário
@@ -113,41 +40,49 @@ a {
     $data_max->modify('+2 months');
     $data_max = $data-> format('Y-m-d');
 ?>
+
 <body>
     <div class="cabecalho">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="..\principal\pagina_admin_page.php"><img src="..\imagens_videos\fatia_home.png" alt=""><br> Home</a>
+                <a class="nav-link" href="..\principal\pagina_client_view.php"><img src="../../images/fatia_home.png"
+                        alt=""><br> Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_reserva.png" alt=""><br> reserva</a>
+                <a class="nav-link" href="#"><img src="../../images/pizza_reserva.png"
+                        alt="Botão que leva para reserva"><br> Reserva</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\caixa_aberta_login.png" alt=""><br> cardapio</a>
+                <a class="nav-link" href="#"><img src="../../images/caixa_aberta_login.png"
+                        alt="Botão que leva para o cardapio"><br>
+                    Cardapio</a>
             </li>
             <li class="nav-item eu">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_eu.png" alt=""><br> eu</a>
+                <a class="nav-link" href="#"><img src="../../images/pizza_eu.png" alt="Botão que leva ao perfil"><br>
+                    Perfil</a>
             </li>
             <li class="nav-item sair">
-                <a class="nav-link" href="..\login\logout_controller.php"><img src="..\imagens_videos\caixa_fechada_cadastro.png" alt=""><br> sair</a>
+                <a class="nav-link" href="../../controllers/login/logout_controller.php"><img
+                        src="../../images/caixa_fechada_cadastro.png" alt="Botão que faz o usuario sair da conta"><br>
+                    Sair</a>
             </li>
         </ul>
     </div>
     <div class="video-background">
         <video autoplay muted loop>
-            <source src="..\imagens_videos\mario_page_adm.mp4" type="video/mp4">
+            <source src="../../images/mario_page_adm.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
         </video>
         <div class="pesquisa">
-                <form action="" method="post">
-                    <label for="pesquisa">pesquisar</label>
-                    <br>
-                    <input type="text" name='pesquisa' placeholder="1° letra do nome" required>
-                    <br>
-                    <button type="submit">enviar</button>
-                    <br>
-                </form>
-                <!--filtros para procurar cliente
+            <form action="" method="post">
+                <label for="pesquisa">pesquisar</label>
+                <br>
+                <input type="text" name='pesquisa' placeholder="1° letra do nome" required>
+                <br>
+                <button type="submit">enviar</button>
+                <br>
+            </form>
+            <!--filtros para procurar cliente
                 <form action="" method="post">
                     <div>
                             <button name="todos">todos</button>
@@ -157,9 +92,9 @@ a {
                     </div>
                 </form>
                 -->
-                
-            </div>
-        <div class="conteudo">  
+
+        </div>
+        <div class="conteudo">
             <!--
 
 
@@ -180,18 +115,18 @@ a {
             </form>
             -->
 
-            
-        <table class ="registro">
-            <tr>
-                <td>----perfil----</td>
-                <td>----nome----</td>
-                <td>----mesa----</td>
-                <td>----horario----</td>
-                <td>----data_reserva----</td>
-                <td>----pessoa----</td>
-            </tr>
 
-            <?php
+            <table class="registro">
+                <tr>
+                    <td>----perfil----</td>
+                    <td>----nome----</td>
+                    <td>----mesa----</td>
+                    <td>----horario----</td>
+                    <td>----data_reserva----</td>
+                    <td>----pessoa----</td>
+                </tr>
+
+                <?php
             
 
             /**forma de mostrar todos os registros da tabela sql */
@@ -236,9 +171,10 @@ a {
                 
 
             ?>
-        </table>           
+            </table>
         </div>
-      </div>
-      
+    </div>
+
 </body>
+
 </html>
