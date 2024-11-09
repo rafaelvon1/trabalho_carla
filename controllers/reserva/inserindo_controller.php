@@ -10,7 +10,7 @@
     if (!isset($_SESSION)) {
         session_start();
     }
-    include("../../../db/conexao.php");
+    include("../../models/conexao.php");
     /**pegando id da tela de login*/
     $id = $_SESSION["id"];
     // Define o fuso horário
@@ -42,7 +42,7 @@
     }
     if ($dados[1] == $data_atual and $dados[0] <= $horario_futuro ) {
         $_SESSION["error"] = "reserve sua mesa com 2 horas de antecedencia";
-        header("location: reserva.php");
+        header("location: ../../views/reserva/reserva_view.php");
     }
     /**verificando se tem mesa disponivel nesse horario */
     else {
