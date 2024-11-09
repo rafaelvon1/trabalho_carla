@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
 </head>
+
 <body>
 
-<?php
+    <?php
 /*
 dados[0] = nome
 dados[1] = telefone
@@ -18,7 +20,7 @@ dados[5] = senha
 
 */
 /**pegando conexao com o banco de dados */
-include("../../../db/conexao.php");
+include("../../models/conexao.php");
 
 /**pegando dados do meu arquivo html */
 $dados = $_POST["cads"];
@@ -68,14 +70,10 @@ else {
     
 }
 ?>
-<!-- caso de ja existir um cadastro, voltar para tela de cadastro -->
-<button type="submit"><a href="../cadastro/cadastro_page.html">ir para tela de login</a></button>
+    <!-- caso de ja existir um cadastro, voltar para tela de cadastro -->
+    <button type="submit"><a href="../../views/cadastro/cadastro_view.html">ir para tela de login</a></button>
 
 
-
-
-
-
-    
 </body>
+
 </html>
