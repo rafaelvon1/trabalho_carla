@@ -140,7 +140,7 @@ a {
                 <a class="nav-link" href="#"><img src="../../images/pizza_eu.png" alt=""><br> Perfil</a>
             </li>
             <li class="nav-item sair">
-                <a class="nav-link" href="..\login\logout_controller.php"><img
+                <a class="nav-link" href="../../controllers/login/logout_controller.php"><img
                         src="../../images/caixa_fechada_cadastro.png" alt=""><br> Sair</a>
             </li>
         </ul>
