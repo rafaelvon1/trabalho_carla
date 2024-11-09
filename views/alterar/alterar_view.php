@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="..\imagens_videos" type="image/x-icon">
-    <link rel="shortcut icon" href="..\imagens_videos\pizza_reserva.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../images/pizza_reserva.png" type="image/x-icon">
     <title>alterar</title>
     <!--<?php
         /**dados na posição 4 = id do cliente 
@@ -17,8 +16,8 @@
          * dados na posição 2 = quantidade pessoa
          * dados na posição 3 = dia da semana
         */
-        include("../login/protect_controller.php");
-        include("../../../db/conexao.php");
+        include("../../controller/login/protect_controller.php");
+        include("../../models/conexao.php");
         if (!isset($_SESSION)) {
             session_start();
         }
@@ -110,12 +109,12 @@
     </div>
     <div class="video-background">
         <video autoplay muted loop>
-            <source src="..\imagens_videos\mario_alterar_usuario.mp4" type="video/mp4">
+            <source src="../../images/mario_alterar_usuario.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
         </video>
         <div class="conteudo">
             <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
-            <form class="registro" method="POST" action="inserindo_controller.php">
+            <form class="registro" method="POST" action="../../controller/reserva/inserindo_controller.php">
                 <h1>alterar</h1>
                 <label for="">horario: </label>
                 <br>
@@ -140,10 +139,9 @@
 
                 <br><br>
 
-
                 <button class="botao" type="submit" name="botao">enviar</button>
                 <br>
-                <button><a href="mostrando_reserva.php">voltar</a></button>
+                <button><a href="../../controller/reserva/mostrando_reserva.php">voltar</a></button>
             </form>
 
         </div>
