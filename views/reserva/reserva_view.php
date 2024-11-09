@@ -39,8 +39,8 @@
     <div class="cabecalho">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="..\principal\pagina_client_view.php"><img src="../../images/fatia_home.png"
-                        alt=""><br> Home</a>
+                <a class="nav-link" href="../principal_cliente/principal_client_view.php"><img
+                        src="../../images/fatia_home.png" alt=""><br> Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><img src="../../images/pizza_reserva.png"

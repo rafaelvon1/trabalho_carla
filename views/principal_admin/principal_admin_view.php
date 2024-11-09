@@ -9,7 +9,7 @@
     <title>pizza</title>
     <link rel="stylesheet" href="pagina_admin.css">
     <?php
-    include("../login/protect_controller.php");
+    include("../../controllers/login/protect_controller.php");
     /**caso usuario client tentar entrar no admin com url, barrar com o if */
     if ($_SESSION["status"] == "client") {
         /**enviando pessoa administradora para sua pagina */
