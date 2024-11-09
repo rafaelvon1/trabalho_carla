@@ -85,7 +85,7 @@
             $sql_code = "INSERT INTO reserva VALUES('null','$dados[4]','$dados[5]','$dados[0]','$dados[1]','$dados[2]','$dados[3]')";
             /**enviando meu codigo para o banco de dados -> aqui nao se espera q algo seja retornado, ja que estamos apenas dando um insert, ele volta como valor booleano*/
             $envio = mysqli_query($mysqli,$sql_code);
-            header("location: checking_controller.php");
+            header("location: ../../views/reserva/mostrando_reserva_view.php");
         }
     }
                

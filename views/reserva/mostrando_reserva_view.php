@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mostrando_reserva.css">
     <link rel="shortcut icon" href="../../images/pizza_reserva.png" type="image/x-icon">
     <title>reserva</title>
     <?php
@@ -23,104 +24,6 @@
         $_SESSION["error"] = "";   
     ?>
 </head>
-<style>
-.cabecalho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-}
-
-.nav {
-    display: flex;
-    width: 100%;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-item {
-    margin-right: 20px;
-    /* Espaçamento entre os itens */
-}
-
-.nav-item.sair {
-    margin-left: auto;
-    /* Move o item 'sair' para o final da linha */
-}
-
-.nav-link {
-    text-align: center;
-}
-
-a {
-    /*font :)*/
-    font-family: 'Courier New', Courier, monospace;
-    color: #8f8c04;
-    /* Cor do texto */
-}
-
-.video-background {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    /* Define a altura do vídeo como a altura total da tela */
-    overflow: hidden;
-}
-
-.video-background video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    /* Garante que o vídeo cubra toda a largura */
-    min-height: 100%;
-    /* Garante que o vídeo cubra toda a altura */
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    /* Coloca o vídeo atrás do conteúdo */
-}
-
-.conteudo {
-    position: relative;
-    z-index: 1;
-    /* Garante que o conteúdo fique na frente do vídeo */
-    color: white;
-    /* Cor do texto para contraste com o vídeo */
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.botao {
-    background-color: blue;
-    color: #ffffff;
-}
-
-.sql_mostra {
-    margin: auto;
-}
-
-.registro {
-    margin: auto;
-    background-color: rgba(255, 255, 0, 0.5);
-    color: black;
-}
-
-.botao_transparente {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-
-/* Deixa a imagem ajustada no botão */
-.botao_transparente img {
-    display: block;
-    height: auto;
-}
-</style>
 
 <body>
     <div class="cabecalho">
@@ -192,13 +95,13 @@ a {
 
             </table>
 
-            <form method="post" action="excluir_controller.php">
+            <form method="post" action="../../controllers/reserva/excluir_controller.php">
                 <small>excluir</small> <br>
                 <button class="botao_transparente" type="submit" name="excluir"><img
                         src="../../images/cortador_pizza_excluir.png" alt=""></button>
             </form>
 
-            <form action="alterar_page.php" method="post">
+            <form action="../alterar/alterar_view.php" method="post">
                 <br>
                 <small>alterar</small>
                 <br>

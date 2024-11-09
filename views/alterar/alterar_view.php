@@ -7,6 +7,7 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../images/pizza_reserva.png" type="image/x-icon">
+    <link rel="stylesheet" href="alterar.css">
     <title>alterar</title>
     <!--<?php
         /**dados na posição 4 = id do cliente 
@@ -16,7 +17,7 @@
          * dados na posição 2 = quantidade pessoa
          * dados na posição 3 = dia da semana
         */
-        include("../../controller/login/protect_controller.php");
+        include("../../controllers/login/protect_controller.php");
         include("../../models/conexao.php");
         if (!isset($_SESSION)) {
             session_start();
@@ -28,68 +29,6 @@
     ?>
     -->
 </head>
-<style>
-.cabecalho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-}
-
-.video-background {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    /* Define a altura do vídeo como a altura total da tela */
-    overflow: hidden;
-}
-
-.video-background video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    /* Garante que o vídeo cubra toda a largura */
-    min-height: 100%;
-    /* Garante que o vídeo cubra toda a altura */
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    /* Coloca o vídeo atrás do conteúdo */
-}
-
-.conteudo {
-    position: relative;
-    z-index: 1;
-    /* Garante que o conteúdo fique na frente do vídeo */
-    color: white;
-    /* Cor do texto para contraste com o vídeo */
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-
-.registro {
-    text-align: center;
-    margin: 350px;
-    width: auto;
-    background-color: rgba(80, 80, 80, 0.8);
-}
-
-.botao_transparente {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-
-/* Deixa a imagem ajustada no botão */
-.botao_transparente img {
-    display: block;
-    height: auto;
-}
-</style>
 <!--
 <?php
     // Define o fuso horário
@@ -114,7 +53,7 @@
         </video>
         <div class="conteudo">
             <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
-            <form class="registro" method="POST" action="../../controller/reserva/inserindo_controller.php">
+            <form class="registro" method="POST" action="../../controllers/reserva/inserindo_controller.php">
                 <h1>alterar</h1>
                 <label for="">horario: </label>
                 <br>
@@ -141,7 +80,7 @@
 
                 <button class="botao" type="submit" name="botao">enviar</button>
                 <br>
-                <button><a href="../../controller/reserva/mostrando_reserva.php">voltar</a></button>
+                <button><a href="../../controllers/reserva/mostrando_reserva.php">voltar</a></button>
             </form>
 
         </div>
