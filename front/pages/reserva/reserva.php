@@ -53,7 +53,7 @@
                     Cardapio</a>
             </li>
             <li class="nav-item eu">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_eu.png"
+                <a class="nav-link" href="..\principal\perfil_cliente.php"><img src="..\imagens_videos\pizza_eu.png"
                         alt="Botão que leva ao perfil"><br> Perfil</a>
             </li>
             <li class="nav-item sair">
