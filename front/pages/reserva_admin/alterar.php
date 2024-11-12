@@ -35,9 +35,6 @@ $id = $_GET["id"];
             <label for="">Nome:</label>
             <input type="text" name="nome" value="<?php echo $variavel['nome']?>">
             <br>
-            <label for="">Email</label>
-            <input type="email" name="email"  value="<?php echo $variavel['email']?>" >
-            <br>
             <label for="">Cep</label>
             <input type="number" name="cep" value="<?php echo $variavel['cep']?>">
             <br>
@@ -47,9 +44,18 @@ $id = $_GET["id"];
             <label for="">Numero</label>
             <input type="number" name="telefone" value="<?php echo $variavel['telefone']?>">
             <br>
-            <button type="submit"  name="altear">alterar</button>
+            <button type="submit"  name="alterar">alterar</button>
         </form>  
         <?php
+        if (isset($_POST["alterar"])) {
+            $nome = $_POST["nome"];
+            $cep = $_POST["cep"];
+            $cpf = $_POST["cpf"];
+            $telefone = $_POST["telefone"];
+            $sql_code = "UPDATE dados_usuario d set d.nome = '$nome', telefone = '$telefone' ,cpf = '$cpf' ,cep = '$cep' where id_client = $id; "; 
+            $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
+            header("location: reserva_admin.php");
+        }
             
         ?>
     </fieldset>
