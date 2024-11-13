@@ -22,13 +22,14 @@ if (!isset($_SESSION)) {
         <b> 
             <p>Informações</p>
         </b>
-        <a href="#">Editar perfil</a>
+       <!-- <a href="#">Editar perfil</a> -->
     </div>
     <hr>
         <div class="dados">
             <ul>
-                <li>Nome: </li>
+                <!--<li>Nome: <?php echo $_SESSION['']; ?> </li> --->
                 <li>Email: <?php echo $_SESSION['email']; ?> </li>
+                <li>Status: <?php echo $_SESSION['status']; ?> </li>
             </ul>
         </div>
     </fieldset>
