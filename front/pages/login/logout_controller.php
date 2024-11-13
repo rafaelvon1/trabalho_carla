@@ -4,7 +4,7 @@
     session_start();
   }
   session_destroy();
-  header("location: ..\..\..\index.html");
+  header("location: ..\..\..\index1.0.html");
   
 
 ?>
