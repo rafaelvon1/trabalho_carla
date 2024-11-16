@@ -16,36 +16,35 @@
          * dados na posição 1 = data
          * dados na posição 2 = quantidade pessoa
          * dados na posição 3 = dia da semana
-        */
+         */
         include("../../controllers/login/protect_controller.php");
         include("../../models/conexao.php");
         if (!isset($_SESSION)) {
             session_start();
         }
         $id = $_SESSION["id"];
-        $sql_code = "SELECT * FROM reserva where id_client = $id"; 
-        $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
+        $sql_code = "SELECT * FROM reserva where id_client = $id";
+        $sql_query = $mysqli->query($sql_code) or die("voce simplismente nao existe");
         $variavel = $sql_query->fetch_assoc();
-    ?>
+        ?>
     -->
 </head>
 <!--
 <?php
-    // Define o fuso horário
-    date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
+// Define o fuso horário
+date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
 
-    /**pegando data e horario atual */
-    $data = new DateTime();
-    $data_atual = $data ->format('Y-m-d');
-    $data_max = $data ;
-    $data_max->modify('+2 months');
-    $data_max = $data-> format('Y-m-d');
+/**pegando data e horario atual */
+$data = new DateTime();
+$data_atual = $data->format('Y-m-d');
+$data_max = $data;
+$data_max->modify('+2 months');
+$data_max = $data->format('Y-m-d');
 ?>
 -->
 
 <body>
-
-    </div>
+    >
     <div class="video-background">
         <video autoplay muted loop>
             <source src="../../images/mario_alterar_usuario.mp4" type="video/mp4">
@@ -57,20 +56,20 @@
                 <h1>alterar</h1>
                 <label for="">horario: </label>
                 <br>
-                <input name="dados[]" type="time" value="<?php echo $variavel['horario']?>" required min="10:00"
+                <input name="dados[]" type="time" value="<?php echo $variavel['horario'] ?>" required min="10:00"
                     max="20:00">
 
                 <br>
                 <label for="">para que dia: </label>
                 <br>
-                <input name="dados[]" type="date" value="<?php echo $variavel['data_reserva']?>" required
-                    min="<?php echo$data_atual;?>" max="<?php echo$data_max;?>">
+                <input name="dados[]" type="date" value="<?php echo $variavel['data_reserva'] ?>" required
+                    min="<?php echo $data_atual; ?>" max="<?php echo $data_max; ?>">
                 <br>
                 <label for="">mesa para quantos: </label>
                 <br>
                 <select name="dados[]" required>
-                    <option value="<?php echo $variavel['quantidade']?>">
-                        <?php echo $variavel['quantidade'],"-pessoas";?></option>
+                    <option value="<?php echo $variavel['quantidade'] ?>">
+                        <?php echo $variavel['quantidade'], "-pessoas"; ?></option>
                     <option value="2">2-pessoa</option>
                     <option value="4">4-pessoa</option>
                     <option value="8">8-pessoa</option>
