@@ -45,14 +45,14 @@ $data_max = $data->format('Y-m-d');
 
 <body>
     >
-    <div class="video-background">
+    <div class="app__video-background">
         <video autoplay muted loop>
             <source src="../../images/mario_alterar_usuario.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
         </video>
-        <div class="conteudo">
+        <div class="app__conteudo">
             <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
-            <form class="registro" method="POST" action="../../controllers/reserva/inserindo_controller.php">
+            <form class="app__registro" method="POST" action="../../controllers/reserva/inserindo_controller.php">
                 <h1>alterar</h1>
                 <label for="">horario: </label>
                 <br>

@@ -15,7 +15,7 @@
         /**enviando pessoa administradora para sua pagina */
         header("location: ../principal_cliente/pagina_cliente_view.php");
     }
-?>
+    ?>
 </head>
 
 <body>
@@ -41,12 +41,12 @@
             </li>
         </ul>
     </div>
-    <div class="video-background">
+    <div class="app__video-background">
         <video autoplay muted loop>
             <source src="../../images/video_pizza.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
         </video>
-        <div class="conteudo">
+        <div class="app__conteudo">
             <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
             <h1>Bem-vindo à Pizzaria administrador</h1>
 

@@ -10,18 +10,18 @@
     <link rel="shortcut icon" href="../../images/pizza_reserva.png" type="image/x-icon">
     <title>reserva</title>
     <?php
-        /**dados na posição 4 = id do cliente 
-         * dados na posição 5 = mesa
-         * dados na posição 0 = horario
-         * dados na posição 1 = data
-         * dados na posição 2 = quantidade pessoa
-         * dados na posição 3 = dia da semana
-        */
-        include("../../controllers/login/protect_controller.php");
-        if (!isset($_SESSION)) {
-            session_start();
-        }
-        $_SESSION["error"] = "";   
+    /**dados na posição 4 = id do cliente 
+     * dados na posição 5 = mesa
+     * dados na posição 0 = horario
+     * dados na posição 1 = data
+     * dados na posição 2 = quantidade pessoa
+     * dados na posição 3 = dia da semana
+     */
+    include("../../controllers/login/protect_controller.php");
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    $_SESSION["error"] = "";
     ?>
 </head>
 
@@ -48,48 +48,47 @@
             </li>
         </ul>
     </div>
-    <div class="video-background">
+    <div class="app__video-background">
         <video autoplay muted loop>
             <source src="../../images/video_reserva.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
         </video>
-        <div class="conteudo">
+        <div class="app__conteudo">
             <!-- Aqui você pode adicionar o conteúdo da página que ficará sobre o vídeo -->
 
-            <table class="registro">
+            <table class="app__registro">
                 <?php
-                    /** ------essa parte ira mostrar caso tenha algun registro ja feito-------- */
+                /** ------essa parte ira mostrar caso tenha algun app__registro ja feito-------- */
 
-                    if (!isset($_SESSION)) {
-                        session_start();
-                    }
-                    include("../../models/conexao.php");
-                    $id = $_SESSION["id"];
-                    $sql_code = "SELECT * FROM reserva where id_client = $id"; 
-                    $sql_query = $mysqli -> query($sql_code) or die("voce simplismente nao existe");
-                    $pull =$sql_query->num_rows;
-                    $variavel = $sql_query->fetch_assoc();
-                    if ($pull == 1) {
-                        echo"<tr>";
-                        echo"<td>---mesa---</td>";
-                        echo"<td>---dia---</td>";
-                        echo"<td>---pessoas---</td>";
-                        echo"<td>---horario---</td>";
-                        echo"<td>---reserva---</td>";
+                if (!isset($_SESSION)) {
+                    session_start();
+                }
+                include("../../models/conexao.php");
+                $id = $_SESSION["id"];
+                $sql_code = "SELECT * FROM reserva where id_client = $id";
+                $sql_query = $mysqli->query($sql_code) or die("voce simplismente nao existe");
+                $pull = $sql_query->num_rows;
+                $variavel = $sql_query->fetch_assoc();
+                if ($pull == 1) {
+                    echo "<tr>";
+                    echo "<td>---mesa---</td>";
+                    echo "<td>---dia---</td>";
+                    echo "<td>---pessoas---</td>";
+                    echo "<td>---horario---</td>";
+                    echo "<td>---reserva---</td>";
 
-                        echo "<tr>";
-                        echo "<td>" . $variavel["mesa"] . "</td>";
-                        echo "<td>" . $variavel["dias"] . "</td>";
-                        echo "<td>" . $variavel["quantidade"] . "</td>";
-                        echo "<td>" . $variavel["horario"] . "</td>";
-                        echo "<td>" . $variavel["data_reserva"] . "</td>";
-                        echo "</tr>";
-                    } 
-                    else {
-                        echo"<h2 class=\"total_reserva\"> faça sua reserva<h2/>";
-                    }
-                    
-                
+                    echo "<tr>";
+                    echo "<td>" . $variavel["mesa"] . "</td>";
+                    echo "<td>" . $variavel["dias"] . "</td>";
+                    echo "<td>" . $variavel["quantidade"] . "</td>";
+                    echo "<td>" . $variavel["horario"] . "</td>";
+                    echo "<td>" . $variavel["data_reserva"] . "</td>";
+                    echo "</tr>";
+                } else {
+                    echo "<h2 class=\"total_reserva\"> faça sua reserva<h2/>";
+                }
+
+
 
                 ?>
 
