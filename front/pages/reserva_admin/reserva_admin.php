@@ -221,7 +221,7 @@ a {
                 else {
                     while ($variavel = $sql_query->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td> <a href=\"perfil_page.php?id=$variavel[id_client]\">entrar</a> </td>";
+                        echo "<td> <a href=\"perfil_admin.php?id=$variavel[id_client]\">entrar</a> </td>";
                         echo "<td>" . $variavel['nome'] . "</td>";
                         echo "<td>" . $variavel['mesa'] . "</td>";
                         echo "<td>" . $variavel['horario'] . "</td>";
