@@ -5,8 +5,8 @@ if (!isset($_SESSION["email"]) || $_SESSION["status"] != "admin") {
     header("Location: ../../views/login/login_view.php");
     exit();
 }
-?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">

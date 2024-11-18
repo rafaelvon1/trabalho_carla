@@ -35,6 +35,14 @@
         </section>
     </main>
 
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        include("../../controllers/login/login_controller.php");
+        $dados = $_POST["log"];
+        $controller = new LoginController();
+        $controller->login($dados);
+    }
+    ?>
 
 
 </body>

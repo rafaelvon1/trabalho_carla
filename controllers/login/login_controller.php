@@ -58,3 +58,10 @@ class LoginController
         }
     }
 }
+
+// Exemplo de uso
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $dados = $_POST["log"];
+    $controller = new LoginController();
+    $controller->login($dados);
+}
