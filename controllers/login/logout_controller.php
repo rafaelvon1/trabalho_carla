@@ -10,11 +10,8 @@ class LogoutController
     header("Location: ../../index.html");
     exit();
   }
-
-  /*
-  Exemplo de uso
-  $controller = new LogoutController(); 
-  $controller->logout();
-  
-*/
 }
+
+// Exemplo de uso
+$controller = new LogoutController();
+$controller->logout();

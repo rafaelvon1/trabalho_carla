@@ -13,7 +13,10 @@ class ProtectController
   }
 }
 
-/* Exemplo de uso
+/*PRECISA TESTAR O PROTECT
+
+Exemplo de uso
+
 $controller = new ProtectController();
 $controller->proteger();
 */
