@@ -1,8 +1,13 @@
 <?php
-  if (!isset($_SESSION)) {
-    session_start();
+class LogoutController
+{
+  public function logout()
+  {
+    if (!isset($_SESSION)) {
+      session_start();
+    }
+    session_destroy();
+    header("Location: ../../index.html");
+    exit();
   }
-  session_destroy();
-  header("location: ..\..\index.html");
-  
-?>
+}

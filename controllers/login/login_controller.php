@@ -12,7 +12,7 @@
 
     /**abrir uma sessao, para armazenar dados do usuario em varias paginas */
     session_start();
-    /**pegando no arquivo conexao minha conexao :) */
+
     class LoginController
     {
         private $conexao;
@@ -20,6 +20,7 @@
 
         public function __construct()
         {
+            /**pegando no arquivo conexao minha conexao :) */
             include("../../models/conexao.php");
             $this->conexao = new Conexao();
             $this->mysqli = $this->conexao->conectar();
