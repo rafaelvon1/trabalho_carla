@@ -85,3 +85,10 @@ dados[5] = senha
 </body>
 
 </html>
+
+<!--
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $dados = $_POST["cads"];
+    $controller = new CadastroController();
+    $controller->cadastrar($dados);
+}

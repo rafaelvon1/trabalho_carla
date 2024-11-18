@@ -73,8 +73,20 @@
         }
     }
     ?>
+
+
     <!-- caso algo der errado, voltar para login-->
     <button type="submit"><a href="logout_controller.php">sair</a></button>
 </body>
 
 </html>
+
+<!--
+exemplo de uso
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $dados = $_POST["login"];
+    $controller = new LoginController();
+    $controller->login($dados);
+}
+?>
