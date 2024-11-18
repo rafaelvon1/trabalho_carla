@@ -13,8 +13,9 @@ class ProtectController
   }
 }
 
-/*PRECISA TESTAR O PROTECT
-
-Exemplo de uso */
+// aqui é onde o controller está sendo iniciado, depois precisa
+// tirar isso e transformar o index.html em um arquivo php
+// e em seguida chamar esse codigo.
+// exemplo de uso 
 $controller = new ProtectController();
 $controller->proteger();
