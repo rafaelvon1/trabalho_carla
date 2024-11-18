@@ -1,3 +1,12 @@
+<?php
+// principal_client_view.php
+session_start();
+if (!isset($_SESSION["email"]) || $_SESSION["status"] != "client") {
+    header("Location: ../../views/login/login_view.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,9 +19,6 @@
 
     <title>pizza</title>
 
-    <?php
-    include("../../controllers/login/protect_controller.php");
-?>
 </head>
 
 

@@ -1,3 +1,13 @@
+<?php
+// principal_admin_view.php
+session_start();
+if (!isset($_SESSION["email"]) || $_SESSION["status"] != "admin") {
+    header("Location: ../../views/login/login_view.php");
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -8,14 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pizza</title>
     <link rel="stylesheet" href="pagina_admin.css">
-    <?php
-    include("../../controllers/login/protect_controller.php");
-    /**caso usuario client tentar entrar no admin com url, barrar com o if */
-    if ($_SESSION["status"] == "client") {
-        /**enviando pessoa administradora para sua pagina */
-        header("location: ../principal_cliente/pagina_cliente_view.php");
-    }
-?>
+
 </head>
 
 <body>
