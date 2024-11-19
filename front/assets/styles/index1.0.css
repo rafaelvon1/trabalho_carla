@@ -15,7 +15,7 @@ body{
     height:100vh;
     overflow-x:hidden;
 }
-/* diminuindo tamanho da imagem*/
+/* diminuindo tamanho da imagem de logo*/
 .img > img{
     width:100px;
 }
