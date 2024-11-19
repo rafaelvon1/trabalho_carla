@@ -11,31 +11,31 @@ if (!isset($_SESSION)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil | Pizzaria </title>
     <link rel="stylesheet" href="../../assets/styles/style_perfil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
-    <h1>Perfil</h1>
+    <nav></nav>
 </header>
 <main>
-<fieldset>
-    <div class="info">
-        <b> 
-            <p>Informações</p>
-        </b>
-       <!-- <a href="#">Editar perfil</a> -->
+    <div class="imagem">
+        <img src="../../assets/images/fotoperfil.png" alt="">
+        <h1>Olá,</h1>
     </div>
-    <hr>
-        <div class="dados">
-            <ul>
-                <!--<li>Nome: <?php echo $_SESSION['']; ?> </li> --->
-                <li>Email: <?php echo $_SESSION['email']; ?> </li>
-                <li>Status: <?php echo $_SESSION['status']; ?> </li>
-            </ul>
-        </div>
-    </fieldset>
+    <br><br>
+    <h2>Aqui estão suas Informações</h2>
+    <div class="info">
+        <ul>
+            <li>Nome: </li>
+            <li>Email: <?php echo $_SESSION['email']; ?></li>
+            <li>Cpf: </li>
+            <li>Cep: </li>
+            <li>Telefone: </li>
+        </ul>
+    </div>
 </main>
 <footer>
-    <a href="">Voltar</a>
+    <p><a href="#">Clique aqui</a> para voltar </p>
 </footer>
 </body>
 </html>
