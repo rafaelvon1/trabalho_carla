@@ -1,4 +1,8 @@
 <?php
+$dados = $_POST["log"];
+$controller = new LoginController();
+$controller->login($dados);
+
 class LoginController
 {
     private $conexao;
@@ -57,15 +61,4 @@ class LoginController
             echo "<h1>Email ou senha inválido<h1/>";
         }
     }
-}
-
-
-// aqui é onde o controller está sendo iniciado, depois precisa
-// tirar isso e transformar o index.html em um arquivo php
-// e em seguida chamar esse codigo.
-// exemplo de uso
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $dados = $_POST["log"];
-    $controller = new LoginController();
-    $controller->login($dados);
 }

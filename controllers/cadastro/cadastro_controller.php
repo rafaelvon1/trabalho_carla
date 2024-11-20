@@ -10,6 +10,7 @@
 <body>
 
     <?php
+
     /*
 dados[0] = nome
 dados[1] = telefone
@@ -20,6 +21,9 @@ dados[5] = senha
 
 */
     /**pegando conexao com o banco de dados */
+    $dados = $_POST["cads"];
+    $controller = new CadastroController();
+    $controller->cadastrar($dados);
     class CadastroController
     {
         private $conexao;
@@ -77,6 +81,7 @@ dados[5] = senha
             }
         }
     }
+
     ?>
     <!-- caso de ja existir um cadastro, voltar para tela de cadastro -->
     <button type="submit"><a href="../../views/cadastro/cadastro_view.html">ir para tela de login</a></button>
@@ -85,10 +90,3 @@ dados[5] = senha
 </body>
 
 </html>
-
-<!--
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $dados = $_POST["cads"];
-    $controller = new CadastroController();
-    $controller->cadastrar($dados);
-}

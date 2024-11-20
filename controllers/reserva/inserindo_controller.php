@@ -7,6 +7,9 @@
  * dados na posição 2 = quantidade pessoa
  * dados na posição 3 = dia da semana
  */
+$dados = $_POST["dados"];
+$controller = new InserindoController();
+$controller->inserirReserva($dados);
 
 class InserindoController
 {
@@ -101,14 +104,3 @@ class InserindoController
         }
     }
 }
-
-/* 
-    Exemplo de uso
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $dados = $_POST["dados"];
-    $controller = new InserindoController();
-    $controller->inserirReserva($dados);
-}
-
-*/
