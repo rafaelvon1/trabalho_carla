@@ -147,7 +147,7 @@ body{
     
     
 }
-.hidden {
+#btrefri, #btsuco, #btcerva, #btagua {
       display: none;
     }
     </style>
@@ -175,21 +175,18 @@ body{
     </div>
     
     <div class="inter">
-        <button class="botaocima" id="pizzas">PIZZAS</button>
-        <button class="botaocima" id="esfiha">ESFIHAS</button>
-        <button class="botaocima" id="bebidas">BEBIDAS</button>
-        <button class="botaocima" id="mostrartudo">MOSTRAR TUDO</button>
+        <button class="botaocima" id="pizzas" onclick="esconderrsca()">PIZZAS</button>
+        <button class="botaocima" id="esfiha" onclick="esconderrsca()">ESFIHAS</button>
+        <button class="botaocima" id="bebidas" onclick="escondersd()">BEBIDAS</button>
     </div>
     <div class="menu">
-        <button class="botaobaixo" id="btsalgada" onclick="toggleButtons()">Salgadas</button>
-        <button class="botaobaixo" id="btdoce" onclick="toggleButtons()">Doces</button>
-        <button class="botaobaixo" id="btrefri" onclick="toggleButtons()">Refrigerante</button>
-        <button class="botaobaixo" id="btsuco" onclick="toggleButtons()">Suco</button>
-        <button class="botaobaixo" id="btcerva" onclick="toggleButtons()">Cerveja</button>
-        <button class="botaobaixo" id="btagua" onclick="toggleButtons()">Água</button>
-        <button class="botaobaixo" id="btvinho" onclick="toggleButtons()">Vinho</button>
-      </div>
-    
+        <button class="botaobaixo" id="btsalgada" >Salgadas</button>
+        <button class="botaobaixo" id="btdoce" >Doces</button>
+        <button class="botaobaixo" id="btrefri" >Refrigerante</button>
+        <button class="botaobaixo" id="btsuco" >Suco</button>
+        <button class="botaobaixo" id="btcerva" >Cerveja</button>
+        <button class="botaobaixo" id="btagua" >Água</button>
+    </div>   
 <div id = "principal"> <!--Colocando as divs em uma borda--> 
     <div id="alimentos">
         <div id="salgadas">
@@ -499,7 +496,7 @@ body{
                 </div>
             </div>
         </div> <!--div salgada termina aqui -->
-        <div id="doces" style="display: none;">
+        <div id="doces">
             <div class="row">
                 <div class="col-3">
                     <div class="container">
@@ -805,7 +802,7 @@ body{
             </div>
         </div><!--div doce termina aqui-->
     </div> <!--div alimentos 1 termina aqui (pizza salgadas e doces)-->
-    <div id="alimentos2" style="display: none;">
+    <div id="alimentos2" >
         <div id="salgada">
             <div class="row">
                 <div class="col-3">
@@ -1173,12 +1170,13 @@ body{
                         <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">                  
                         <h6>QUEIJO</H6>
                         <small>Mussarela</small>
+                        <br>
                         <strong id="rs">R$ 6.00</strong>
                     </div>
                 </div>
             </div>
         </div><!--final da identação esfiha salgada--> 
-        <div id="doce" style="display: none;">
+        <div id="doce">
             <div class="row">
                 <div class="col-3">
                     <div class="container">
@@ -1533,10 +1531,459 @@ body{
         </div><!--Final Identação esfiha doce-->
     </div><!--Final da identação alimentos 2 (esfihas)-->
     <div id="drink">
-
-    </div>
+        <div id = "refri">
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\cc2l.jpg" alt="">               
+                        <br>
+                        <H6>COCA-COLA 2 LITROS</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 17.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\cc600ml.jpg" alt="">               
+                        <H6>COCA-COLA 600ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 8.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\cc350ml.jpg" alt="">   
+                        <H6>COCA-COLA 350ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 5.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\ccz2l.jpg" alt="">   
+                        <H6>COCA-COLA ZERO 2 LITROS</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 17.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\ccz600ml.jpg" alt="">               
+                        <br>
+                        <H6>COCA-COLA ZERO 600ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 8.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\ccz350ml.jpg" alt="">               
+                        <H6>COCA-COLA ZERO 350ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 5.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/fl2l.jpg" alt="">   
+                        <H6>FANTA LARANJA 2 LITROS</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 15.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/fl600ml.jpg" alt="">   
+                        <H6>FANTA LARANJA 600ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 8.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/fl350ml.jpg" alt="">               
+                        <br>
+                        <H6>FANTA LARAJANTA 350ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 5.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/fu2l.jpg" alt="">               
+                        <H6>FANTA UVA 2 LITROS</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 15.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/fu600ml.jpg" alt="">   
+                        <H6>FANTA UVA 600ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 8.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/fu350ml.jpg" alt="">   
+                        <H6>FANTA UVA 350ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 5.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\ga2l.png" alt="">               
+                        <br>
+                        <H6>GUARANÁ ANTARCTICA 2 LITROS</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 15.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\ga600ml.jpg" alt="">               
+                        <H6>GUARANÁ ANTARCTICA 600ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 8.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos\ga350ml.jpg" alt="">   
+                        <H6>GUARANA ANTARCTICA 350ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 5.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/ps2l.jpg" alt="">   
+                        <H6>PEPSI 2 LITROS</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 15.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/ps600ml.jpg" alt="">               
+                        <br>
+                        <H6>PEPSI 600ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 8.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/ps350ml.jpg" alt="">               
+                        <H6>PEPSI 350ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 5.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/sw350ml.jpg" alt="">   
+                        <H6>SCHWEPPES CITRUS 350ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 5.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/sp2l.jpg" alt="">   
+                        <H6>SPRITE 2 LITROS</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 15.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/sp600ml.jpg" alt="">               
+                        <br>
+                        <H6>SPRITE 600ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 8.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/sp350ml.jpg" alt="">               
+                        <H6>SPRITE 350ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 5.99</strong>
+                    </div>
+                </div>
+            </div>
+        </div><!--final identação refri-->
+        <div id = "suco">
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/scgoiaba.jpg" alt="">               
+                        <br>
+                        <H6>DEL VALE GOIABA LATA 290ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 6.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/scmanga.jpg" alt="">               
+                        <H6>DEL VALE MANGA LATA 290ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 6.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/scmaracas.jpg" alt="">   
+                        <H6>DEL VALE MARACUJÁ LATA 290ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 6.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/scpessego.jpg" alt="">   
+                        <H6>DEL VALE PÊSSEGO LATA 290ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 6.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/scuvavale.jpg" alt="">               
+                        <br>
+                        <H6>DEL VALE UVA LATA 290ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 6.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/scuva.png" alt="">               
+                        <H6>SUCO DE UVA 1,5L</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 24.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/sclaranja.jpg" alt="">   
+                        <H6>SUCO DE LARANJA 1,5 LITROS</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 24.99</strong>
+                    </div>
+                </div>
+            </div>
+        </div><!--final identação suco-->
+        <div id = "cerva">
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/antarticaln.jpg" alt="">               
+                        <br>
+                        <H6>ANTARCTICA LONG NECK</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 11.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/amstelln.jpg" alt="">               
+                        <H6>AMSTEL LONG NECK</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 13.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/bohemialn.jpg" alt="">   
+                        <H6>BOHEMIA LONG NECK</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 11.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/brahmaln.jpg" alt="">   
+                        <H6>BRAHMA LONG NECK</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 15.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/budweiserln.jpg" alt="">               
+                        <br>
+                        <H6>BUDWEISER LONG NECK</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 11.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/coronaln.png" alt="">               
+                        <H6>CORONA LONG NECK</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 13.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/heinekenln.png" alt="">   
+                        <H6>HEINEKIN LONG NECK</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 13.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/itaipavaln.jpg" alt="">   
+                        <H6>ITAIPAVA LONG NECK</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 15.99</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/kaiserln.jpg" alt="">               
+                        <br>
+                        <H6>KAISER LONG NECK</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 11.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/polarln.jpg" alt="">               
+                        <H6>POLAR LONG NECK</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 11.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/skolln.jpg" alt="">   
+                        <H6>SKOL LONG NECK</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 15.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/stellaln.jpg" alt="">   
+                        <H6>STELLA ARTOIS LONG NECK</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 13.99</strong>
+                    </div>
+                </div>
+            </div>
+        </div><!--final identação cerveja-->
+        <div id = "agua">
+            <div class="row">
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/aguanormal.png" alt="">               
+                        <br>
+                        <H6>ÁGUA 500ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 5.49</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/aguagas.png" alt="">               
+                        <H6>ÁGUA COM GÁS 500ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 5.49</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/aguasw.png" alt="">   
+                        <H6>ÁGUA TÔNICA SCHWEPPES 350ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 6.99</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container">
+                        <img class="imagem" src="..\imagens_videos/h20limao.jpg" alt="">   
+                        <H6>H20 COM LIMÃO 500ML</H6>
+                        <small></small>
+                        <br>
+                        <strong id="rs">R$ 7.99</strong>
+                    </div>
+                </div>
+            </div>
+        </div><!--final identação agua-->
+    </div><!--final identação drink-->
 </div><!--Identação da Principal-->         
-<script src="btnbaixo.js"></script>   
-<script src="btncima.js"></script>
+<script src="btnbaixo.js" ></script>   
+<script src="btncima.js" ></script>
+<script src="esconderbtn.js" ></script>
 </body>
 </html>
