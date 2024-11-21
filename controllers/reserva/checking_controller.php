@@ -2,6 +2,7 @@
 
 /**se meu usuario ja tiver um cadastro, levar ele para mostrar reserva, nao para pagina de fazer uma reserva */
 include("../../models/conexao.php");
+
 /**pegando id da tela de login*/
 if (!isset($_SESSION)) {
     session_start();
@@ -28,10 +29,10 @@ class ReservaChecker
         /**----essa parte ira fazer a verificaçao se dados existem para nao aparecer na tela do layout------- */
         $sql_code = "SELECT * FROM reserva WHERE id_client = ?";
         /** utilizando um parametro para query para rodar meu codigo no banco de dados caso der erro aparece a mensagem (die->) -> aqui se espera que algo seja retornado*/
-        $stmt = $this->mysqli->prepare($sql_code);
-        $stmt->bind_param("i", $this->id);
-        $stmt->execute();
-        $sql_query = $stmt->get_result();
+        $sql_query = $this->mysqli->prepare($sql_code);
+        $sql_query->bind_param("i", $this->id);
+        $sql_query->execute();
+        $sql_query = $sql_query->get_result();
         $pull = $sql_query->num_rows;
         /**verifico se meu usuario ja existe no banco do registro, permitido apenas 1 reserva */
         if ($pull == 0) {
@@ -42,7 +43,7 @@ class ReservaChecker
             exit();
         }
 
-        $stmt->close();
+        $sql_query->close();
     }
 }
 
