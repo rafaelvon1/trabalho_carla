@@ -200,7 +200,9 @@ a {
                         $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client order by d.nome;";
                     }
                     elseif ($pesquisa == "2") {
-                        $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client and data_reserva < date(now());";  
+                        $data = new DateTime();
+                        $data_atual = $data ->format('Y-m-d');
+                        $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client and data_reserva < '$data_atual';";  
                     }
                     else {
                         
