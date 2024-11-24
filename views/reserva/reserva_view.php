@@ -10,29 +10,28 @@
     <link rel="stylesheet" href="reserva.css">
     <title>reserva</title>
     <?php
-        /**dados na posição 4 = id do cliente 
-         * dados na posição 5 = mesa
-         * dados na posição 0 = horario
-         * dados na posição 1 = data
-         * dados na posição 2 = quantidade pessoa
-         * dados na posição 3 = dia da semana
-        */
-        include("../../controllers/login/protect_controller.php");
-        include("../../controllers/reserva/checking_controller.php");
+    /**dados na posição 4 = id do cliente 
+     * dados na posição 5 = mesa
+     * dados na posição 0 = horario
+     * dados na posição 1 = data
+     * dados na posição 2 = quantidade pessoa
+     * dados na posição 3 = dia da semana
+     */
+    include("../../controllers/reserva/checking_controller.php");
     ?>
 </head>
 
 
 <?php
-    // Define o fuso horário
-    date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
+// Define o fuso horário
+date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
 
-    /**pegando data e horario atual */
-    $data = new DateTime();
-    $data_atual = $data ->format('Y-m-d');
-    $data_max = $data ;
-    $data_max->modify('+2 months');
-    $data_max = $data-> format('Y-m-d');
+/**pegando data e horario atual */
+$data = new DateTime();
+$data_atual = $data->format('Y-m-d');
+$data_max = $data;
+$data_max->modify('+2 months');
+$data_max = $data->format('Y-m-d');
 ?>
 
 <body>
@@ -97,7 +96,7 @@
             </form>
             <?php
             if (isset($_SESSION["error"])) {
-                echo$_SESSION["error"];
+                echo $_SESSION["error"];
             }
             ?>
         </div>
