@@ -117,20 +117,6 @@
                 <br>
                 <button type="submit"><img src="../../images/alterar.png" alt=""></button>
             </form>
-            <!-- alterar reserva
-                <form method="post" action="alterar_controller.php">  
-                    
-                    <small>alterar</small>
-                    <br>
-                    <select name="opc" required>
-                                <option value="" disabled selected >o que deseja alterar</option>
-                                <option value="horario">horario e data</option>
-                                <option value="pessoa">pessoa</option>
-                                </select>
-                    <br><button type="submit">enviar</button>
-                </form>
-                -->
-
 
         </div>
     </div>
