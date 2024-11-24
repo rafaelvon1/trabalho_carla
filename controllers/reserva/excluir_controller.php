@@ -1,18 +1,20 @@
 <?php
-
-
-/**caso cliente apertar no botao excluir registro */
+// Inclui o arquivo de conexão
 include("../../models/conexao.php");
-$id = $_SESSION["id"];
 
-$reservaExclusao = new ReservaExclusao($mysqli, $id);
-$reservaExclusao->excluirReserva();
-
-/**verificar se botao excluir existe */
+// Inicializa a sessão, se ainda não estiver ativa
 if (!isset($_SESSION)) {
     session_start();
 }
 
+
+$id = $_SESSION["id"];
+
+// Cria uma instância da conexão com o banco de dados
+$conexao = new Conexao();
+$mysqli = $conexao->conectar();
+
+// Define a classe para exclusão de reserva
 class ReservaExclusao
 {
     private $mysqli;
@@ -26,18 +28,35 @@ class ReservaExclusao
 
     public function excluirReserva()
     {
-        $id = $_SESSION["id"];
-        $sql_code = "DELETE FROM  reserva WHERE id_client = {$id};";
-        $sql_query = $this->mysqli->query($sql_code) or die("algo deu errado");
-        header("location: ../../views/reserva/reserva_view.php");
+        // Monta o SQL para exclusão
+        $sql_code = "DELETE FROM reserva WHERE id_client = ?";
+        $stmt = $this->mysqli->prepare($sql_code);
 
-        if ($sql_query->affected_rows > 0) {
-            header("location: ../../views/reserva/reserva_view.php");
-            exit();
+        if (!$stmt) {
+            die("Erro ao preparar a consulta: " . $this->mysqli->error);
+        }
+
+        // Substitui o `?` pelo ID do cliente
+        $stmt->bind_param("i", $this->id);
+
+        // Executa a consulta
+        if ($stmt->execute()) {
+            if ($stmt->affected_rows > 0) {
+                // Redireciona se a exclusão foi bem-sucedida
+                header("Location: ../../views/reserva/reserva_view.php");
+                exit();
+            } else {
+                die("Nenhum registro encontrado para excluir.");
+            }
         } else {
-            die("algo deu errado");
+            die("Erro ao executar a consulta: " . $stmt->error);
         }
     }
 }
 
+// Instancia a classe e realiza a exclusão
+$reservaExclusao = new ReservaExclusao($mysqli, $id);
+$reservaExclusao->excluirReserva();
+
+// Fecha a conexão com o banco de dados
 $mysqli->close();
