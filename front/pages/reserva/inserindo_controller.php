@@ -41,7 +41,7 @@
         $horario_futuro ='23:59:00';
     }
     if ($dados[1] == $data_atual and $dados[0] <= $horario_futuro ) {
-        $_SESSION["error"] = $horario_futuro;
+        $_SESSION["error"] = "reserve depois de : $horario_futuro";
         header("location: reserva.php");
     }
     /**verificando se tem mesa disponivel nesse horario */
