@@ -37,11 +37,11 @@
      */
     $total= 35;
     /**caso usuario esteja reservando mesa as 23:00 horario futuro ira chegar a 00:00 assim deixando usuario digitar horario na data errada */
-    if ($horario_futuro >= '00:00:00') {
+    if ($horario_futuro >= '00:00:00' and $horario_futuro <= '10:00:00') {
         $horario_futuro ='23:59:00';
     }
     if ($dados[1] == $data_atual and $dados[0] <= $horario_futuro ) {
-        $_SESSION["error"] = "reserve sua mesa com 2 horas de antecedencia";
+        $_SESSION["error"] = $horario_futuro;
         header("location: reserva.php");
     }
     /**verificando se tem mesa disponivel nesse horario */
