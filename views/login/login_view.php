@@ -28,8 +28,9 @@
 
                     <p class="text-redirection">Deseja voltar para a home? <a href="../../index.html">Clique aqui!</a>
                     </p>
-                    <p class="text-redirection">Ainda não possui uma conta? Crie agora!<a
-                            href="../cadastro/cadastro_view.html">Clique aqui!</a>
+                    <p class="text-redirection">Ainda não possui uma conta? <br> <a class="text-button"
+                            href="../cadastro/cadastro_view.html">Crie
+                            agora!</a>
                     </p>
                 </form>
             </div>
