@@ -96,20 +96,20 @@ button[type="submit"]:hover {
   background-color: #929191;
 }
 
-.signup {
+.text-redirection {
   margin-top: 15px;
   font-size: 14px;
   color: #333;
   text-align: center;
 }
 
-.signup a {
+.text-redirection a {
   color: #b31b1b;
   text-decoration: none;
   font-weight: bold;
 }
 
-.signup a:hover {
+.text-redirection a:hover {
   color: #8c1a1a;
 }
 

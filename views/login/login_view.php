@@ -24,12 +24,13 @@
                 <form action="../../controllers/login/login_controller.php" method="post">
                     <input type="email" id="email" name="log[]" placeholder="Email" required>
                     <input type="password" placeholder="Senha" input type="password" name="log[]" required>
-                    <div class="options">
-                        <label><input type="checkbox"> Lembrar senha</label>
-                    </div>
                     <button type="submit">Login</button>
 
-                    <p class="signup">Deseja voltar para a home? <a href="../../index.html">Clique aqui!</a></p>
+                    <p class="text-redirection">Deseja voltar para a home? <a href="../../index.html">Clique aqui!</a>
+                    </p>
+                    <p class="text-redirection">Ainda não possui uma conta? Crie agora!<a
+                            href="../cadastro/cadastro_view.html">Clique aqui!</a>
+                    </p>
                 </form>
             </div>
         </section>
