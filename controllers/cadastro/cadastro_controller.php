@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>cadastro</title>
 </head>
 
 <body>
@@ -36,7 +36,7 @@ dados[5] = senha
             $this->mysqli = $this->conexao->conectar();
         }
 
-        public function cadastrar($dados)
+        public function cadastrar($dados): void
         {
             /** Verificando se meus dados estão limpos, se não há código SQL */
             $dados[4] = $this->mysqli->real_escape_string($dados[4]);
