@@ -125,9 +125,6 @@ a {
             <li class="nav-item">
                 <a class="nav-link" href="#"><img src="..\imagens_videos\caixa_aberta_login.png" alt=""><br> cardapio</a>
             </li>
-            <li class="nav-item eu">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_eu.png" alt=""><br> eu</a>
-            </li>
             <li class="nav-item sair">
                 <a class="nav-link" href="..\login\logout_controller.php"><img src="..\imagens_videos\caixa_fechada_cadastro.png" alt=""><br> sair</a>
             </li>
@@ -221,7 +218,7 @@ a {
                 else {
                     while ($variavel = $sql_query->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td> <a href=\"perfil_page.php?id=$variavel[id_client]\">entrar</a> </td>";
+                        echo "<td> <a href=\"perfil_admin.php?id=$variavel[id_client]\">entrar</a> </td>";
                         echo "<td>" . $variavel['nome'] . "</td>";
                         echo "<td>" . $variavel['mesa'] . "</td>";
                         echo "<td>" . $variavel['horario'] . "</td>";

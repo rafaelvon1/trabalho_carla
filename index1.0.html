@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="front/assets/styles/index1.0.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="img">
+            <img src="front/assets/images/Logopizza.jpg" alt="logo pizzaria">
+                <div>
+                    <h1>Bem-vindo a pizzaria Nerdola!</h1>
+                    <p><a href="front/pages/login/login_page.html"><strong> Clique aqui </strong></a> Para efetuar login</p>
+                    <p>Caso não tenha conta <a href="front/pages/cadastro/cadastro_page.html"><strong> Clique aqui </strong></a> para se Cadastrar</p>
+                </div>
+                <!--<p class="cardapio">Cardapio</p> -->
+        </div>
+    </header>
+    <main>
+        <img src="front/assets/images/pizza artesanal.png" alt="">
+        <div id="fechado">
+            <h1>Loja fechada no momento!</h1>
+            <p>Horário de atendimento das 10:00 às 20:00 horas</p>
+        </div>
+        <div id="aberto" >
+            <h1>Loja Aberta!</h1>
+            <p>Horário de atendimento das 10:00 às 20:00 horas</p>
+        </div>
+    </main>
+    <br><br>
+    <footer>
+        <hr>
+        <section>
+            <div class="local">
+                <h4>Localização</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1731450652404!6m8!1m7!1syGZQBf8OKMTMe6ifnfhJow!2m2!1d-23.54514609561701!2d-46.37128077382284!3f57.73254725186435!4f-18.418109092383162!5f0.7820865974627469" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="contato">
+                <h2>Contato </h2>
+                <p class="cont">Telefone</p>
+                <p>(11)97157-1413</p>
+                <p class="cont">Email</p>
+                <p>Nerdola@Pizzaria.com.br</p>
+            </div>
+        </section>
+    </footer>
+    <script>
+        var aberto = document.getElementById("aberto");
+        var fechado = document.getElementById("fechado");
+        var data = new Date;
+        // pegando hora do sistema
+        var hora = data.getHours();
+    
+    
+            // condicional que vai mudar o anuncio de aberto e fechado do site
+        if((hora >= 10) && (hora < 20)){
+                aberto.style.display = "block";
+                fechado.style.display = "none";
+        }else{
+                 aberto.style.display = "none";
+                fechado.style.display = "block";    
+        }
+        </script>
+</body>
+</html>

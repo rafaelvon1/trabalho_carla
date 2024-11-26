@@ -13,7 +13,7 @@
     include("../login/protect_controller.php");
     /**caso usuario client tentar entrar no admin com url, barrar com o if */
     if ($_SESSION["status"] == "client") {
-        /**enviando pessoa administradora para sua pagina */
+        /**enviando pessoa cliente para sua pagina */
         header("location: ../principal/pagina_client_page.php");
     }
 ?>
@@ -43,9 +43,6 @@
                 <a class="nav-link" href="#"><img src="..\imagens_videos\caixa_aberta_login.png" alt=""><br>
                     cardapio</a>
 >>>>>>> 2aba80b3218351d88357951011e1d167e5d9c44e
-            </li>
-            <li class="nav-item eu">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_eu.png" alt=""><br> eu</a>
             </li>
             <li class="nav-item sair">
 <<<<<<< HEAD
