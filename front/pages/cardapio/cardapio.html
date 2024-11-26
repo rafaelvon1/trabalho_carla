@@ -77,69 +77,34 @@
 
             background-color: #ffffff;
             margin: auto;
-            padding: 20px;
-            /* Espaçamento interno */
-            border: 1px solid hsl(0, 0%, 52%);
-            /* Borda */
+            padding: 20px;          
+            border: 1px solid hsl(0, 0%, 52%);          
             max-width: 800px;
-            /* Largura máxima */
             text-align: center;
-            /*Centraliza Texto que estão dentro da div principal*/
 
         }
 
 
         .container {
             position: relative;
-            /* Para posicionar o texto em relação à imagem */
             display: inline-block;
-            /* Para que a imagem e o texto se alinhem */
         }
 
         .texto {
             display: none;
-            /* Inicialmente oculto */
             position: absolute;
-            /* Para posicionar o texto sobre a imagem */
             left: 30px;
-            /* Dar aquela centralizada*/
             background-color: rgb(255, 255, 255);
-            /* Fundo*/
             color: rgb(0, 0, 0);
-            /* Cor do texto */
             padding: 5px;
-            /* Espaçamento interno */
             z-index: 20px;
         }
 
         .container:hover .texto {
             display: block;
-            /* Exibe o texto ao passar o mouse */
         }
 
-        body {
-            /* Fixado para cobrir toda a tela */
-            top: 50%;
-            /* Inicia no topo */
-            left: 50%;
-            /* Inicia à esquerda */
-            width: auto;
-            /* Largura da viewport */
-            height: auto;
-            /* Altura da viewport */
-            min-width: 100%;
-            /* Garante que o vídeo cubra toda a largura */
-            min-height: 100%;
-            /* Garante que o vídeo cubra toda a altura */
-            background-image: url('');
-            /* Substitua pelo caminho da sua imagem */
-            background-size: cover;
-            /* Faz a imagem cobrir todo o espaço */
-            background-position: center;
-            /* Centraliza a imagem */
-            z-index: -1;
-            /* Mantém a imagem atrás do conteúdo */
-        }
+
 
         .menu {
 
@@ -149,69 +114,48 @@
             /* Centraliza o menu */
             max-width: 800px;
             /* Largura máxima */
-            margin-top: 650px;
+            margin-top: 250px;
             /* Move o menu um pouco para cima */
 
         }
 
         .botaobaixo {
             background-color: #ecebeb;
-            /* Cor de fundo */
             color: rgb(0, 0, 0);
-            /* Cor do texto */
             border: none;
-            /* Remove a borda padrão */
             border-radius: 5px;
-            /* Arredonda os cantos */
             padding: 10px 20px;
-            /* Espaçamento interno */
             font-size: 16px;
-            /* Tamanho da fonte */
             cursor: pointer;
-            /* Muda o cursor ao passar o mouse */
             transition: background-color 0.3s ease, transform 0.3s ease;
-            /* Efeito de transição */
         }
 
         .botaobaixo:hover {
             background-color: #ffffff;
-            /* Cor ao passar o mouse */
             transform: scale(1.05);
-            /* Leve aumento ao passar o mouse */
         }
 
         .botaocima {
             background-color: red;
-            /* Cor de fundo */
             color: rgb(255, 255, 255);
-            /* Cor do texto */
             border: none;
-            /* Remove a borda padrão */
             border-radius: 200px;
-            /* Arredonda os cantos */
             padding: 10px 20px;
-            /* Espaçamento interno */
             font-size: 16px;
-            /* Tamanho da fonte */
             cursor: pointer;
-            /* Muda o cursor ao passar o mouse */
 
         }
 
         .botaocima:hover {
             background-image: linear-gradient(to top, red, black);
-            /* Cor ao passar o mouse */
             transform: scale(1.05);
-            /* Leve aumento ao passar o mouse */
+            
         }
 
         .inter {
-
             margin: auto;
-            /* Centraliza o menu */
             max-width: 720px;
-            /* Largura máxima */
-            top: 530px;
+            top: 150px;
             position: relative;
             left: -30px;
 
@@ -231,22 +175,22 @@
     <div class="cabecalho">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="..\principal\paginaclient.php"><img src="..\imagens_videos\fatia_home.png"
+                <a class="nav-link" href="..\principal\paginaclient.php"><img src="..\..\images\fatia_home.png"
                         alt=""><br> HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="..\reserva\reserva.html"><img src="..\imagens_videos\pizza_reserva.png"
+                <a class="nav-link" href="..\reserva\reserva.html"><img src="..\..\images\pizza_reserva.png"
                         alt=""><br> RESERVA</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="..\cardapio\cardapio.html"><img src="..\imagens_videos\caixa_aberta_login.png"
+                <a class="nav-link" href="..\cardapio\cardapio.html"><img src="..\..\images\caixa_aberta_login.png"
                         alt=""><br> CARDÁPIO</a>
             </li>
             <li class="nav-item eu">
-                <a class="nav-link" href="#"><img src="..\imagens_videos\pizza_eu.png" alt=""><br> eu</a>
+                <a class="nav-link" href="#"><img src="..\..\images\pizza_eu.png" alt=""><br> eu</a>
             </li>
             <li class="nav-item sair">
-                <a class="nav-link" href="..\login\logout.php"><img src="..\imagens_videos\caixa_fechada_cadastro.png"
+                <a class="nav-link" href="..\login\logout.php"><img src="..\..\images\caixa_fechada_cadastro.png"
                         alt=""><br> SAIR</a>
             </li>
         </ul>
@@ -257,7 +201,6 @@
         <button class="botaocima" id="esfiha" onclick="esconderrsca()">ESFIHAS</button>
         <button class="botaocima" id="bebidas" onclick="escondersd()">BEBIDAS</button>
     </div>
-    <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar Produto" oninput="search()">
     <div class="menu">
         <button class="botaobaixo" id="btsalgada">Salgadas</button>
         <button class="botaobaixo" id="btdoce">Doces</button>
@@ -273,7 +216,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <br>
                             <H6 >A MODA DA CASA</H6>
                             <small>Presunto, Calabresa defumada fatiada, Molho de Tomate, Bacon, Mussarela, Milho,Orégano</small>
@@ -283,7 +226,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >ATUM</H6>
                             <small>Atum, Molho de tomate, Mussarela, Orégano, Palmito</small>
                             <br>
@@ -292,7 +235,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >BAURU</H6>
                             <small>Molho de tomate, Mussarela, Orégano, Presunto, Tomate</small>
                             <br>
@@ -301,7 +244,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >BRÓCOLIS COM CATUPIRY</H6 >
                             <small>Bacon, Brócolis, Requeijão cremoso</small>
                             <br>
@@ -312,7 +255,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >CALABRESA</H6 >
                             <small>Azeitona Verde, Calabresa fatiada, Cebola, molho de tomate, Orégano</small>
                             <br>
@@ -321,7 +264,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >CARNE SECA COM CATUPIRY</H6 >
                             <small>Carne seca, Cebola, Requeijão cremoso</small>
                             <br>
@@ -330,7 +273,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >CINCO QUEIJOS</H6 >
                             <small>Gorgonzola, Mussarela, Parmesão, Provolone, Requeijão cremoso</small>
                             <br>
@@ -339,7 +282,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >DOIS QUEIJO</H6 >
                             <small> Mussarela, Requeijão cremoso</small>
                             <br>
@@ -350,7 +293,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >DORITOS</H6 >
                             <small>Doritos, Mussarela, Peperona</small>
                             <br>
@@ -359,7 +302,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >ESCAROLA</H6 >
                             <small>Bacon, Escarola, MOlho de tomate, Requeijão cremoso</small>
                             <br>
@@ -368,7 +311,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >ESPANHOLA</H6 >
                             <small>Calabresa fatiada, Mussarela, Ovo, Presunto</small>
                             <br>
@@ -377,7 +320,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >FRANCESA</H6 >
                             <small>Cebola, Ervilha, Mussarela, Palmito</small>
                             <br>
@@ -388,7 +331,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >FRANGO COM CATUPIRY</H6 >
                             <small>Frango, Requeijão cremoso</small>
                             <br>
@@ -397,7 +340,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >GALETO</H6 >
                             <small>Frango, Palmito, Requeijão cremoso</small>
                             <br>
@@ -406,7 +349,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >GREGO</H6 >
                             <small>Ervilha, Mussarela, Palmito, Presunto, Tomate</small>
                             <br>
@@ -415,7 +358,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >HAVAIANA</H6 >
                             <small>Abacaxi em calda, Lombo, Mussarela</small>
                             <br>
@@ -426,7 +369,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >JARDINEIRA</H6 >
                             <small> Ervilha, Milho, Mussarela, Palmito, Tomate</small>
                             <br>
@@ -435,7 +378,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >LIGHT</H6 >
                             <small>Brócolis, Milho, Palmito, Tomate</small>
                             <br>
@@ -444,7 +387,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >LOMBO</H6 >
                             <small>Bacon, Lombo, Palmito, Requeijão cremoso</small>
                             <br>
@@ -453,7 +396,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >MEXICANA</H6 >
                             <small>Azeitona verde, Molho de tomate, Mussarela, Orégano, Peperone, Pimentão</small>
                             <br>
@@ -464,7 +407,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >NAPOLITANA</H6 >
                             <small>Molho de tomate, Orégano, Parmesão, Tomate</small>
                             <br>
@@ -473,7 +416,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >NERDOLA A MODA DO CHEFE</H6 >
                             <small>Bacon, Carne seca, Cheddar, Orégano, Molho de tomate, Azeitona verde, Alho
                                 frito</small>
@@ -483,7 +426,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >PÃO DE ALHO</H6 >
                             <small>Molho de tomate, Mussarela, Pão de alho, Pasta de alho</small>
                             <br>
@@ -492,7 +435,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >PERUANA</H6 >
                             <small>Atum, Bacon, Ervilha, Milho, Mussarela</small>
                             <br>
@@ -503,7 +446,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >QUATRO QUEIJOS</H6 >
                             <small>Mussarela, Parmesão, Provolone, Requeijão cremoso</small>
                             <br>
@@ -512,7 +455,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >SICILIANA</H6 >
                             <small>Bacon, Champignon, Mussarela</small>
                             <br>
@@ -521,7 +464,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >SONHO DA NOITE</H6 >
                             <small>Bacon, Milho, Requeijão cremoso</small>
                             <br>
@@ -530,7 +473,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >TOSCANA</H6 >
                             <small>Calabresa Fatiada, Cebola, Mussarela, Tomate</small>
                             <br>
@@ -541,7 +484,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >TRÊS QUEIJOS</H6 >
                             <small>Mussarela, Parmesão, Requeijão cremoso</small>
                             <br>
@@ -550,7 +493,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >VEGANA</H6 >
                             <small>Alho frito, Brócolis, Champignon, Milho, Palmito</small>
                             <br>
@@ -559,7 +502,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >VENEZA</H6 >
                             <small>Bacon, Lombo, Mussarela, Palmito, Presunto</small>
                             <br>
@@ -568,7 +511,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\pizza.png" alt="">
+                            <img class="imagem" src="..\..\images\pizza.png" alt="">
                             <H6 >Volcano</H6 >
                             <small>Molho de tomate, Mussarela, Calabresa, Jalapeños, Pimentão, Cebola, Azeitana verde,
                                 Orégano</small>
@@ -582,7 +525,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >ABACAXI COM CANELA</H6 >
                             <small>Abacaxi fatiado, Açucar e canela, Calda de caramelo</small>
                             <br>
@@ -591,7 +534,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >ABÓBORA COM ESPECIARIAS</H6 >
                             <small>Purê de abóbora, Canela, Noz-Moscada,Cobertura cream cheese</small>
                             <br>
@@ -600,7 +543,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >BANANA COM DOCE DE LEITE</H6 >
                             <small>Banana fatiada, Doce de leite, Canela</small>
                             <br>
@@ -609,7 +552,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >BAUNILHA COM AMÊNDOAS</H6 >
                             <small>Creme de baunilha, Amêndoas fatiadas, Frutas de estação</small>
                             <br>
@@ -620,7 +563,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >BIS</H6 >
                             <small>Bis, Chcocolate ao leite, Chocolate branco</small>
                             <br>
@@ -629,7 +572,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >CARAMELO SALGADO</H6 >
                             <small>Creme de caramelo, Flocos de sal, Nozes e Amêndoas</small>
                             <br>
@@ -638,7 +581,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >CHEESECAKE</H6 >
                             <small>Cream cheese, Açucar, Baunilha, Cobertura de frutas verlhas</small>
                             <br>
@@ -647,7 +590,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >CHOCOLETE BRANCO E FRUTAS</H6 >
                             <small>Chocolate branco, Morango, Kiwi, Framboesa</small>
                             <br>
@@ -658,7 +601,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >CHURROS</H6 >
                             <small>Doce de leite/Chocolate, Canela, Açucar, Cobertura de chantilly</small>
                             <br>
@@ -667,7 +610,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >COCO</H6 >
                             <small>Coco ralado, Leite de coco, Açucar </small>
                             <br>
@@ -676,7 +619,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >DOCE DE LEITE</H6 >
                             <small>Doce de leite, Coco ralado</small>
                             <br>
@@ -685,7 +628,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >ECLAIR</H6 >
                             <small>Creme de confeiteiro, Cobertura de chocolate</small>
                             <br>
@@ -696,7 +639,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >FERRERO ROCHER</H6 >
                             <small>Creme de avelã, Pedaços de ferrero rocher, avelãs trituradas</small>
                             <br>
@@ -705,7 +648,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 > FONDUE DE CHOCOLATE</H6 >
                             <small>Chocolate derretido, Base com chocolate, Marshmallows para mergulhar</small>
                             <br>
@@ -714,7 +657,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >GELATO</H6 >
                             <small>IORGURTE GREDO, MEL</small>
                             <br>
@@ -723,7 +666,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >IOGURTE GREGO COM AMENDOIM</H6 >
                             <small>Iogurte grego, Mel, Amendoim triturado</small>
                             <br>
@@ -734,7 +677,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >IOGURTE E FRUTAS VERMELHAS</H6 >
                             <small>Iogurte natural, Frutas vermelhas, Mel</small>
                             <br>
@@ -743,7 +686,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >KINDER BUENO</H6 >
                             <small>Chocolate ao leite, Creme ninho, Kinder bueno</small>
                             <br>
@@ -752,7 +695,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >KITKAT</H6 >
                             <small>Chocolate ao leite, Kitkat</small>
                             <br>
@@ -761,7 +704,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >LEITE NINHO</H6 >
                             <small>Leite em pó, Doce de leite</small>
                             <br>
@@ -772,7 +715,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >LIMÃO</H6 >
                             <small>Creme de limão, Raspas de limão, Açucar</small>
                             <br>
@@ -781,7 +724,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >MAÇA COM CANELA</H6 >
                             <small>Maças fatiadas, Açucar, Canela em pó</small>
                             <br>
@@ -790,7 +733,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >M&M</H6 >
                             <small>Chocolate ao leite, M&M's coloridos</small>
                             <br>
@@ -799,7 +742,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >MORANGO COM CHANTILLY</H6 >
                             <small>Morango frescos, Cobertura chantilly, Açucar</small>
                             <br>
@@ -810,7 +753,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >NUTELLA</H6 >
                             <small>Nutella</small>
                             <br>
@@ -819,7 +762,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >NUTELLA COM LEITE NINHO</H6 >
                             <small>Nutella, Leite em pó</small>
                             <br>
@@ -828,7 +771,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >NUTELLA COM MORANGO</H6 >
                             <small>Nutella, Morango</small>
                             <br>
@@ -837,7 +780,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >OREO</H6 >
                             <small>Oreo, Chocolate ao leite</small>
                             <br>
@@ -848,7 +791,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >PAÇOCA</H6 >
                             <small>Paçoca esfarelada, Chocolate ao leite, Amendoim</small>
                             <br>
@@ -857,7 +800,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >PRESTÍGIO</H6 >
                             <small>Chocolate ao leite, Coco ralado, Leite condensado</small>
                             <br>
@@ -866,7 +809,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >RAFFAELLO</H6 >
                             <small>Coco, Leite em pó, Raffaello</small>
                             <br>
@@ -875,7 +818,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\imagempizzadoce.png" alt="">
+                            <img class="imagem" src="..\..\images\imagempizzadoce.png" alt="">
                             <H6 >TORTUGUITA</H6 >
                             <small>Chocolate ao leite, Granulado, Tortuguita</small>
                             <strong id="rs">R$ 66.99</strong>
@@ -889,7 +832,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >ALHO COM MUSSARELA</H6 >
                             <small>Alho, Mussarela</small>
                             <br>
@@ -898,7 +841,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >ATUM</H6 >
                             <small>Atum</small>
                             <br>
@@ -907,7 +850,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >ATUM COM QUEIJO E PALMITO</H6 >
                             <small>Atum, Palmito, Queijo</small>
                             <br>
@@ -916,7 +859,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >ATUM COM CATUPIRY</H6 >
                             <small>Atum, Requeijão cremoso</small>
                             <strong id="rs">R$ 6.00</strong>
@@ -926,7 +869,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >ATUM COM QUEIJO</H6 >
                             <small>Atum, Queijo</small>
                             <br>
@@ -935,7 +878,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >BACON</H6 >
                             <small>Bacon, Mussarela</small>
                             <br>
@@ -944,7 +887,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >BACON COM CHEDDAR</H6 >
                             <small>Bacon, Cheddar</small>
                             <br>
@@ -953,7 +896,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >BAURU</H6 >
                             <small>Mussarela, Presunto, Tomate</small>
                             <strong id="rs">R$ 6.00</strong>
@@ -963,7 +906,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >BRÓCOLIS COM CATUPIRY E BACON</H6 >
                             <small>Bacon, Brócolis, Requeijão cremoso</small>
                             <br>
@@ -972,7 +915,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >BRÓCOLIS COM QUEIJO</H6 >
                             <small>Brócolis, Queijo</small>
                             <br>
@@ -981,7 +924,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >BRÓCOLIS COM QUEIJO E BACON</H6 >
                             <small>Bacon, Brócolis, Queijo</small>
                             <br>
@@ -990,7 +933,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >CALABRESA</H6 >
                             <small>Calabresa, Requeijão cremoso</small>
                             <strong id="rs">R$ 6.00</strong>
@@ -1000,7 +943,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >CALABRESA COM CATUPIRY</H6 >
                             <small>Calabresa, Requeijão cremoso</small>
                             <br>
@@ -1009,7 +952,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >CALABRESA COM CHEDDAR</H6 >
                             <small>Calabresa, Cheddar</small>
                             <br>
@@ -1018,7 +961,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >CALABRESA COM QUEIJO</H6 >
                             <small>Calabresa, Queijo</small>
                             <br>
@@ -1027,7 +970,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >CARNE</H6 >
                             <small>Carne temperada</small>
                             <strong id="rs">R$ 6.00</strong>
@@ -1037,7 +980,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >CARNE COM CATUPIRY</H6 >
                             <small>Carne temperada, Requeijão cremoso</small>
                             <br>
@@ -1046,7 +989,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >CARNE COM QUEIJO</H6 >
                             <small>Carne temperada, Queijo</small>
                             <br>
@@ -1055,7 +998,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >CARNE SECA COM CATUPIRY</H6 >
                             <small>Carne seca, Requeijão cremoso</small>
                             <br>
@@ -1064,7 +1007,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >CARNE SECA COM QUEIJO</H6 >
                             <small>Carne seca, Queijo</small>
                             <strong id="rs">R$ 6.00</strong>
@@ -1074,7 +1017,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >CATUPIRY</H6 >
                             <small>Requeijão cremoso</small>
                             <br>
@@ -1083,7 +1026,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >CHEDDAR</H6 >
                             <small>Cheddar</small>
                             <br>
@@ -1092,7 +1035,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >DOIS QUEIJOS</H6 >
                             <small>Mussarela, Requeijão cremoso</small>
                             <br>
@@ -1101,7 +1044,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >ESCAROLA COM QUEIJO</H6 >
                             <small>Escarola, Queijo</small>
                             <strong id="rs">R$ 6.00</strong>
@@ -1111,7 +1054,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >ESCAROLA COM QUEIJO E BACON</H6 >
                             <small>Bacon, Escarola, Queijo</small>
                             <br>
@@ -1120,7 +1063,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >ESCAROLA COM CATUPIRY</H6 >
                             <small>Escarola, Requeijão cremoso</small>
                             <br>
@@ -1129,7 +1072,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >FRANGO</H6 >
                             <small>Frango</small>
                             <br>
@@ -1138,7 +1081,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >FRANGO COM CATUPIRY</H6 >
                             <small>Frango, Requeijão cremoso</small>
                             <strong id="rs">R$ 6.00</strong>
@@ -1148,7 +1091,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >FRANGO COM CHEDDAR</H6 >
                             <small>Cheddar, Frango</small>
                             <br>
@@ -1157,7 +1100,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >FRANGO COM CREAM CHEESE</H6 >
                             <small>Cream cheese, Frango</small>
                             <br>
@@ -1166,7 +1109,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >FRANGO COM MUSSARELA</H6 >
                             <small>Frango, Mussarela</small>
                             <br>
@@ -1175,7 +1118,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >MILHO COM CATUPIRY</H6 >
                             <small>Milho, Requeijão cremoso</small>
                             <strong id="rs">R$ 6.00</strong>
@@ -1185,7 +1128,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >MILHO COM MUSSARELA</H6 >
                             <small>Milho, Mussarela</small>
                             <br>
@@ -1194,7 +1137,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >PALMITO</H6 >
                             <small>Palmito, Mussarela</small>
                             <br>
@@ -1203,7 +1146,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >PALMITO COM CATUPIRY</H6 >
                             <small>Palmito, Requeijão cremoso</small>
                             <br>
@@ -1212,7 +1155,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >PÃO DE ALHO</H6 >
                             <small>Mussarela, Pão de alho</small>
                             <strong id="rs">R$ 6.00</strong>
@@ -1222,7 +1165,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >PEPERONE COM MUSSARELA</H6 >
                             <small>Peperone, Mussarela</small>
                             <br>
@@ -1231,7 +1174,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >PORTUGUESA</H6 >
                             <small>Ovo, Mussarela, Presunto</small>
                             <br>
@@ -1240,7 +1183,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >PRESUNTO COM QUEIJO</H6 >
                             <small>Mussarela, Presunto</small>
                             <br>
@@ -1249,7 +1192,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihasalgad.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihasalgad.jpeg" alt="">
                             <H6 >QUEIJO</H6 >
                             <small>Mussarela</small>
                             <br>
@@ -1262,7 +1205,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <br>
                             <H6 >ABACAXI</H6 >
                             <small>Abacaxi picado, Açúcar, Canela</small>
@@ -1272,7 +1215,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >ABÓBORA</H6 >
                             <small>purê de abóbora, açúcar, canela</small>
                             <br>
@@ -1281,7 +1224,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >BRIGADEIRO</H6 >
                             <small>Leite condensado, Chocolate em pó, Granulado</small>
                             <br>
@@ -1290,7 +1233,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >CHOCOLATE AO LEITE</H6 >
                             <small>Chocalate ao leite derretido</small>
                             <br>
@@ -1301,7 +1244,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <br>
                             <H6 >Coco</H6 >
                             <small>Coco ralado, Leite condensado</small>
@@ -1311,7 +1254,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >DOCE DE LEITE</H6 >
                             <small>Doce de Leite</small>
                             <br>
@@ -1320,7 +1263,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >DOCE DE LEITE COM COCO</H6 >
                             <small>Doce de leite, Coco ralado</small>
                             <br>
@@ -1329,7 +1272,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >DUO</H6 >
                             <small>Kitkat, Galak</small>
                             <br>
@@ -1340,7 +1283,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <br>
                             <H6 >GALAK</H6 >
                             <small>Galak</small>
@@ -1350,7 +1293,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >GALAK COM NEGRESCO</H6 >
                             <small>Galak, Negresco</small>
                             <br>
@@ -1359,7 +1302,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >GOIABADA</H6 >
                             <small>Goiabada fatiada, Leite condensado</small>
                             <br>
@@ -1368,7 +1311,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >IOGURTE GREGO</H6 >
                             <small>Iogurte grego</small>
                             <br>
@@ -1379,7 +1322,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <br>
                             <H6 >KIWI</H6 >
                             <small>Kiwi, Leite condensado</small>
@@ -1389,7 +1332,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >LEITE CONSENSADO COM AMENDOIM</H6 >
                             <small>Amendoim, Leite condensado</small>
                             <br>
@@ -1398,7 +1341,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >MAÇA</H6 >
                             <small>Maçã fatiada, Açúcar, Canela</small>
                             <br>
@@ -1407,7 +1350,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >MARACUJÁ</H6 >
                             <small>Polpa de maracujá, Açúcar</small>
                             <br>
@@ -1418,7 +1361,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <br>
                             <H6 >MARSHMALLOWS</H6 >
                             <small>Marshmallow picado</small>
@@ -1428,7 +1371,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >MEL</H6 >
                             <small>Mel</small>
                             <br>
@@ -1437,7 +1380,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >NUTELLA</H6 >
                             <small>Nutella</small>
                             <br>
@@ -1446,7 +1389,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >NUTELLA COM BANANA</H6 >
                             <small>Nutella, Banana fatiada</small>
                             <br>
@@ -1457,7 +1400,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <br>
                             <H6 >OVOMALTINE</H6 >
                             <small>Creme de ovomaltine</small>
@@ -1467,7 +1410,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >PAÇOCA</H6 >
                             <small>Paçoca esfarelada</small>
                             <br>
@@ -1476,7 +1419,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >PAÇOCA COM AMENDOIM EXTRA CROCANTE</H6 >
                             <small>Paçoca esfarelada, Amendoim crocante</small>
                             <br>
@@ -1485,7 +1428,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >PAÇOCA COM CHOCOLATE</H6 >
                             <small>Paçoca esfarelada, Chocolate derretido</small>
                             <br>
@@ -1496,7 +1439,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <br>
                             <H6 >PACOÇA COM COCO</H6 >
                             <small>Paçoca esfarelada, Coco ralado</small>
@@ -1506,7 +1449,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >PERA</H6 >
                             <small>Pera picada, Açúcar, Canela</small>
                             <br>
@@ -1515,7 +1458,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >PISTACHE</H6 >
                             <small>Pistaches triturados, Açúcar</small>
                             <br>
@@ -1524,7 +1467,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >QUINDIM</H6 >
                             <small>Coco ralado, Açúcar, Leite de coco</small>
                             <br>
@@ -1535,7 +1478,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <br>
                             <H6 >ROMÃ</H6 >
                             <small>Sementes de romã, Açúcar</small>
@@ -1545,7 +1488,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >ROMEU E JULIETA</H6 >
                             <small>Catupiry, Goiabada</small>
                             <br>
@@ -1554,7 +1497,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >SORVETE</H6 >
                             <small>Sorvete de Morango/Chocolate/Creme (de sua escolha, só 1)</small>
                             <br>
@@ -1563,7 +1506,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >TAPIOCA</H6 >
                             <small>Tapioca, Leite condensado</small>
                             <br>
@@ -1574,7 +1517,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <br>
                             <H6 >TAPIOCA COM NUTELLA</H6 >
                             <small>Tapioca, Nutella</small>
@@ -1584,7 +1527,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >TIRAMISU</H6 >
                             <small>Mascarpone, Café, Açúcar, Cacau em pó</small>
                             <br>
@@ -1593,7 +1536,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >TORTA DE LIMÃO</H6 >
                             <small>Creme de limão, Raspas de limão</small>
                             <br>
@@ -1602,7 +1545,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\esfihadoce.jpeg" alt="">
+                            <img class="imagem" src="..\..\images\esfihadoce.jpeg" alt="">
                             <H6 >UVA</H6 >
                             <small>Uvas cortadas, Açúcar</small>
                             <br>
@@ -1617,7 +1560,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\cc2l.jpg" alt="">
+                            <img class="imagem" src="..\..\images\cc2l.jpg" alt="">
                             <br>
                             <H6 >COCA-COLA 2 LITROS</H6 >
                             <small></small>
@@ -1627,7 +1570,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\cc600ml.jpg" alt="">
+                            <img class="imagem" src="..\..\images\cc600ml.jpg" alt="">
                             <H6 >COCA-COLA 600ML</H6 >
                             <small></small>
                             <br>
@@ -1636,7 +1579,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\cc350ml.jpg" alt="">
+                            <img class="imagem" src="..\..\images\cc350ml.jpg" alt="">
                             <H6 >COCA-COLA 350ML</H6 >
                             <small></small>
                             <br>
@@ -1645,7 +1588,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\ccz2l.jpg" alt="">
+                            <img class="imagem" src="..\..\images\ccz2l.jpg" alt="">
                             <H6 >COCA-COLA ZERO 2 LITROS</H6 >
                             <small></small>
                             <br>
@@ -1656,7 +1599,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\ccz600ml.jpg" alt="">
+                            <img class="imagem" src="..\..\images\ccz600ml.jpg" alt="">
                             <br>
                             <H6 >COCA-COLA ZERO 600ML</H6 >
                             <small></small>
@@ -1666,7 +1609,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\ccz350ml.jpg" alt="">
+                            <img class="imagem" src="..\..\images\ccz350ml.jpg" alt="">
                             <H6 >COCA-COLA ZERO 350ML</H6 >
                             <small></small>
                             <br>
@@ -1675,7 +1618,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/fl2l.jpg" alt="">
+                            <img class="imagem" src="..\..\images/fl2l.jpg" alt="">
                             <H6 >FANTA LARANJA 2 LITROS</H6 >
                             <small></small>
                             <br>
@@ -1684,7 +1627,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/fl600ml.jpg" alt="">
+                            <img class="imagem" src="..\..\images/fl600ml.jpg" alt="">
                             <H6 >FANTA LARANJA 600ML</H6 >
                             <small></small>
                             <br>
@@ -1695,7 +1638,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/fl350ml.jpg" alt="">
+                            <img class="imagem" src="..\..\images/fl350ml.jpg" alt="">
                             <br>
                             <H6 >FANTA LARAJANTA 350ML</H6 >
                             <small></small>
@@ -1705,7 +1648,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/fu2l.jpg" alt="">
+                            <img class="imagem" src="..\..\images/fu2l.jpg" alt="">
                             <H6 >FANTA UVA 2 LITROS</H6 >
                             <small></small>
                             <br>
@@ -1714,7 +1657,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/fu600ml.jpg" alt="">
+                            <img class="imagem" src="..\..\images/fu600ml.jpg" alt="">
                             <H6 >FANTA UVA 600ML</H6 >
                             <small></small>
                             <br>
@@ -1723,7 +1666,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/fu350ml.jpg" alt="">
+                            <img class="imagem" src="..\..\images/fu350ml.jpg" alt="">
                             <H6 >FANTA UVA 350ML</H6 >
                             <small></small>
                             <br>
@@ -1734,7 +1677,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\ga2l.png" alt="">
+                            <img class="imagem" src="..\..\images\ga2l.png" alt="">
                             <br>
                             <H6 >GUARANÁ ANTARCTICA 2 LITROS</H6 >
                             <small></small>
@@ -1744,7 +1687,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\ga600ml.jpg" alt="">
+                            <img class="imagem" src="..\..\images\ga600ml.jpg" alt="">
                             <H6 >GUARANÁ ANTARCTICA 600ML</H6 >
                             <small></small>
                             <br>
@@ -1753,7 +1696,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos\ga350ml.jpg" alt="">
+                            <img class="imagem" src="..\..\images\ga350ml.jpg" alt="">
                             <H6 >GUARANA ANTARCTICA 350ML</H6 >
                             <small></small>
                             <br>
@@ -1762,7 +1705,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/ps2l.jpg" alt="">
+                            <img class="imagem" src="..\..\images/ps2l.jpg" alt="">
                             <H6 >PEPSI 2 LITROS</H6 >
                             <small></small>
                             <br>
@@ -1773,7 +1716,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/ps600ml.jpg" alt="">
+                            <img class="imagem" src="..\..\images/ps600ml.jpg" alt="">
                             <br>
                             <H6 >PEPSI 600ML</H6 >
                             <small></small>
@@ -1783,7 +1726,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/ps350ml.jpg" alt="">
+                            <img class="imagem" src="..\..\images/ps350ml.jpg" alt="">
                             <H6 >PEPSI 350ML</H6 >
                             <small></small>
                             <br>
@@ -1792,7 +1735,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/sw350ml.jpg" alt="">
+                            <img class="imagem" src="..\..\images/sw350ml.jpg" alt="">
                             <H6 >SCHWEPPES CITRUS 350ML</H6 >
                             <small></small>
                             <br>
@@ -1801,7 +1744,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/sp2l.jpg" alt="">
+                            <img class="imagem" src="..\..\images/sp2l.jpg" alt="">
                             <H6 >SPRITE 2 LITROS</H6 >
                             <small></small>
                             <br>
@@ -1812,7 +1755,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/sp600ml.jpg" alt="">
+                            <img class="imagem" src="..\..\images/sp600ml.jpg" alt="">
                             <br>
                             <H6 >SPRITE 600ML</H6 >
                             <small></small>
@@ -1822,7 +1765,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/sp350ml.jpg" alt="">
+                            <img class="imagem" src="..\..\images/sp350ml.jpg" alt="">
                             <H6 >SPRITE 350ML</H6 >
                             <small></small>
                             <br>
@@ -1835,7 +1778,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/scgoiaba.jpg" alt="">
+                            <img class="imagem" src="..\..\images/scgoiaba.jpg" alt="">
                             <br>
                             <H6 >DEL VALE GOIABA LATA 290ML</H6 >
                             <small></small>
@@ -1845,7 +1788,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/scmanga.jpg" alt="">
+                            <img class="imagem" src="..\..\images/scmanga.jpg" alt="">
                             <H6 >DEL VALE MANGA LATA 290ML</H6 >
                             <small></small>
                             <br>
@@ -1854,7 +1797,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/scmaracas.jpg" alt="">
+                            <img class="imagem" src="..\..\images/scmaracas.jpg" alt="">
                             <H6 >DEL VALE MARACUJÁ LATA 290ML</H6 >
                             <small></small>
                             <br>
@@ -1863,7 +1806,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/scpessego.jpg" alt="">
+                            <img class="imagem" src="..\..\images/scpessego.jpg" alt="">
                             <H6 >DEL VALE PÊSSEGO LATA 290ML</H6 >
                             <small></small>
                             <br>
@@ -1874,7 +1817,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/scuvavale.jpg" alt="">
+                            <img class="imagem" src="..\..\images/scuvavale.jpg" alt="">
                             <br>
                             <H6 >DEL VALE UVA LATA 290ML</H6 >
                             <small></small>
@@ -1884,7 +1827,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/scuva.png" alt="">
+                            <img class="imagem" src="..\..\images/scuva.png" alt="">
                             <H6 >SUCO DE UVA 1,5L</H6 >
                             <small></small>
                             <br>
@@ -1893,7 +1836,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/sclaranja.jpg" alt="">
+                            <img class="imagem" src="..\..\images/sclaranja.jpg" alt="">
                             <H6 >SUCO DE LARANJA 1,5 LITROS</H6 >
                             <small></small>
                             <br>
@@ -1906,7 +1849,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/antarticaln.jpg" alt="">
+                            <img class="imagem" src="..\..\images/antarticaln.jpg" alt="">
                             <br>
                             <H6 >ANTARCTICA LONG NECK</H6 >
                             <small></small>
@@ -1916,7 +1859,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/amstelln.jpg" alt="">
+                            <img class="imagem" src="..\..\images/amstelln.jpg" alt="">
                             <H6 >AMSTEL LONG NECK</H6 >
                             <small></small>
                             <br>
@@ -1925,7 +1868,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/bohemialn.jpg" alt="">
+                            <img class="imagem" src="..\..\images/bohemialn.jpg" alt="">
                             <H6 >BOHEMIA LONG NECK</H6 >
                             <small></small>
                             <br>
@@ -1934,7 +1877,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/brahmaln.jpg" alt="">
+                            <img class="imagem" src="..\..\images/brahmaln.jpg" alt="">
                             <H6 >BRAHMA LONG NECK</H6 >
                             <small></small>
                             <br>
@@ -1945,7 +1888,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/budweiserln.jpg" alt="">
+                            <img class="imagem" src="..\..\images/budweiserln.jpg" alt="">
                             <br>
                             <H6 >BUDWEISER LONG NECK</H6 >
                             <small></small>
@@ -1955,7 +1898,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/coronaln.png" alt="">
+                            <img class="imagem" src="..\..\images/coronaln.png" alt="">
                             <H6 >CORONA LONG NECK</H6 >
                             <small></small>
                             <br>
@@ -1964,7 +1907,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/heinekenln.png" alt="">
+                            <img class="imagem" src="..\..\images/heinekenln.png" alt="">
                             <H6 >HEINEKIN LONG NECK</H6 >
                             <small></small>
                             <br>
@@ -1973,7 +1916,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/itaipavaln.jpg" alt="">
+                            <img class="imagem" src="..\..\images/itaipavaln.jpg" alt="">
                             <H6 >ITAIPAVA LONG NECK</H6 >
                             <small></small>
                             <br>
@@ -1984,7 +1927,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/kaiserln.jpg" alt="">
+                            <img class="imagem" src="..\..\images/kaiserln.jpg" alt="">
                             <br>
                             <H6 >KAISER LONG NECK</H6 >
                             <small></small>
@@ -1994,7 +1937,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/polarln.jpg" alt="">
+                            <img class="imagem" src="..\..\images/polarln.jpg" alt="">
                             <H6 >POLAR LONG NECK</H6 >
                             <small></small>
                             <br>
@@ -2003,7 +1946,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/skolln.jpg" alt="">
+                            <img class="imagem" src="..\..\images/skolln.jpg" alt="">
                             <H6 >SKOL LONG NECK</H6 >
                             <small></small>
                             <br>
@@ -2012,7 +1955,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/stellaln.jpg" alt="">
+                            <img class="imagem" src="..\..\images/stellaln.jpg" alt="">
                             <H6 >STELLA ARTOIS LONG NECK</H6 >
                             <small></small>
                             <br>
@@ -2025,7 +1968,7 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/aguanormal.png" alt="">
+                            <img class="imagem" src="..\..\images/aguanormal.png" alt="">
                             <br>
                             <H6 >ÁGUA 500ML</H6 >
                             <small></small>
@@ -2035,7 +1978,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/aguagas.png" alt="">
+                            <img class="imagem" src="..\..\images/aguagas.png" alt="">
                             <H6 >ÁGUA COM GÁS 500ML</H6 >
                             <small></small>
                             <br>
@@ -2044,7 +1987,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/aguasw.png" alt="">
+                            <img class="imagem" src="..\..\images/aguasw.png" alt="">
                             <H6 >ÁGUA TÔNICA SCHWEPPES 350ML</H6 >
                             <small></small>
                             <br>
@@ -2053,7 +1996,7 @@
                     </div>
                     <div class="col-3">
                         <div class="container">
-                            <img class="imagem" src="..\imagens_videos/h20limao.jpg" alt="">
+                            <img class="imagem" src="..\..\images/h20limao.jpg" alt="">
                             <H6 >H20 COM LIMÃO 500ML</H6 >
                             <small></small>
                             <br>

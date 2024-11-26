@@ -15,7 +15,10 @@ document.getElementById('esfiha').addEventListener('click', function() {
     document.getElementById('doce').style.display = 'none';  
     document.getElementById('alimentos').style.display = 'none';
     document.getElementById('drink').style.display = 'none';
- 
+    document.getElementById('suco').style.display = 'none';
+    document.getElementById('cerva').style.display = 'none';
+    document.getElementById('agua').style.display = 'none';
+
 });
 
 document.getElementById('bebidas').addEventListener('click', function() {
