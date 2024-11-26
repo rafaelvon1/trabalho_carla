@@ -26,13 +26,15 @@ $id = $_SESSION["id"];
 </header>
 <main>
     <div class="imagem">
-        <img src="../../assets/images/fotoperfil.png" alt="">
-        <h1>Olá,</h1>
+        <img src="../../assets/images/fotoperfil.png" alt="Foto de perfil">
+        <!--Mostrando nome do usuario logado-->
+        <h1>Olá, <?php echo $variavel['nome'] ?></h1>
     </div>
     <br><br>
     <h2>Aqui estão suas Informações</h2>
     <div class="info">
         <ul>
+            <!--mostrando informações do usuário logado--->
             <li>Nome: <?php echo $variavel['nome']; ?></li>
             <li>Email: <?php echo $variavel['email']; ?></li>
             <li>Cpf: <?php echo $variavel['cpf']; ?></li>
@@ -42,7 +44,7 @@ $id = $_SESSION["id"];
     </div>
 </main>
 <footer>
-    <p><a href="#">Clique aqui</a> para voltar </p>
+    <p><a href="../principal/pagina_client_page.php">Clique aqui</a> para voltar</p>
 </footer>
 </body>
 </html>
