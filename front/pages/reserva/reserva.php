@@ -24,17 +24,6 @@
 </head>
 
 
-<?php
-    // Define o fuso horário
-    date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
-
-    /**pegando data e horario atual */
-    $data = new DateTime();
-    $data_atual = $data ->format('Y-m-d');
-    $data_max = $data ;
-    $data_max->modify('+2 months');
-    $data_max = $data-> format('Y-m-d');
-?>
 
 <body>
     <div class="cabecalho">
@@ -78,12 +67,26 @@
                     <input id="horario" name="dados[]" type="time" required min="10:00" max="20:00">
                 </div>
 
+                <?php
+                    // Define o fuso horário
+                    date_default_timezone_set('America/Sao_Paulo'); 
+                    /**pegando data e horario atual */
+                    $data = new DateTime();
+                    $data_atual = $data ->format('Y-m-d');
+                    $data_max = $data ;
+                    $data_max->modify('+2 months');
+                    $data_max = $data-> format('Y-m-d');
+                ?>
+
                 <div class="form-group">
                     <label for="data">Para qual dia:</label>
                     <input id="data" name="dados[]" type="date" required min="<?php echo $data_atual; ?>"
                         max="<?php echo $data_max; ?>">
                 </div>
 
+
+
+                
                 <div class="form-group">
                     <label for="pessoas">Quantidade de pessoas:</label>
                     <select id="pessoas" name="dados[]" required>

@@ -14,7 +14,7 @@
     /**pegando id da tela de login*/
     $id = $_SESSION["id"];
     // Define o fuso horário
-    date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
+    date_default_timezone_set('America/Sao_Paulo');
     /**pegando data atual para verificação */
     $data = new DateTime();
     $data_atual = $data ->format('Y-m-d');
@@ -33,15 +33,14 @@
     $horas_depois = new DateTime("$dados[1] $dados[0]");
     $horas_depois->modify('+2 hours');
     $horas_depois = $horas_depois->format('H:i');
-    /**mesas pre definidas
-     */
+    /**mesas pre definidas*/
     $total= 35;
     /**caso usuario esteja reservando mesa as 23:00 horario futuro ira chegar a 00:00 assim deixando usuario digitar horario na data errada */
-    if ($horario_futuro >= '00:00:00') {
+    if ($horario_futuro >= '00:00:00' and $horario_futuro <= '10:00:00') {
         $horario_futuro ='23:59:00';
     }
     if ($dados[1] == $data_atual and $dados[0] <= $horario_futuro ) {
-        $_SESSION["error"] = "reserve sua mesa com 2 horas de antecedencia";
+        $_SESSION["error"] = "reserve em outro horario ou data<br> exemplo:<br> horario fututo; $horario_futuro <br> data atual; $data_atual";
         header("location: reserva.php");
     }
     /**verificando se tem mesa disponivel nesse horario */
