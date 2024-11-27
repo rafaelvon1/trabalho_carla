@@ -1,0 +1,138 @@
+.imagem {
+    width: 170px;
+    height: auto;
+}
+
+a {
+    font-family: 'Courier New', Courier, monospace;
+    color: #8f8c04;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-item.sair {
+    margin-left: auto;
+}
+
+.nav-link {
+    text-align: center;
+}
+
+#rs {
+    color: brown;
+    text-align: center;
+}
+
+.botao {
+    display: none;
+    position: absolute;
+    left: 10px;
+    border-radius: 50px;
+    left: 50px;
+    z-index: 10px;
+}
+
+.container:hover .botao {
+    display: block;
+}
+
+#principal {
+    background-color: #ffffff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid hsl(0, 0%, 52%);
+    max-width: 800px;
+    text-align: center;
+}
+
+
+.container {
+    position: relative;
+    display: inline-block;
+}
+
+.texto {
+    display: none;
+    position: absolute;
+    left: 30px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    z-index: 20px;
+}
+
+.container:hover .texto {
+    display: block;
+}
+
+.menu {
+    display: flex;
+    margin: auto;
+    max-width: 800px;
+    margin-top: 250px;
+}
+
+.botaobaixo {
+    background-color: #ecebeb;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botaobaixo:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+}
+
+.botaocima {
+    background-color: red;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 200px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+.botaocima:hover {
+    background-image: linear-gradient(to top, red, black);
+    transform: scale(1.05);
+
+}
+
+.inter {
+    margin: auto;
+    max-width: 720px;
+    top: 150px;
+    position: relative;
+    left: -30px;
+}
+
+#btrefri,
+#btsuco,
+#btcerva,
+#btagua {
+    display: none;
+}
