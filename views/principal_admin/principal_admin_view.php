@@ -32,7 +32,8 @@ if (!isset($_SESSION["email"]) || $_SESSION["status"] != "admin") {
                         src="../../Images/pizza_reserva.png" alt=""><br> Reserva</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="../../images/caixa_aberta_login.png" alt=""><br>
+                <a class="nav-link" href="../cardapio/cardapio.html"><img src="../../images/caixa_aberta_login.png"
+                        alt=""><br>
                     Cardapio</a>
             </li>
             <li class="nav-item eu">

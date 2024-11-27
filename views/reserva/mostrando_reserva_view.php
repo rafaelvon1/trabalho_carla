@@ -32,14 +32,17 @@
                         src="../../images/fatia_home.png" alt=""><br> Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="../../images/pizza_reserva.png" alt=""><br> Reserva</a>
+                <a class="nav-link" href="mostrando_reserva_view.php"><img src="../../images/pizza_reserva.png"
+                        alt=""><br> Reserva</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="../../images/caixa_aberta_login.png" alt=""><br>
+                <a class="nav-link" href="../cardapio/cardapio.html"><img src="../../images/caixa_aberta_login.png"
+                        alt=""><br>
                     Cardapio</a>
             </li>
             <li class="nav-item eu">
-                <a class="nav-link" href="#"><img src="../../images/pizza_eu.png" alt=""><br> Perfil</a>
+                <a class="nav-link" href="../perfils/perfil_cliente/perfil_cliente_view.php"><img
+                        src="../../images/pizza_eu.png" alt=""><br> Perfil</a>
             </li>
             <li class="nav-item sair">
                 <a class="nav-link" href="../../controllers/login/logout_controller.php"><img
