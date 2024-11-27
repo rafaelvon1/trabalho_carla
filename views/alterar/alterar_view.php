@@ -61,12 +61,14 @@ $data_max = $data->format('Y-m-d');
                 <label for="">mesa para quantos: </label>
                 <br>
                 <select name="dados[]" required>
-                    <option value="<?php echo $variavel['quantidade']; ?>">
-                        <?php echo $variavel['quantidade'], "-pessoas"; ?></option>
+                    <option value="<?php echo $variavel['quantidade'] ?? ''; ?>">
+                        <?php echo ($variavel['quantidade'] ?? 'Selecione'), "-pessoas"; ?>
+                    </option>
                     <option value="2">2-pessoa</option>
                     <option value="4">4-pessoa</option>
                     <option value="8">8-pessoa</option>
                 </select>
+
 
                 <br><br>
 

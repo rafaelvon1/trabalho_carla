@@ -11,8 +11,8 @@
     <h1>bom dia</h1>
     <button><a href="../reserva_admin/reserva_admin_view.php">voltar</a></button>
     <?php
-        $id = $_GET["id"];
-        echo $id ;
+    $id = $_GET["id"];
+    echo $id;
     ?>
 </body>
 

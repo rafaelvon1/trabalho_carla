@@ -38,7 +38,7 @@ if (!isset($_SESSION)) {
         </fieldset>
     </main>
     <footer>
-        <a href="">Voltar</a>
+        <a href="../../principal_cliente/principal_client_view.php">Voltar</a>
     </footer>
 </body>
 
