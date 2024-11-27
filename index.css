@@ -1,101 +1,106 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0px;
     margin: 0px;
-    text-decoration: none;
-}
-
-/* imagem de fundo do site*/
-body {
-    background-image: url(images/pexels-tolga-ardic-410168453-28869117.jpg);
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-}
-
-.nr {
-    margin-left: 15%;
-}
-
-.contato {
-    padding: 10px;
-}
-
-.contato>span {
-    margin-left: 30px;
-    margin-right: 15px;
+    padding: 0px;
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
 header {
-    padding: 25px;
-    margin-bottom: 8%;
-    color: white;
-    background-color: rgba(10, 23, 55, 0.5);
-    box-shadow: 1px 1px 1px 2px black;
+    background-color: white;
+    width: 98.8vw;
+    height: 100px;
 }
 
-/* alinhando os botões de login/cadastro*/
-li {
+body {
+    width: 98.7vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* diminuindo tamanho da imagem de logo*/
+.img>img {
+    width: 100px;
+}
+
+/* deixando texto ao lado da imagem e centralizada na altura dela*/
+.img {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 
-.reserva {
-    border: 3px solid goldenrod;
-    border-radius: 10px;
-    padding: 5px;
+/* deixando elementos h1 e p mais próximos*/
+.img>div>p {
+    margin-top: 5px;
 }
 
-main {
-    margin-left: 10%;
-    padding: 10px;
-    width: 40%;
-}
-
-main>h1 {
-    margin-bottom: 15px;
-}
-
-.botoes {
-    margin-top: 50px;
-}
-
+/* link para login*/
 a {
-    color: white;
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+main>img {
+    margin-top: 80px;
+    margin-left: 25%;
+    margin-bottom: 30px;
+}
+
+/* aviso de loja fechada*/
+#fechado {
+    margin: auto;
+    border: 1px solid red;
+    padding: 35px;
+    text-align: center;
+    width: 500px;
+    background-color: rgb(247, 207, 207);
+    border-radius: 5px;
+}
+
+#fechado>h1 {
+    color: red;
+}
+
+/* aviso de loja aberta */
+#aberto {
+    margin: auto;
+    border: 1px solid green;
+    padding: 35px;
+    text-align: center;
+    width: 500px;
+    background-color: rgb(207, 247, 207);
+    border-radius: 5px;
+}
+
+#aberto>h1 {
+    color: green;
+}
+
+hr {
+    border: 1px solid red;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.contato {
     margin: 5px;
-}
-
-.log {
-    border: 3px solid goldenrod;
-    border-radius: 10px;
     padding: 5px;
 }
 
-.log:hover {
-    background-color: goldenrod;
+.contato>h2 {
+    color: red;
+    margin-bottom: 10px;
 }
 
-.cad {
-    border: 3px solid goldenrod;
-    border-radius: 10px;
-    padding: 5px;
-}
+.cont {
+    color: red;
+    text-decoration: underline;
 
-/* aplicando cor quando passa mouse por cima do botão */
-.cad:hover {
-    background-color: goldenrod;
-}
-
-.menu {
-    color: white;
-    border: 3px solid goldenrod;
-    border-radius: 10px;
-    margin-left: 10%;
-    padding: 10px;
-}
-
-/* aplicando cor quando passa mouse por cima do botão */
-.menu:hover {
-    background-color: goldenrod;
 }
