@@ -5,7 +5,7 @@ const btAgua = document.getElementById('btagua');
 const btSalgada = document.getElementById('btsalgada');
 const btDoce = document.getElementById('btdoce');
 
-function esconderSd() {
+function escondersd() {
     btRefri.style.display = 'block';
     btSuco.style.display = 'block';
     btCerva.style.display = 'block';
@@ -14,7 +14,7 @@ function esconderSd() {
     btDoce.style.display = 'none';
 }
 
-function esconderRsca() {
+function esconderrsca() {
     btRefri.style.display = 'none';
     btSuco.style.display = 'none';
     btCerva.style.display = 'none';
