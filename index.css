@@ -1,0 +1,106 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+header {
+    background-color: white;
+    width: 98.8vw;
+    height: 100px;
+}
+
+body {
+    width: 98.7vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* diminuindo tamanho da imagem de logo*/
+.img>img {
+    width: 100px;
+}
+
+/* deixando texto ao lado da imagem e centralizada na altura dela*/
+.img {
+    display: flex;
+    align-items: center;
+}
+
+/* deixando elementos h1 e p mais próximos*/
+.img>div>p {
+    margin-top: 5px;
+}
+
+/* link para login*/
+a {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+main>img {
+    margin-top: 80px;
+    margin-left: 95px;
+    margin-bottom: 30px;
+}
+
+/* aviso de loja fechada*/
+#fechado {
+    margin: auto;
+    border: 1px solid red;
+    padding: 35px;
+    text-align: center;
+    width: 500px;
+    background-color: rgb(247, 207, 207);
+    border-radius: 5px;
+}
+
+#fechado>h1 {
+    color: red;
+}
+
+/* aviso de loja aberta */
+#aberto {
+    margin: auto;
+    border: 1px solid green;
+    padding: 35px;
+    text-align: center;
+    width: 500px;
+    background-color: rgb(207, 247, 207);
+    border-radius: 5px;
+}
+
+#aberto>h1 {
+    color: green;
+}
+
+hr {
+    border: 1px solid red;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.contato {
+    margin: 5px;
+    padding: 5px;
+}
+
+.contato>h2 {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.cont {
+    color: red;
+    text-decoration: underline;
+
+}
