@@ -1,16 +1,24 @@
-function escondersd(){
-    document.getElementById('btrefri').style.display = 'block';
-    document.getElementById('btsuco').style.display = 'block';
-    document.getElementById('btcerva').style.display = 'block';
-    document.getElementById('btagua').style.display = 'block';
-    document.getElementById('btsalgada').style.display = 'none';
-    document.getElementById('btdoce').style.display = 'none';
-};
-function esconderrsca(){
-    document.getElementById('btrefri').style.display = 'none';
-    document.getElementById('btsuco').style.display = 'none';
-    document.getElementById('btcerva').style.display = 'none';
-    document.getElementById('btagua').style.display = 'none';
-    document.getElementById('btsalgada').style.display = 'block';
-    document.getElementById('btdoce').style.display = 'block';
-};
+const btRefri = document.getElementById('btrefri');
+const btSuco = document.getElementById('btsuco');
+const btCerva = document.getElementById('btcerva');
+const btAgua = document.getElementById('btagua');
+const btSalgada = document.getElementById('btsalgada');
+const btDoce = document.getElementById('btdoce');
+
+function esconderSd() {
+    btRefri.style.display = 'block';
+    btSuco.style.display = 'block';
+    btCerva.style.display = 'block';
+    btAgua.style.display = 'block';
+    btSalgada.style.display = 'none';
+    btDoce.style.display = 'none';
+}
+
+function esconderRsca() {
+    btRefri.style.display = 'none';
+    btSuco.style.display = 'none';
+    btCerva.style.display = 'none';
+    btAgua.style.display = 'none';
+    btSalgada.style.display = 'block';
+    btDoce.style.display = 'block';
+}

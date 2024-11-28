@@ -18,13 +18,13 @@
       <input name="cads[]" type="text" required placeholder="Digite aqui o seu nome">
 
       <label for="telefone">Nº Telefone:</label>
-      <input name="cads[]" type="number" required placeholder="Nº de telefone">
+      <input name="cads[]" type="text" required placeholder="Nº de telefone" minlength="10" maxlength="11">
 
       <label for="cpf">CPF:</label>
-      <input name="cads[]" type="number" required placeholder="Nº do CPF">
+      <input name="cads[]" type="text" required placeholder="Nº do CPF" minlength="11" maxlength="11">
 
       <label for="cep">CEP:</label>
-      <input name="cads[]" type="number" required placeholder="Nº do CEP">
+      <input name="cads[]" type="text" required placeholder="Nº do CEP" minlength="8" maxlength="8">
 
       <label for="email">Email:</label>
       <input name="cads[]" type="email" required placeholder="Digite o seu email">
@@ -35,9 +35,7 @@
       <button type="submit">Cadastrar</button>
 
       <p class="info">
-        Já tem uma conta? <a href="../login/login_view.php">Faça login</a> ou <a href="../cardapio/cardapio.html">acesse
-          o
-          cardápio</a>.
+        Já tem uma conta? <a href="../login/login_view.php">Faça login</a>
       </p>
       <p class="info">Deseja voltar para a home? <a href="../../index.html">Clique aqui!</a></p>
     </form>

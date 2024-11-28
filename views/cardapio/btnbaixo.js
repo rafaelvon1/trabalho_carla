@@ -1,69 +1,63 @@
-document.getElementById('btsalgada').addEventListener('click', function() {
-    document.getElementById('salgadas').style.display = 'block';
-    document.getElementById('doces').style.display = 'none';
+const btnSalgada = document.getElementById('btsalgada');
+const btnDoce = document.getElementById('btdoce');
+const btnRefri = document.getElementById('btrefri');
+const btnSuco = document.getElementById('btsuco');
+const btnCerva = document.getElementById('btcerva');
+const btnAgua = document.getElementById('btagua');
 
+const sectionSalgadas = document.getElementById('salgadas');
+const sectionDoces = document.getElementById('doces');
+const sectionSalgada = document.getElementById('salgada');
+const sectionDoce = document.getElementById('doce');
+const sectionRefri = document.getElementById('refri');
+const sectionSuco = document.getElementById('suco');
+const sectionCerva = document.getElementById('cerva');
+const sectionAgua = document.getElementById('agua');
 
-   
+btnSalgada.addEventListener('click', function () {
+    sectionSalgadas.style.display = 'block';
+    sectionDoces.style.display = 'none';
 });
 
-document.getElementById('btdoce').addEventListener('click', function() {
-    document.getElementById('doces').style.display = 'block';
-    document.getElementById('salgadas').style.display = 'none';
-
-
-  
-});
-document.getElementById('btsalgada').addEventListener('click', function() {
-    document.getElementById('salgada').style.display = 'block';
-    document.getElementById('doce').style.display = 'none';  
-
-
- 
+btnDoce.addEventListener('click', function () {
+    sectionDoces.style.display = 'block';
+    sectionSalgadas.style.display = 'none';
 });
 
-document.getElementById('btdoce').addEventListener('click', function() {
-    document.getElementById('doce').style.display = 'block';
-    document.getElementById('salgada').style.display = 'none';
-
-
-   
-
-    //bebidas --------------------------------------------------------------
-});
-document.getElementById('btrefri').addEventListener('click', function() {
-    document.getElementById('refri').style.display = 'block';
-    document.getElementById('suco').style.display = 'none';
-    document.getElementById('cerva').style.display = 'none';
-    document.getElementById('agua').style.display = 'none';
-
-
-   
-});
-document.getElementById('btsuco').addEventListener('click', function() {
-    document.getElementById('suco').style.display = 'block';
-    document.getElementById('refri').style.display = 'none';
-    document.getElementById('cerva').style.display = 'none';
-    document.getElementById('agua').style.display = 'none';
-
-
-   
-});
-document.getElementById('btcerva').addEventListener('click', function() {
-    document.getElementById('cerva').style.display = 'block';
-    document.getElementById('suco').style.display = 'none';
-    document.getElementById('refri').style.display = 'none';
-    document.getElementById('agua').style.display = 'none';
-
-
-    
-});
-document.getElementById('btagua').addEventListener('click', function() {
-    document.getElementById('agua').style.display = 'block';
-    document.getElementById('suco').style.display = 'none';
-    document.getElementById('cerva').style.display = 'none';
-    document.getElementById('refri').style.display = 'none';
-
-
-    
+btnSalgada.addEventListener('click', function () {
+    sectionSalgada.style.display = 'block';
+    sectionDoce.style.display = 'none';
 });
 
+btnDoce.addEventListener('click', function () {
+    sectionDoce.style.display = 'block';
+    sectionSalgada.style.display = 'none';
+});
+
+btnRefri.addEventListener('click', function () {
+    sectionRefri.style.display = 'block';
+    sectionSuco.style.display = 'none';
+    sectionCerva.style.display = 'none';
+    sectionAgua.style.display = 'none';
+});
+
+btnSuco.addEventListener('click', function () {
+    sectionSuco.style.display = 'block';
+    sectionRefri.style.display = 'none';
+    sectionCerva.style.display = 'none';
+    sectionAgua.style.display = 'none';
+});
+
+btnCerva.addEventListener('click', function () {
+    sectionCerva.style.display = 'block';
+    sectionSuco.style.display = 'none';
+    sectionRefri.style.display = 'none';
+    sectionAgua.style.display = 'none';
+});
+
+btnAgua.addEventListener('click', function () {
+    sectionAgua.style.display = 'block';
+    sectionSuco.style.display = 'none';
+    sectionCerva.style.display = 'none';
+    sectionRefri.style.display = 'none';
+});
