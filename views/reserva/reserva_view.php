@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -23,6 +23,11 @@
 
 
 <?php
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+$status = isset($_SESSION['status']) ? $_SESSION['status'] : 'client';
 // Define o fuso horário
 date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
 
@@ -38,23 +43,24 @@ $data_max = $data->format('Y-m-d');
     <div class="cabecalho">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="../principal_cliente/principal_client_view.php"><img
-                        src="../../images/fatia_home.png" alt=""><br> Home</a>
+                <a class="nav-link" href="../../controllers/cardapio/cardapio_controller.php"><img
+                        src="../../images/fatia_home.png" alt="Acesso a pagina principal"><br> Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="reserva_view.php"><img src="../../images/pizza_reserva.png"
                         alt="Botão que leva para reserva"><br> Reserva</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../cardapio/cardapio.html"><img src="../../images/caixa_aberta_login.png"
+                <a class="nav-link" href="../cardapio/cardapio.php"><img src="../../images/caixa_aberta_login.png"
                         alt="Botão que leva para o cardapio"><br>
                     Cardapio</a>
             </li>
-            <li class="nav-item eu">
-                <a class="nav-link" href="../perfils/perfil_cliente/perfil_cliente_view.php"><img
-                        src="../../images/pizza_eu.png" alt="Botão que leva ao perfil"><br>
-                    Perfil</a>
-            </li>
+            <?php if ($status === 'client'): ?>
+                <li class="nav-item eu">
+                    <a class="nav-link" href="../perfils/perfil_cliente/perfil_cliente_view.php"><img
+                            src="../../images/pizza_eu.png" alt=""><br> Perfil</a>
+                </li>
+            <?php endif; ?>
             <li class="nav-item sair">
                 <a class="nav-link" href="../../controllers/login/logout_controller.php"><img
                         src="../../images/caixa_fechada_cadastro.png" alt="Botão que faz o usuario sair da conta"><br>

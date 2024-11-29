@@ -74,7 +74,7 @@ $data_max = $data->format('Y-m-d');
 
                 <button class="botao" type="submit" name="botao">enviar</button>
                 <br>
-                <button><a href="../../controllers/reserva/mostrando_reserva.php">voltar</a></button>
+                <button><a href="../reserva/mostrando_reserva_view.php">voltar</a></button>
             </form>
 
         </div>

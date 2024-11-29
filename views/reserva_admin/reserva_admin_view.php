@@ -63,13 +63,9 @@ $data_max = $data->format('Y-m-d');
                         alt="Botão que leva para reserva"><br> Reserva</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="../../images/caixa_aberta_login.png"
+                <a class="nav-link" href="../cardapio/cardapio.php"><img src="../../images/caixa_aberta_login.png"
                         alt="Botão que leva para o cardapio"><br>
                     Cardapio</a>
-            </li>
-            <li class="nav-item eu">
-                <a class="nav-link" href="#"><img src="../../images/pizza_eu.png" alt="Botão que leva ao perfil"><br>
-                    Perfil</a>
             </li>
             <li class="nav-item sair">
                 <a class="nav-link" href="../../controllers/login/logout_controller.php"><img
