@@ -1,3 +1,8 @@
+<?php
+session_start();
+$status = isset($_SESSION['status']) ? $_SESSION['status'] : 'client';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,7 +20,7 @@
     <div class="cabecalho">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="../principal_cliente/principal_client_view.php"><img
+                <a class="nav-link" href="../../controllers/cardapio/cardapio_controller.php"><img
                         src="../../images/fatia_home.png" alt="Acesso a pagina principal"><br> Home</a>
             </li>
             <li class="nav-item">
@@ -24,13 +29,15 @@
                     Reserva</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="cardapio.html"><img src="../../images/caixa_aberta_login.png" alt=""><br>
+                <a class="nav-link" href="cardapio.php"><img src="../../images/caixa_aberta_login.png" alt=""><br>
                     Cardapio</a>
             </li>
-            <li class="nav-item eu">
-                <a class="nav-link" href="../perfils/perfil_cliente/perfil_cliente_view.php"><img
-                        src="../../images/pizza_eu.png" alt=""><br> Perfil</a>
-            </li>
+            <?php if ($status === 'client'): ?>
+                <li class="nav-item eu">
+                    <a class="nav-link" href="../perfils/perfil_cliente/perfil_cliente_view.php"><img
+                            src="../../images/pizza_eu.png" alt=""><br> Perfil</a>
+                </li>
+            <?php endif; ?>
             <li class="nav-item sair">
                 <a class="nav-link" href="../../controllers/login/logout_controller.php"><img
                         src="../../images/caixa_fechada_cadastro.png" alt=""><br> Sair</a>
@@ -52,7 +59,8 @@
         <button class="botaobaixo" id="btagua">Água</button>
     </div>
 
-    <div id="principal"> <!--Colocando as divs em uma borda-->
+    <div id="principal">
+        <!--Colocando as divs em uma borda-->
         <div id="alimentos">
             <div id="salgadas">
                 <div class="row">
@@ -363,7 +371,8 @@
                         </div>
                     </div>
                 </div>
-            </div> <!--div salgada termina aqui -->
+            </div>
+            <!--div salgada termina aqui -->
             <div id="doces">
                 <div class="row">
                     <div class="col-3">
@@ -668,8 +677,10 @@
                         </div>
                     </div>
                 </div>
-            </div><!--div doce termina aqui-->
-        </div> <!--div alimentos 1 termina aqui (pizza salgadas e doces)-->
+            </div>
+            <!--div doce termina aqui-->
+        </div>
+        <!--div alimentos 1 termina aqui (pizza salgadas e doces)-->
         <div id="alimentos2">
             <div id="salgada">
                 <div class="row">
@@ -1052,7 +1063,8 @@
                         </div>
                     </div>
                 </div>
-            </div><!--final da identação esfiha salgada-->
+            </div>
+            <!--final da identação esfiha salgada-->
             <div id="doce">
                 <div class="row">
                     <div class="col-3">
@@ -1405,8 +1417,10 @@
                         </div>
                     </div>
                 </div>
-            </div><!--Final Identação esfiha doce-->
-        </div><!--Final da identação alimentos 2 (esfihas)-->
+            </div>
+            <!--Final Identação esfiha doce-->
+        </div>
+        <!--Final da identação alimentos 2 (esfihas)-->
         <div id="drink">
             <div id="refri">
                 <div class="row">
@@ -1625,7 +1639,8 @@
                         </div>
                     </div>
                 </div>
-            </div><!--final identação refri-->
+            </div>
+            <!--final identação refri-->
             <div id="suco">
                 <div class="row">
                     <div class="col-3">
@@ -1696,7 +1711,8 @@
                         </div>
                     </div>
                 </div>
-            </div><!--final identação suco-->
+            </div>
+            <!--final identação suco-->
             <div id="cerva">
                 <div class="row">
                     <div class="col-3">
@@ -1815,7 +1831,8 @@
                         </div>
                     </div>
                 </div>
-            </div><!--final identação cerveja-->
+            </div>
+            <!--final identação cerveja-->
             <div id="agua">
                 <div class="row">
                     <div class="col-3">
@@ -1856,9 +1873,12 @@
                         </div>
                     </div>
                 </div>
-            </div><!--final identação agua-->
-        </div><!--final identação drink-->
-    </div><!--Identação da Principal-->
+            </div>
+            <!--final identação agua-->
+        </div>
+        <!--final identação drink-->
+    </div>
+    <!--Identação da Principal-->
     <script src="btnbaixo.js"></script>
     <script src="btncima.js"></script>
     <script src="esconderbtn.js"></script>

@@ -2,44 +2,46 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="cadastro.css">
-  <title>Cadastro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>Cadastro</title>
 </head>
 
 <body>
 
-  <main class="container">
-    <form action="../../controllers/cadastro/cadastro_controller.php" method="post">
-      <h1>Cadastro</h1>
+    <main class="container">
+        <form action="../../controllers/cadastro/cadastro_controller.php" method="post">
+            <h1>Cadastro</h1>
 
-      <label for="nome">Nome:</label>
-      <input name="cads[]" type="text" required placeholder="Digite aqui o seu nome">
+            <label for="nome">Nome:</label>
+            <input name="cads[]" type="text" required placeholder="Digite aqui o seu nome">
 
-      <label for="telefone">Nº Telefone:</label>
-      <input name="cads[]" type="text" required placeholder="Nº de telefone" minlength="10" maxlength="11">
+            <label for="telefone">Nº Telefone:</label>
+            <input name="cads[]" type="text" required placeholder="Nº de telefone" minlength="10" maxlength="11">
 
-      <label for="cpf">CPF:</label>
-      <input name="cads[]" type="text" required placeholder="Nº do CPF" minlength="11" maxlength="11">
+            <label for="cpf">CPF:</label>
+            <input name="cads[]" type="text" required placeholder="Nº do CPF" minlength="11" maxlength="11">
 
-      <label for="cep">CEP:</label>
-      <input name="cads[]" type="text" required placeholder="Nº do CEP" minlength="8" maxlength="8">
+            <label for="cep">CEP:</label>
+            <input name="cads[]" type="text" required placeholder="Nº do CEP" minlength="8" maxlength="8">
 
-      <label for="email">Email:</label>
-      <input name="cads[]" type="email" required placeholder="Digite o seu email">
+            <label for="email">Email:</label>
+            <input name="cads[]" type="email" required placeholder="Digite o seu email">
 
-      <label for="senha">Senha:</label>
-      <input name="cads[]" type="password" required placeholder="Digite sua senha">
+            <label for="senha">Senha:</label>
+            <input name="cads[]" type="password" required placeholder="Digite sua senha">
 
-      <button type="submit">Cadastrar</button>
+            <button type="submit">Cadastrar</button>
 
-      <p class="info">
-        Já tem uma conta? <a href="../login/login_view.php">Faça login</a>
-      </p>
-      <p class="info">Deseja voltar para a home? <a href="../../index.html">Clique aqui!</a></p>
-    </form>
-  </main>
+            <p class="info">
+                Já tem uma conta? <a href="../login/login_view.php">Faça login</a>
+            </p>
+            <p class="info">Deseja voltar para a home? <a href="../../index.html">Clique aqui!</a></p>
+        </form>
+    </main>
+
+
 
 </body>
 

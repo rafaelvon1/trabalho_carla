@@ -34,7 +34,7 @@ if (!isset($_SESSION["email"]) || $_SESSION["status"] != "client") {
                         alt="Botão que leva pra reserva"><br> Reserva</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../cardapio/cardapio.html"><img src="../../images/caixa_aberta_login.png"
+                <a class="nav-link" href="../cardapio/cardapio.php"><img src="../../images/caixa_aberta_login.png"
                         alt="Botão do cardapio"><br>
                     Cardapio</a>
             </li>
