@@ -1,5 +1,32 @@
+<?php
+
+/**dados na posição 4 = id do cliente 
+ * dados na posição 5 = mesa
+ * dados na posição 0 = horario
+ * dados na posição 1 = data
+ * dados na posição 2 = quantidade pessoa
+ * dados na posição 3 = dia da semana
+ */
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+// Verifica se a variável de sessão 'status' está definida
+if (isset($_SESSION["status"]) && $_SESSION["status"] == "client") {
+    // Envia o cliente para sua página
+    header("location: ../principal/pagina_client_page.php");
+    exit();
+}
+
+/*ligando com o arquivo conexao*/
+include("../../models/conexao.php");
+
+$conexao = new Conexao();
+$mysqli = $conexao->conectar();
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -10,36 +37,18 @@
     <link rel="shortcut icon" href="..\imagens_videos" type="image/x-icon">
     <link rel="shortcut icon" href="..\imagens_videos\pizza_reserva.png" type="image/x-icon">
     <title>reserva administrador</title>
-    <?php
-        /**dados na posição 4 = id do cliente 
-         * dados na posição 5 = mesa
-         * dados na posição 0 = horario
-         * dados na posição 1 = data
-         * dados na posição 2 = quantidade pessoa
-         * dados na posição 3 = dia da semana
-        */
-        include("../../controllers/login/protect_controller.php");
-        /**caso usuario client tentar entrar no admin com url, barrar com o if */
-        if ($_SESSION["status"] == "client") {
-            /**enviando pessoa administradora para sua pagina */
-            header("location: ../principal/pagina_client_page.php");
-        }
-
-        /*ligando com o arquivo conexao*/
-        include("../../models/conexao.php");
-    ?>
 </head>
 
 <?php
-    // Define o fuso horário
-    date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
+// Define o fuso horário
+date_default_timezone_set('America/Sao_Paulo'); // Ajuste para seu fuso horário, se necessário
 
-    /**pegando data e horario atual */
-    $data = new DateTime();
-    $data_atual = $data ->format('Y-m-d');
-    $data_max = $data ;
-    $data_max->modify('+2 months');
-    $data_max = $data-> format('Y-m-d');
+/**pegando data e horario atual */
+$data = new DateTime();
+$data_atual = $data->format('Y-m-d');
+$data_max = $data;
+$data_max->modify('+2 months');
+$data_max = $data->format('Y-m-d');
 ?>
 
 <body>
@@ -128,33 +137,30 @@
                 </tr>
 
                 <?php
-            
 
-            /**forma de mostrar todos os registros da tabela sql */
-            /**verificando se a conexão foi */
+
+                /**forma de mostrar todos os registros da tabela sql */
+                /**verificando se a conexão foi */
                 $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client;";
                 if (isset($_POST['pesquisa'])) {
                     $pesquisa = $_POST['pesquisa'];
                     if ($pesquisa == "1") {
                         $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client order by d.nome;";
-                    }
-                    elseif ($pesquisa == "2") {
-                        $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client and data_reserva < date(now());";  
-                    }
-                    else {
-                        
+                    } elseif ($pesquisa == "2") {
+                        $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client and data_reserva < date(now());";
+                    } else {
+
                         $sql_cod = "SELECT r.id_client,d.nome,r.mesa,r.horario,r.data_reserva,r.quantidade from reserva r, dados_usuario d where r.id_client = d.id_client and nome like '$pesquisa%';";
                     }
                 }
-                
+
                 /**utilizando parametro query para enviar codigo sql caso nao funcione die */
-                $sql_query = $mysqli -> query($sql_cod) or die("voce simplismente nao existe");
+                $sql_query = $mysqli->query($sql_cod) or die("voce simplismente nao existe");
                 /**verificando se teve algum retorno da minha consulta */
                 $retorno = $sql_query->num_rows;
                 if ($retorno == 0) {
-                    echo"<h2 class=\"aviso\">nada registrado<h2/>";
-                } 
-                else {
+                    echo "<h2 class=\"aviso\">nada registrado<h2/>";
+                } else {
                     while ($variavel = $sql_query->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td> <a href=\"../perfils/perfil_admin/perfil_admin_view.php?id=$variavel[id_client]\">entrar</a> </td>";
@@ -165,13 +171,11 @@
                         echo "<td>" . $variavel['quantidade'] . "</td>";
                         echo "</tr>";
                     }
-                
-                    
                 }
-                
-                
 
-            ?>
+
+
+                ?>
             </table>
         </div>
     </div>
